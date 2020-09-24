@@ -1,7 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const CopyPlugin = require('copy-webpack-plugin');
 
 // eslint-disable-next-line
 module.exports = {
@@ -20,9 +19,6 @@ module.exports = {
     new Dotenv({
       systemvars: true
     }),
-    new CopyPlugin([
-      { from: 'public' },
-    ])
   ],
   module: {
     rules: [
@@ -35,6 +31,26 @@ module.exports = {
             cacheDirectory: true
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', 
+          {
+            loader: 'css-loader',
+            options: {
+              modules: 'global',
+              sourceMap: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
