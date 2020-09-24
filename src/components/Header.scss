@@ -1,3 +1,70 @@
+@import '../styles/variables.scss';
+
 :local(.Header) {
+  display: flex;
+  flex-direction: column;
+
+  height: 120px;
+  width: 100%;
+
+  padding: 10px 40px;
+
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
   
+  border: 1px solid $blackText;
+  
+  -webkit-box-shadow: 0px 4px 15px 0px $blackText;
+  -moz-box-shadow: 0px 4px 15px 0px $blackText;
+  box-shadow: 0px 4px 15px 0px $blackText;
+  
+  color: $blackText;
+
+  animation-name: fly-in-top; 
+  animation-duration: 500ms;
+  animation-delay: 500ms;
+  animation-fill-mode: both;
+  
+  h1, h2 {
+    animation-name: fly-in-right; 
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(.79,.43,.36,1.19);
+    animation-fill-mode: both;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+    
+    font-family: $bold;
+    font-size: 24px;
+
+    animation-delay: 1500ms;
+  }
+  
+  h2 {
+    flex-grow: 1;
+    
+    font-family: $semiBold;
+    font-size: 16px;
+
+    animation-delay: 2200ms;
+  }
+  
+  @keyframes fly-in-top {
+    0% {
+      transform: translateY(-200%)
+    }
+    100% {
+      transform: none;
+    }
+  }
+
+  @keyframes fly-in-right {
+    0% {
+      transform: translateX(150%)
+    }
+    100% {
+      transform: none;
+    }
+  }
 }

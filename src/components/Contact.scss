@@ -1,0 +1,57 @@
+@import '../styles/variables.scss';
+
+:local(.Contact) {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  height: 14px;
+  width: 100%;
+
+
+  p {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    text-align: right;
+    font-family: $regular;
+    font-size: 14px;
+
+    animation-name: fly-in-left; 
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+  }
+
+  .phone {
+    right: 0;
+    animation-delay: 2800ms;
+  }
+
+  .email {
+    right: 110px;
+    animation-delay: 3100ms;
+  }
+  
+  .linked-in {
+    right: 288px;
+    animation-delay: 3400ms;
+  }
+  
+  .git-hub {
+    right: 492px;
+    animation-delay: 3700ms;
+  }
+
+
+
+  @keyframes fly-in-left {
+    0% {
+      transform: translateX(-200%)
+    }
+    100% {
+      transform: none;
+    }
+  }
+}

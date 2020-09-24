@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from './Contact';
 import styles from './Header.scss';
 
 export default function Header() {
@@ -11,6 +12,8 @@ export default function Header() {
       <h2>
         {'Sprinklr\'s PDX Engineering Team\'s New Best Friend'}
       </h2>
+
+      <Contact />
     </header>
   );
 }
