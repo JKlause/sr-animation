@@ -32,7 +32,7 @@
 
   @keyframes slide-in-bottom {
     0% {
-      transform: translateY($footerHeight);
+      transform: translateY($footerHeight + 20px);
     }
     100% {
       transform: none;

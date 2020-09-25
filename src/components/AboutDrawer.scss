@@ -4,39 +4,19 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  // -20px for box shadow
+  bottom: calc(-#{$aboutDrawerHeight} - 20px);
 
-  height: 400px;
-  background: red;
+  height: $aboutDrawerHeight;
+
+  background: rgba(0,212,255,1);
+  border: 1px solid $blackText;
+  box-shadow: 0px -4px 15px 0px $boxShadowColor;
+  
   z-index: 100;
+  transition: bottom .4s ease-in;
 
   &.open {
-    animation-name: drawer-open; 
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-  }
-  
-  &.closed {
-    animation-name: drawer-close; 
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-  }
-
-  @keyframes drawer-open {
-    0% {
-      transform: translateY(calc(399px + #{$footerHeight}));
-    }
-    100% {
-      transform: none;
-    }
-  }
-
-  @keyframes drawer-close {
-    0% {
-      transform: none;
-    }
-    100% {
-      transform: translateY(calc(399px + #{$footerHeight}));
-    }
+    bottom: calc(#{$footerHeight} - 2px);
   }
 }
