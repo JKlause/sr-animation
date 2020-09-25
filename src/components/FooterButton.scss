@@ -1,0 +1,66 @@
+@import '../styles/variables.scss';
+
+:local(.FooterButton) {
+  height: 50px;
+  width: 70%;
+  max-width: 200px;
+
+  font-family: $semiBold;
+  font-size: 16px;
+
+  border-radius: 34px;
+
+  background: rgba(64,91,214,.7);
+  
+  box-shadow: 4px 4px 5px 0px $boxShadowColor;
+
+  opacity: 0;
+
+  user-select: none;
+  
+  &.on-click {
+    box-shadow: none;
+  }
+  
+  &.visible {
+    cursor: pointer;
+    animation-name: fade-in; 
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+  
+  &.not-visible {
+    cursor: auto;
+    pointer-events: none;
+    animation-name: fade-out; 
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+  
+  &.disabled {
+    cursor: auto;
+    pointer-events: none;
+    color: $blackTextDisabled;
+    background: rgba(64,91,214,.2);
+    box-shadow: none;
+  }
+
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

@@ -14,3 +14,11 @@
   font-family: 'bold';
   src: url('./montserrat/Montserrat-Bold.otf');
 }
+
+button {
+  cursor: pointer;
+  //removes focus highlight
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}

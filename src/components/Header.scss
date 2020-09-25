@@ -4,21 +4,20 @@
   display: flex;
   flex-direction: column;
 
-  height: 120px;
+  height: $headerHeight;
   width: 100%;
 
   padding: 10px 40px;
 
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
+
+  color: $blackText;
+
+  background: linear-gradient(180deg, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
   
   border: 1px solid $blackText;
   
-  -webkit-box-shadow: 0px 4px 15px 0px $blackText;
-  -moz-box-shadow: 0px 4px 15px 0px $blackText;
-  box-shadow: 0px 4px 15px 0px $blackText;
+  box-shadow: 0px 4px 15px 0px $boxShadowColor;
   
-  color: $blackText;
 
   animation-name: fly-in-top; 
   animation-duration: 500ms;

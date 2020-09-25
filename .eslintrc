@@ -18,12 +18,14 @@
     "plugin:react/recommended"
   ],
   "rules": {
+    "react/prop-types": 0,
     "no-console": "warn",
     "indent": [
       "error",
       2,
       {
-        "SwitchCase": 1
+        "SwitchCase": 1,
+        "offsetTernaryExpressions": true
       }
     ],
     "quotes": [
