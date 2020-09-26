@@ -14,6 +14,7 @@ export default function Footer({
   const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
   const [areNavButtonsVisible, setAreNavButtonsVisible] = useState(false);
   const [isAboutButtonVisible, setIsAboutButtonVisible] = useState(false);
+  const [isNoBeginClickAnimation, setIsNoBeginClickAnimation] = useState(false);
 
   const isPreviousButtonDisabled = displayIndex === 1 || isAboutDrawerOpen;
   const isNextButtonDisabled = displayIndex === 3 || isAboutDrawerOpen;
@@ -39,7 +40,7 @@ export default function Footer({
 
       <div>
         <FooterButton
-          className={`previous ${isPreviousButtonDisabled ? 'disabled' : ''}`}
+          className={`previous ${isPreviousButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Previous"
           isVisible={areNavButtonsVisible}
           handleClick={() => {
@@ -55,7 +56,9 @@ export default function Footer({
                 className="begin"
                 text="Begin"
                 isVisible={isBeginButtonVisible}
+                noClickAnimation={isNoBeginClickAnimation}
                 handleClick={() => {
+                  setIsNoBeginClickAnimation(true);
                   moveTitle();
                   
                   setTimeout(() => {
@@ -81,7 +84,7 @@ export default function Footer({
 
       <div>
         <FooterButton
-          className={`next ${isNextButtonDisabled ? 'disabled' : ''}`}
+          className={`next ${isNextButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Next"
           isVisible={areNavButtonsVisible}
           handleClick={() => {

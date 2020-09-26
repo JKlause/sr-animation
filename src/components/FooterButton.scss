@@ -7,12 +7,12 @@
 
   font-family: $semiBold;
   font-size: 16px;
+  color: $blackText;
+  background: $buttonPurple;
+    
+  box-shadow: 4px 4px 5px 0px $boxShadowColor;
 
   border-radius: 34px;
-
-  background: $buttonPurple;
-  
-  box-shadow: 4px 4px 5px 0px $boxShadowColor;
 
   opacity: 0;
 
@@ -20,6 +20,7 @@
   
   &.on-click {
     box-shadow: none;
+    color: #AAAAAA;
   }
   
   &.visible {
@@ -37,9 +38,16 @@
   }
   
   &.disabled {
-    pointer-events: none;
     color: $blackTextDisabled;
     background: rgba(64,91,214,.2);
+
+    pointer-events: none;
     box-shadow: none;
+    
+    transition: background, color 100ms ease-out
+  }
+  
+  &.enabled {
+    transition: background, color 100ms ease-out
   }
 }
