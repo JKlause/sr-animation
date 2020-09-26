@@ -30,7 +30,6 @@
   }
   
   &.not-visible {
-    cursor: auto;
     pointer-events: none;
     animation-name: fade-out; 
     animation-duration: 500ms;
@@ -38,29 +37,9 @@
   }
   
   &.disabled {
-    cursor: auto;
     pointer-events: none;
     color: $blackTextDisabled;
     background: rgba(64,91,214,.2);
     box-shadow: none;
-  }
-
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
   }
 }

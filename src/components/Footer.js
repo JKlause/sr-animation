@@ -12,9 +12,10 @@ export default function Footer({
 }) {
   const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
   const [areNavButtonsVisible, setAreNavButtonsVisible] = useState(false);
+  const [isAboutButtonVisible, setIsAboutButtonVisible] = useState(false);
 
   const isPreviousButtonDisabled = displayIndex === 1 || isAboutDrawerOpen;
-  const isNextButtonDisabled = displayIndex === 3;
+  const isNextButtonDisabled = displayIndex === 3 || isAboutDrawerOpen;
 
   useEffect(() => {
     if(displayIndex === 1) {
@@ -26,7 +27,11 @@ export default function Footer({
 
   setTimeout(() => {
     setIsBeginButtonVisible(true);
-  }, 6000);
+  }, 7500);
+
+  useEffect(() => {
+    if(displayIndex === 3) setIsAboutButtonVisible(true);
+  }, [displayIndex]);
 
   return (
     <footer className={styles.Footer}>
@@ -60,7 +65,7 @@ export default function Footer({
             : <FooterButton
                 className="about"
                 text={isAboutDrawerOpen ? 'Close' : 'About Joe'}
-                isVisible={displayIndex === 3} 
+                isVisible={isAboutButtonVisible} 
                 handleClick={() => {
                   isAboutDrawerOpen 
                     ? closeAboutDrawer()
