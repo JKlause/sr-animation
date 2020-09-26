@@ -6,6 +6,7 @@ import FooterButton from './FooterButton';
 export default function Footer({ 
   displayIndex, 
   setDisplayIndex,
+  moveTitle,
   isAboutDrawerOpen,
   openAboutDrawer,
   closeAboutDrawer,
@@ -55,11 +56,15 @@ export default function Footer({
                 text="Begin"
                 isVisible={isBeginButtonVisible}
                 handleClick={() => {
-                  setIsBeginButtonVisible(false);
-                
+                  moveTitle();
+                  
+                  setTimeout(() => {
+                    setIsBeginButtonVisible(false);
+                  }, 600);
+                  
                   setTimeout(() => {
                     setDisplayIndex(1);
-                  }, 600);
+                  }, 1100);
                 }}/>
               
             : <FooterButton

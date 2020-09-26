@@ -13,6 +13,37 @@
     position: relative;
     height: calc(100% - #{$footerHeight} - #{$headerHeight});
     width: 100%;
+
+    h1 {
+      position: absolute;
+      right: calc(50% - 236px);
+      top: calc(50% - 100px);
+
+      width: 476px;
+      margin-bottom: 60px;
+
+      text-align: center;
+      line-height: 50px;
+
+      color: $blackText;
+      font-family: $semiBold;
+      font-size: 40px;
+
+      animation-name: fade-in; 
+      animation-duration: 1500ms;
+      animation-delay: 5000ms;
+      animation-fill-mode: both;
+
+      &.final-position {
+        top: 0;
+        transition: top .5s ease-in-out;
+
+        animation-name: shrink; 
+        animation-duration: 500ms;
+        animation-delay: 0ms;
+        animation-fill-mode: both;
+      }
+    }
     
     .grid {
       display: grid;
@@ -24,30 +55,6 @@
       
       margin-right: calc(100% * -3);
       transition: margin-left .5s ease-in-out;
-      
-
-      .title-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-          width: 475px;
-          margin-bottom: 60px;
-
-          text-align: center;
-          line-height: 50px;
-
-          color: $blackText;
-          font-family: $semiBold;
-          font-size: 40px;
-
-          animation-name: fade-in; 
-          animation-duration: 1500ms;
-          animation-delay: 5000ms;
-          animation-fill-mode: both;
-        }
-      }
 
       .card-container {
         display: flex;
@@ -66,6 +73,15 @@
           
         }
       }
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      transform: none;
+    }
+    100% {
+      transform: scale(.5)
     }
   }
 }
