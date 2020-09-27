@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin([{
-      from: 'public'
+      from: 'public', to: 'dest'
     }]),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanWebpackPlugin(),
