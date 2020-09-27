@@ -5,6 +5,7 @@ import styles from './AboutDrawerContent.scss';
 
 export default function AboutDrawerContent() {
 
+  
   return (
     <section className={`${styles.AboutDrawerContent} disable-scrollbars`}>
       <img src={joeImg} alt="Joe's Picture" />

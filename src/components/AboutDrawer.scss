@@ -14,13 +14,14 @@
 
   z-index: 100;
   transition: bottom .4s ease-in;
-   
+
   &.open {
     bottom: calc(#{$footerHeight} - 2px);
   }
 
   .content-container {
     position: relative;
+    
     height: 100%;
     width: 100%;
   }

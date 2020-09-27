@@ -8,7 +8,7 @@
 
   width: 100%;
 
-  div {
+  .paragraph-container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -16,9 +16,10 @@
 
     p {
       margin-right: 20px;
+
+      text-align: right;
       line-height: 18px;
       
-      text-align: right;
       font-family: $regular;
       font-size: 14px;
       
@@ -54,10 +55,12 @@
 
       p {
         margin-right: 0;
+        
         font-size: 12px;
       }
     }
   }
+
 
   @keyframes fly-in-left {
     0% {

@@ -6,6 +6,7 @@
 
   height: $aboutDrawerHeaderHeight;
   width: 100%;
+
   padding: 20px 0;
   
   border-bottom: 2px solid $buttonPurple;
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
     padding-right: 30px;
 
     button {
@@ -38,19 +40,19 @@
 
       .text {
         height: 100%;
+
         margin-right: 5px;
 
-        color: $dropdownGrey;
+        color: $dropdownGreyText;
         font-family: $regular;
         font-size: 12px;
-
       }
       
       .chevron {
         height: 100%;
         width: 18px;
         
-        color: $dropdownGrey;
+        color: $dropdownGreyText;
         font-family: $semiBold;
         font-size: 28px;
 
@@ -81,6 +83,7 @@
     }
   }
 
+
   @keyframes chevron-open {
     0% {
       transform: rotate(-180deg);
@@ -110,5 +113,4 @@
       transform: scaleY(-1)
     }
   }
-
 }

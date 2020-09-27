@@ -11,13 +11,11 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
     setIsNoClickEvents(true);
   }, [isDropdownOpen]);
 
+  
   return (
     <header className={styles.AboutDrawerHeader}>
 
-      { 
-        isMobile ||
-          <div/>
-      }
+      { isMobile || <div/> }
 
       <div className="header-container">
         <h1>
@@ -30,6 +28,7 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
           className={`${isNoClickEvents ? 'no-click-events' : ''}`}
           onClick={() => toggleDropdown()}
           onAnimationEnd={() => setIsNoClickEvents(false)}>
+
           <p className="text">
             {'About this site'}
           </p>
@@ -38,7 +37,6 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
           </p>
         </button>
       </div>
-
     </header>
   );
 }

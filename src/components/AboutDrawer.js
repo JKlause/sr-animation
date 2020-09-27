@@ -11,7 +11,6 @@ export default function AboutDrawer({ isOpen }) {
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
       <section className="content-container">
-
         <AboutDrawerHeader 
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
