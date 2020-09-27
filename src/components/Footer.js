@@ -29,7 +29,7 @@ export default function Footer({
     if(displayIndex === 3) {
       setTimeout(() => {
         setIsAboutButtonVisible(true);
-      }, 300);
+      }, 500);
     }
   }, [displayIndex]);
 
