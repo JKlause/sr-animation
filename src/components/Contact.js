@@ -5,7 +5,8 @@ import styles from './Contact.scss';
 export default function Contact() {
   return (
     <section className={styles.Contact}>
-      <div>
+
+      <div className="paragraph-container">
         <p className="phone">
           {'503-707-0138'}
         </p>
@@ -13,15 +14,16 @@ export default function Contact() {
           {'JoeKlause@gmail.com'}
         </p>
       </div>
-      <div>
+
+      <div className="paragraph-container">
         <p className="linked-in">
           {'linkedin.com/in/joe-klause'}
         </p>
-        
         <p className="git-hub">
           {'github.com/JKlause'}
         </p>
       </div>
+      
     </section>
   );
 }

@@ -1,6 +1,9 @@
 {
   "name": "sr-animation",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "",
   "main": "src/index.js",
   "jest": {
@@ -19,7 +22,8 @@
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
-    "build": "webpack -p --devtool source-map"
+    "build": "webpack -p --devtool source-map",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -28,6 +32,7 @@
     "postcss": "^8.0.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-responsive": "^8.1.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2"
   },

@@ -9,15 +9,11 @@
 
   padding: 10px 20px 10px 40px;
 
+  background: linear-gradient(180deg, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
+  border: 1px solid $blackText;
+  box-shadow: 0px 4px 15px 0px $boxShadowColor;
 
   color: $blackText;
-
-  background: linear-gradient(180deg, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
-  
-  border: 1px solid $blackText;
-  
-  box-shadow: 0px 4px 15px 0px $boxShadowColor;
-  
 
   animation-name: fly-in-top; 
   animation-duration: 500ms;
@@ -44,7 +40,6 @@
     }
     
     h2 {
-      
       font-family: $semiBold;
       font-size: 16px;
       
@@ -54,6 +49,7 @@
 
   @include mobile-view {
     flex-direction: row;
+
     padding: 10px 20px;
 
     .headers {
@@ -68,12 +64,14 @@
       }
 
       h2 {
-        font-size: 14px;
         margin-bottom: 18px;
+
+        font-size: 14px;
       }
     }
   }
     
+  
   @keyframes fly-in-top {
     0% {
       transform: translateY(-150%)

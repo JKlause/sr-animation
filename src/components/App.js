@@ -5,6 +5,7 @@ import Footer from './Footer';
 import AboutDrawer from './AboutDrawer';
 import styles from './App.scss';
 
+
 export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
