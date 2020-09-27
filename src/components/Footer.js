@@ -23,7 +23,7 @@ export default function Footer({
     if(displayIndex === 1) {
       setTimeout(() => {
         setAreNavButtonsVisible(true);
-      }, 1000);
+      }, 800);
     }
   }, [displayIndex]);
 
@@ -63,11 +63,11 @@ export default function Footer({
                   
                   setTimeout(() => {
                     setIsBeginButtonVisible(false);
-                  }, 600);
+                  }, 150);
                   
                   setTimeout(() => {
                     setDisplayIndex(1);
-                  }, 1100);
+                  }, 800);
                 }}/>
               
             : <FooterButton

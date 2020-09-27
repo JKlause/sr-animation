@@ -56,43 +56,6 @@
         }
       }
     }
-    
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 100%);
-      grid-gap: 100px;
-
-      height: 100%;
-      width: 100%;
-      
-      margin-right: calc(100% * -3);
-      transition: margin-left .5s ease-in-out;
-
-      .card-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .card {
-          width: calc(100% - 200px);
-          height: calc(100% - 150px);
-          margin-top: 50px;
-          max-height: 500px;
-          max-width: 800px;
-
-          background: rgba(73,208,183,.6);
-          border: 2px solid $buttonPurple;
-          border-radius: 8px;
-
-          @include mobile-view {
-            width: calc(100% - 40px);
-
-            margin-top: 80px;
-
-          }
-        }
-      }
-    }
   }
 
   @keyframes shrink {
