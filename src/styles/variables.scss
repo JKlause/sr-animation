@@ -10,10 +10,13 @@ $boxShadowColor: rgb(2,0,36,.5);
 
 $buttonPurple: rgba(64,91,214,.7);
 $buttonPurpleHover: rgba(64,91,214,.9);
+$aboutMeTeal: rgb(0,212,255);
+
 
 $headerHeight: 120px;
 $footerHeight: 120px;
 $aboutDrawerHeight: 420px;
+$aboutDrawerHeaderHeight: 72px;
 
 @mixin mobile-view {
   @media screen and (max-width: 500px) {

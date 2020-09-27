@@ -9,7 +9,7 @@
 
   height: $aboutDrawerHeight;
   
-  background: rgba(0,212,255,1);
+  background: $aboutMeTeal;
   border: 1px solid $blackText;
 
   z-index: 100;
@@ -17,5 +17,11 @@
    
   &.open {
     bottom: calc(#{$footerHeight} - 2px);
+  }
+
+  .content-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
   }
 }

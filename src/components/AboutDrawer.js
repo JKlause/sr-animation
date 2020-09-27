@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import AboutDrawerHeader from './AboutDrawerHeader';
-import AboutDrawerContent from './AboutDrawerContent';
+import AboutDrawerHeader from './about-drawer/AboutDrawerHeader';
+import AboutDrawerContent from './about-drawer/AboutDrawerContent';
+import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
 import styles from './AboutDrawer.scss';
 
 export default function AboutDrawer({ isOpen }) {
@@ -9,11 +10,14 @@ export default function AboutDrawer({ isOpen }) {
 
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : 'open'}`}>
-      <AboutDrawerHeader 
-        isDropdownOpen={isDropdownOpen}
-        toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
-      
-      <AboutDrawerContent />
+      <section className="content-container">
+
+        <AboutDrawerHeader 
+          isDropdownOpen={isDropdownOpen}
+          toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
+        <AboutDrawerDropdown isOpen={isDropdownOpen}/>
+        <AboutDrawerContent />
+      </section>
     </section>
   );
 }

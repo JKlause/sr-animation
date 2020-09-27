@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useMobile } from './shared/useMedia';
+import { useMobile } from '../../utils/useMedia';
 import styles from './AboutDrawerHeader.scss';
 
 

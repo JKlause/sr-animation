@@ -1,5 +1,5 @@
 import React from 'react';
-import joeImg from '../assets/joeImg.jpg';
+import joeImg from '../../assets/joeImg.jpg';
 import styles from './AboutDrawerContent.scss';
 
 

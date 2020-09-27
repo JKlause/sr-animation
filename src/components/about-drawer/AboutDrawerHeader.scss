@@ -1,10 +1,10 @@
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 :local(.AboutDrawerHeader) {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
 
-  height: 72px;
+  height: $aboutDrawerHeaderHeight;
   width: 100%;
   padding: 20px 0;
   
@@ -58,13 +58,14 @@
 
         &.open {
           animation-name: chevron-open; 
-          animation-duration: 1500ms;
+          animation-duration: 2000ms;
           animation-fill-mode: both;
         }
         
         &.closed {
           animation-name: chevron-closed; 
-          animation-duration: 1500ms;
+          animation-delay: 500ms;
+          animation-duration: 2000ms;
           animation-fill-mode: both;
         }
       }
@@ -84,10 +85,13 @@
     0% {
       transform: rotate(-180deg);
     }
-    33% {
+    25% {
       transform: rotate(-180deg)
     }
-    66% {
+    50% {
+      transform: rotate(-90deg)
+    }
+    75% {
       transform: rotate(-90deg)
     }
     100% {
@@ -99,14 +103,17 @@
     0% {
       transform: rotate(0deg);
     }
-    33% {
+    25% {
+      transform: rotate(90deg)
+    }
+    50% {
       transform: rotate(0deg)
     }
-    66% {
-      transform: rotate(-90deg)
+    75% {
+      transform: rotate(0deg)
     }
     100% {
-      transform: rotate(-180deg)
+      transform: scaleY(-1)
     }
   }
 
