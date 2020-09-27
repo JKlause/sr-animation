@@ -8,21 +8,6 @@
 
   width: 100%;
 
-  @include mobile-view {
-    flex-direction: row;
-    justify-content: flex-end;
-    
-    div {
-      flex-direction: row;
-      justify-content: flex-end;
-
-      p {
-        margin-right: 0;
-        font-size: 12px;
-      }
-    }
-  }
-
   div {
     display: flex;
     flex-direction: row-reverse;
@@ -59,7 +44,20 @@
     }
   }
 
+  @include mobile-view {
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    div {
+      flex-direction: row;
+      justify-content: flex-end;
 
+      p {
+        margin-right: 0;
+        font-size: 12px;
+      }
+    }
+  }
 
   @keyframes fly-in-left {
     0% {

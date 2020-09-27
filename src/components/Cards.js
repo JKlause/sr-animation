@@ -8,7 +8,7 @@ export default function Cards({ displayIndex }) {
 
   return (
     <section className={styles.Cards} style={pageStyle}>
-      <Card />
+      <div className="title-placeholder" />
       <Card hasContent={true}/>
       <Card hasContent={true}/>
       <Card hasContent={true}/>
