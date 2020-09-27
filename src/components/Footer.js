@@ -14,7 +14,7 @@ export default function Footer({
   const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
   const [areNavButtonsVisible, setAreNavButtonsVisible] = useState(false);
   const [isAboutButtonVisible, setIsAboutButtonVisible] = useState(false);
-  const [isNoBeginClickAnimation, setIsNoBeginClickAnimation] = useState(false);
+  const [isNoBeginButtonClickAnimation, setIsNoBeginButtonClickAnimation] = useState(false);
 
   const isPreviousButtonDisabled = displayIndex === 1 || isAboutDrawerOpen;
   const isNextButtonDisabled = displayIndex === 3 || isAboutDrawerOpen;
@@ -25,32 +25,58 @@ export default function Footer({
         setAreNavButtonsVisible(true);
       }, 800);
     }
+
+    if(displayIndex === 3) {
+      setTimeout(() => {
+        setIsAboutButtonVisible(true);
+      }, 500);
+    }
   }, [displayIndex]);
+
 
   setTimeout(() => {
     setIsBeginButtonVisible(true);
   }, 7500);
 
-  useEffect(() => {
-    if(displayIndex === 3) {
-      setTimeout(() => {
-        setIsAboutButtonVisible(true);
-      }, 300);
-    }
-  }, [displayIndex]);
+
+  const handlePreviousButtonClick = () => {
+    if(isPreviousButtonDisabled) return;
+    setDisplayIndex(--displayIndex);
+  };
+
+  const handleNextButtonClick = () => {
+    if(isNextButtonDisabled) return;
+    setDisplayIndex(++displayIndex);
+  };
+
+  const handleAboutButtonClick = () => {
+    isAboutDrawerOpen 
+      ? closeAboutDrawer()
+      : openAboutDrawer();
+  };
+
+  const handleBeginButtonClick = () => {
+    setIsNoBeginButtonClickAnimation(true);
+    moveTitle();
+
+    setTimeout(() => {
+      setIsBeginButtonVisible(false);
+    }, 150);
+    
+    setTimeout(() => {
+      setDisplayIndex(1);
+    }, 800);
+  };
+
 
   return (
     <footer className={styles.Footer}>
-
       <div>
         <FooterButton
           className={`previous ${isPreviousButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Previous"
           isVisible={areNavButtonsVisible}
-          handleClick={() => {
-            if(isPreviousButtonDisabled) return;
-            setDisplayIndex(--displayIndex);
-          }}/>
+          handleClick={() => handlePreviousButtonClick()}/>
       </div>
 
       <div>
@@ -60,29 +86,14 @@ export default function Footer({
                 className="begin"
                 text="Begin"
                 isVisible={isBeginButtonVisible}
-                noClickAnimation={isNoBeginClickAnimation}
-                handleClick={() => {
-                  setIsNoBeginClickAnimation(true);
-                  moveTitle();
-                  
-                  setTimeout(() => {
-                    setIsBeginButtonVisible(false);
-                  }, 150);
-                  
-                  setTimeout(() => {
-                    setDisplayIndex(1);
-                  }, 800);
-                }}/>
+                noClickAnimation={isNoBeginButtonClickAnimation}
+                handleClick={() => handleBeginButtonClick()}/>
               
             : <FooterButton
                 className="about"
                 text={isAboutDrawerOpen ? 'Close' : 'About Joe'}
                 isVisible={isAboutButtonVisible} 
-                handleClick={() => {
-                  isAboutDrawerOpen 
-                    ? closeAboutDrawer()
-                    : openAboutDrawer();
-                }}/>
+                handleClick={() => handleAboutButtonClick()}/>
         }
       </div>
 
@@ -91,10 +102,7 @@ export default function Footer({
           className={`next ${isNextButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Next"
           isVisible={areNavButtonsVisible}
-          handleClick={() => {
-            if(isNextButtonDisabled) return;
-            setDisplayIndex(++displayIndex);
-          }}/>
+          handleClick={() => handleNextButtonClick()}/>
       </div>
     </footer>
   );

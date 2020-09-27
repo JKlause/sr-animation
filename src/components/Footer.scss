@@ -8,27 +8,28 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: $footerHeight;
 
-  color: $blackText;
+  height: $footerHeight;
 
   border: 1px solid $blackText;
   box-shadow: 0px -4px 15px 0px $boxShadowColor;
-
   background: linear-gradient(0deg, rgba(73,208,183,1) 0%, rgba(0,212,255,1) 100%);
+  
+  color: $blackText;
 
   z-index: 200;
 
+  animation-name: slide-in-bottom; 
+  animation-duration: 1000ms;
+  animation-delay: 6200ms;
+  animation-fill-mode: both;
+  
   div {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  animation-name: slide-in-bottom; 
-  animation-duration: 1000ms;
-  animation-delay: 6200ms;
-  animation-fill-mode: both;
 
   @keyframes slide-in-bottom {
     0% {
