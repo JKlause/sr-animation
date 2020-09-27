@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+:local(.Cards) {
+  display: grid;
+  grid-template-columns: repeat(4, 100%);
+  grid-gap: 100px;
+
+  height: 100%;
+  width: 100%;
+  
+  margin-right: calc(100% * -3);
+  transition: margin-left .5s ease-in-out;
+}

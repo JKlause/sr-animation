@@ -1,0 +1,72 @@
+@import '../styles/variables.scss';
+
+:local(.Contact) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  @include mobile-view {
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    div {
+      flex-direction: row;
+      justify-content: flex-end;
+
+      p {
+        margin-right: 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    p {
+      margin-right: 20px;
+      line-height: 18px;
+      
+      text-align: right;
+      font-family: $regular;
+      font-size: 14px;
+      
+      animation-name: fly-in-left; 
+      animation-duration: 300ms;
+      animation-fill-mode: both;
+    }
+    
+    .phone {
+      animation-delay: 3000ms;
+    }
+    
+    .email {
+      animation-delay: 3400ms;
+    }
+    
+    .linked-in {
+      animation-delay: 3800ms;
+    }
+    
+    .git-hub {
+      animation-delay: 4200ms;
+    }
+  }
+
+
+
+  @keyframes fly-in-left {
+    0% {
+      transform: translateX(-10000px)
+    }
+    100% {
+      transform: none;
+    }
+  }
+}

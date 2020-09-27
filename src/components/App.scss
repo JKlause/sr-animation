@@ -1,0 +1,69 @@
+@import '../styles/variables.scss';
+
+:local(.App) {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  background: radial-gradient(circle, rgba(73,73,208,1) 0%, rgba(0,212,255,1) 100%);
+
+  main {
+    position: relative;
+    height: calc(100% - #{$footerHeight} - #{$headerHeight});
+    width: 100%;
+
+    h1 {
+      position: absolute;
+      right: calc(50% - 236px);
+      top: calc(50% - 100px);
+
+      width: 476px;
+
+      text-align: center;
+      line-height: 50px;
+
+      color: $blackText;
+      font-family: $semiBold;
+      font-size: 40px;
+
+      animation-name: fade-in; 
+      animation-duration: 1500ms;
+      animation-delay: 5000ms;
+      animation-fill-mode: both;
+
+      &.final-position {
+        top: 0;
+        
+        transition: top .5s ease-in-out;
+
+        animation-name: shrink; 
+        animation-duration: 500ms;
+        animation-delay: 0ms;
+        animation-fill-mode: both;
+      }
+
+      @include mobile-view {
+        width: calc(100% - 40px);
+        right: calc(50% - calc((100% - 40px) / 2));
+
+        line-height: 40px;
+        font-size: 34px;
+
+        &.final-position {
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      transform: none;
+    }
+    100% {
+      transform: scale(.5)
+    }
+  }
+}
