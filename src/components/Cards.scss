@@ -9,5 +9,10 @@
   width: 100%;
   
   margin-right: calc(100% * -3);
+  
   transition: margin-left .5s ease-in-out;
+
+  .title-placeholder {
+    width: 100%;
+  }
 }

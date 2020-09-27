@@ -15,6 +15,7 @@
   src: url('./montserrat/Montserrat-Bold.otf');
 }
 
+
 button {
   cursor: pointer;
   //removes focus highlight
@@ -22,6 +23,7 @@ button {
   box-shadow: none;
   border-color: transparent;
 }
+
 
 .disable-scrollbars {
   scrollbar-width: none; /* Firefox */
@@ -34,6 +36,7 @@ button {
     background: transparent; /* Chrome/Safari/Webkit */
   }
 }
+
 
 @keyframes fade-in {
   0% {

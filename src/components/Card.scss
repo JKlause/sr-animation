@@ -11,13 +11,14 @@
   .content {
     width: calc(100% - 150px);
     height: calc(100% - 150px);
-    margin-top: 50px;
     max-height: 500px;
     max-width: 800px;
 
-    background: rgba(73,208,183,.6);
+    margin-top: 50px;
+
     border: 2px solid $buttonPurple;
     border-radius: 8px;
+    background: rgba(73,208,183,.6);
 
     @include mobile-view {
       width: calc(100% - 40px);
