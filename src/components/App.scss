@@ -20,7 +20,6 @@
       top: calc(50% - 100px);
 
       width: 476px;
-      margin-bottom: 60px;
 
       text-align: center;
       line-height: 50px;
@@ -36,12 +35,25 @@
 
       &.final-position {
         top: 0;
+        
         transition: top .5s ease-in-out;
 
         animation-name: shrink; 
         animation-duration: 500ms;
         animation-delay: 0ms;
         animation-fill-mode: both;
+      }
+
+      @include mobile-view {
+        width: calc(100% - 40px);
+        right: calc(50% - calc((100% - 40px) / 2));
+
+        line-height: 40px;
+        font-size: 34px;
+
+        &.final-position {
+          top: -5px;
+        }
       }
     }
     
@@ -63,14 +75,21 @@
 
         .card {
           width: calc(100% - 200px);
-          height: calc(100% - 100px);
+          height: calc(100% - 150px);
+          margin-top: 50px;
           max-height: 500px;
           max-width: 800px;
 
           background: rgba(73,208,183,.6);
           border: 2px solid $buttonPurple;
           border-radius: 8px;
-          
+
+          @include mobile-view {
+            width: calc(100% - 40px);
+
+            margin-top: 80px;
+
+          }
         }
       }
     }

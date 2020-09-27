@@ -1,54 +1,69 @@
 @import '../styles/variables.scss';
 
 :local(.Contact) {
-  position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
-  height: 14px;
   width: 100%;
 
+  @include mobile-view {
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    div {
+      flex-direction: row;
+      justify-content: flex-end;
 
-  p {
-    position: absolute;
-
-    height: 100%;
-    width: 100%;
-
-    text-align: right;
-    font-family: $regular;
-    font-size: 14px;
-
-    animation-name: fly-in-left; 
-    animation-duration: 300ms;
-    animation-fill-mode: both;
+      p {
+        margin-right: 0;
+        font-size: 12px;
+      }
+    }
   }
 
-  .phone {
-    right: 0;
-    animation-delay: 3000ms;
-  }
+  div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 
-  .email {
-    right: 110px;
-    animation-delay: 3400ms;
-  }
-  
-  .linked-in {
-    right: 288px;
-    animation-delay: 3800ms;
-  }
-  
-  .git-hub {
-    right: 492px;
-    animation-delay: 4200ms;
+    p {
+      margin-right: 20px;
+      line-height: 18px;
+      
+      text-align: right;
+      font-family: $regular;
+      font-size: 14px;
+      
+      animation-name: fly-in-left; 
+      animation-duration: 300ms;
+      animation-fill-mode: both;
+    }
+    
+    .phone {
+      animation-delay: 3000ms;
+    }
+    
+    .email {
+      animation-delay: 3400ms;
+    }
+    
+    .linked-in {
+      animation-delay: 3800ms;
+    }
+    
+    .git-hub {
+      animation-delay: 4200ms;
+    }
   }
 
 
 
   @keyframes fly-in-left {
     0% {
-      transform: translateX(-200%)
+      transform: translateX(-10000px)
     }
     100% {
       transform: none;

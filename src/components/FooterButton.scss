@@ -9,18 +9,26 @@
   font-size: 16px;
   color: $blackText;
   background: $buttonPurple;
-    
+  
   box-shadow: 4px 4px 5px 0px $boxShadowColor;
-
+  
   border-radius: 34px;
-
+  
   opacity: 0;
-
+  
   user-select: none;
+
+  @include mobile-view {
+    width: 90%;
+  }
+  
+  &:hover {
+    color: #DDDDDD;
+    background: $buttonPurpleHover;
+  }
   
   &.on-click {
     box-shadow: none;
-    color: #AAAAAA;
   }
   
   &.visible {
@@ -44,10 +52,10 @@
     pointer-events: none;
     box-shadow: none;
     
-    transition: background, color 100ms ease-out
+    transition: background, color 120ms ease-out
   }
   
   &.enabled {
-    transition: background, color 100ms ease-out
+    transition: background, color 120ms ease-out
   }
 }

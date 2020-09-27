@@ -6,12 +6,14 @@ export default function Header() {
 
   return (
     <header className={styles.Header}>
-      <h1>
-        {'Joe Klause'}
-      </h1>
-      <h2>
-        {'Sprinklr PDX Engineering Team\'s New Best Friend'}
-      </h2>
+      <section className="headers">
+        <h1>
+          {'Joe Klause'}
+        </h1>
+        <h2>
+          {'Sprinklr PDX Engineering Team\'s New Best Friend'}
+        </h2>
+      </section>
 
       <Contact />
     </header>

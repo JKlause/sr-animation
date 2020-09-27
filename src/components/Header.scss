@@ -7,7 +7,7 @@
   height: $headerHeight;
   width: 100%;
 
-  padding: 10px 40px;
+  padding: 10px 20px 10px 40px;
 
 
   color: $blackText;
@@ -23,44 +23,69 @@
   animation-duration: 500ms;
   animation-delay: 500ms;
   animation-fill-mode: both;
-  
-  h1, h2 {
-    animation-name: fly-in-right; 
-    animation-duration: 500ms;
-    animation-timing-function: cubic-bezier(.79,.43,.36,1.19);
-    animation-fill-mode: both;
-  }
-  
-  h1 {
-    margin-bottom: 10px;
-    
-    font-family: $bold;
-    font-size: 24px;
 
-    animation-delay: 1500ms;
-  }
-  
-  h2 {
+  .headers {
     flex-grow: 1;
     
-    font-family: $semiBold;
-    font-size: 16px;
-
-    animation-delay: 2200ms;
+    h1, h2 {
+      animation-name: fly-in-right; 
+      animation-duration: 500ms;
+      animation-timing-function: cubic-bezier(.79,.43,.36,1.19);
+      animation-fill-mode: both;
+    }
+    
+    h1 {
+      margin-bottom: 10px;
+      
+      font-family: $bold;
+      font-size: 24px;
+      
+      animation-delay: 1500ms;
+    }
+    
+    h2 {
+      
+      font-family: $semiBold;
+      font-size: 16px;
+      
+      animation-delay: 2200ms;
+    }
   }
-  
+
+  @include mobile-view {
+    flex-direction: row;
+    padding: 10px 20px;
+
+    .headers {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      height: 100%;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+    
   @keyframes fly-in-top {
     0% {
-      transform: translateY(-200%)
+      transform: translateY(-150%)
     }
     100% {
       transform: none;
     }
   }
-
+    
   @keyframes fly-in-right {
     0% {
-      transform: translateX(150%)
+      transform: translateX(300%)
     }
     100% {
       transform: none;
