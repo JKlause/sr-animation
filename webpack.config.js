@@ -14,9 +14,9 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new CopyPlugin([{
-      from: 'public', to: 'dest'
-    }]),
+    new CopyPlugin({
+      patterns: [{ from: 'public', to: 'dest' }]
+    }),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanWebpackPlugin(),
   ],
