@@ -58,14 +58,14 @@
 
         &.open {
           animation-name: chevron-open; 
-          animation-duration: 2000ms;
+          animation-duration: 1500ms;
           animation-fill-mode: both;
         }
         
         &.closed {
           animation-name: chevron-closed; 
           animation-delay: 500ms;
-          animation-duration: 2000ms;
+          animation-duration: 1500ms;
           animation-fill-mode: both;
         }
       }
@@ -85,13 +85,10 @@
     0% {
       transform: rotate(-180deg);
     }
-    25% {
+    33% {
       transform: rotate(-180deg)
     }
-    50% {
-      transform: rotate(-90deg)
-    }
-    75% {
+    66% {
       transform: rotate(-90deg)
     }
     100% {
@@ -103,13 +100,10 @@
     0% {
       transform: rotate(0deg);
     }
-    25% {
+    33% {
       transform: rotate(90deg)
     }
-    50% {
-      transform: rotate(0deg)
-    }
-    75% {
+    66% {
       transform: rotate(0deg)
     }
     100% {

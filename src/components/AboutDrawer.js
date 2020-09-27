@@ -9,7 +9,7 @@ export default function AboutDrawer({ isOpen }) {
 
 
   return (
-    <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : 'open'}`}>
+    <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
       <section className="content-container">
 
         <AboutDrawerHeader 
