@@ -5,17 +5,16 @@
   width: 70%;
   max-width: 200px;
 
-  font-family: $semiBold;
-  font-size: 16px;
-  color: $blackText;
+  box-shadow: 4px 4px 5px 0px $boxShadowColor;
+  border-radius: 34px;
   background: $buttonPurple;
   
-  box-shadow: 4px 4px 5px 0px $boxShadowColor;
-  
-  border-radius: 34px;
+  color: $blackText;
+  font-family: $semiBold;
+  font-size: 16px;
   
   opacity: 0;
-  
+
   user-select: none;
 
   @include mobile-view {
@@ -23,8 +22,9 @@
   }
   
   &:hover {
-    color: #DDDDDD;
     background: $buttonPurpleHover;
+
+    color: #DDDDDD;
   }
   
   &.on-click {
@@ -33,6 +33,7 @@
   
   &.visible {
     cursor: pointer;
+
     animation-name: fade-in; 
     animation-duration: 500ms;
     animation-fill-mode: both;
@@ -40,17 +41,19 @@
   
   &.not-visible {
     pointer-events: none;
+
     animation-name: fade-out; 
     animation-duration: 500ms;
     animation-fill-mode: both;
   }
   
   &.disabled {
-    color: $blackTextDisabled;
     background: rgba(64,91,214,.2);
+    box-shadow: none;
+    
+    color: $blackTextDisabled;
 
     pointer-events: none;
-    box-shadow: none;
     
     transition: background, color 120ms ease-out
   }

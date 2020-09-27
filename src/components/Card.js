@@ -4,6 +4,7 @@ import styles from './Card.scss';
 
 export default function Card({ hasContent }) {
 
+  
   return (
     <section className={styles.Card}>
       {
