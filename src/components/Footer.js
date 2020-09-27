@@ -32,7 +32,11 @@ export default function Footer({
   }, 7500);
 
   useEffect(() => {
-    if(displayIndex === 3) setIsAboutButtonVisible(true);
+    if(displayIndex === 3) {
+      setTimeout(() => {
+        setIsAboutButtonVisible(true);
+      }, 300);
+    }
   }, [displayIndex]);
 
   return (
