@@ -98,7 +98,7 @@ export default function BarChartCard({ data }) {
           </Group>
         </svg>
       </section>
-      <section className="info-container">
+      <section className="info-container disable-scrollbars">
         <FillParent className="info">
 
           <h1>
