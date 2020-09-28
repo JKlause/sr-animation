@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import 'styles/variables.scss';
 
 :local(.AboutDrawerDropdown) {
   position: absolute;
@@ -14,9 +14,6 @@
   transform: scale(0,0);
   
   .content {
-    width: 100%;
-    height: 100%;
-
     padding: 20px 20px 10px;
 
     border: 2px solid $aboutMeTeal;

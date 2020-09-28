@@ -1,12 +1,9 @@
-@import '../styles/variables.scss';
+@import 'styles/variables.scss';
 
 :local(.Card) {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 100%;
-  width: 100%;
 
   .content {
     width: calc(100% - 150px);

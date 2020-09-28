@@ -1,5 +1,7 @@
 import React from 'react';
-import Card from './Card';
+import barChartData from './cards/bar-chart/barChartData';
+import BarChartCard from './cards/bar-chart/BarChartCard';
+import FillParent from 'shared/layout/FillParent';
 import styles from './Cards.scss';
 
 
@@ -8,11 +10,11 @@ export default function Cards({ displayIndex }) {
 
 
   return (
-    <section className={styles.Cards} style={pageStyle}>
+    <FillParent tag="section" className={styles.Cards} style={pageStyle}>
       <div className="title-placeholder" />
-      <Card hasContent={true}/>
-      <Card hasContent={true}/>
-      <Card hasContent={true}/>
-    </section>
+      <BarChartCard data={barChartData}/>
+      <div className="title-placeholder" />
+      <div className="title-placeholder" />
+    </FillParent >
   );
 }

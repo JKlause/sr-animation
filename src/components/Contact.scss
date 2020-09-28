@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import 'styles/variables.scss';
 
 :local(.Contact) {
   display: flex;
@@ -49,7 +49,7 @@
     flex-direction: row;
     justify-content: flex-end;
     
-    div {
+    .paragraph-container {
       flex-direction: row;
       justify-content: flex-end;
 

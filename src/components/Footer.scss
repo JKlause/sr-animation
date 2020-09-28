@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import 'styles/variables.scss';
 
 :local(.Footer) {
   position: fixed;
@@ -10,6 +10,8 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   height: $footerHeight;
+
+  padding: 0 10px;
 
   border: 1px solid $blackText;
   box-shadow: 0px -4px 15px 0px $boxShadowColor;
