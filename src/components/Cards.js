@@ -1,6 +1,6 @@
 import React from 'react';
 import FillParent from 'shared/layout/FillParent';
-import BarChartCard from './BarChartCard';
+import BarChartCard from './cards/BarChartCard';
 import styles from './Cards.scss';
 
 

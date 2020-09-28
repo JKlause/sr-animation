@@ -8,7 +8,7 @@ export default function BarChartCard() {
   
   return (
     <Card className={styles.Card}>
-     
+
     </Card>
   );
 }
