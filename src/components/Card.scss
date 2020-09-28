@@ -24,5 +24,24 @@
 
       margin-top: 80px;
     }
+
+    .graph-container {
+      height: 100%;
+      width: 50%;
+  
+      overflow: scroll;
+    }
+    
+    .info-container {
+      height: calc(100% - 80px);
+      width: calc(50% - 20px);
+  
+      margin: 40px 10px;
+  
+      border: 2px solid $buttonPurple;
+      border-radius: $borderRadius;
+      
+      overflow: scroll;
+    }
   }
 }

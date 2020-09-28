@@ -18,7 +18,7 @@ export default function useDimensions(ref) {
 
   useLayoutEffect(() => {
     if(ref && ref.current) ro.observe(ref.current);
-  }, [ref]);
+  }, [ref.current]);
 
   return dim;
 }
