@@ -1,5 +1,5 @@
 import React from 'react';
-import joePic from '../../assets/joePic.jpg';
+import joePic from 'assets/joePic.jpg';
 import styles from './AboutDrawerContent.scss';
 
 

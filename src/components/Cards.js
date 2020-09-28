@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import BarChartCard from './BarChartCard';
 import styles from './Cards.scss';
 
 
@@ -10,9 +10,9 @@ export default function Cards({ displayIndex }) {
   return (
     <section className={styles.Cards} style={pageStyle}>
       <div className="title-placeholder" />
-      <Card hasContent={true}/>
-      <Card hasContent={true}/>
-      <Card hasContent={true}/>
+      <BarChartCard />
+      <BarChartCard />
+      <BarChartCard />
     </section>
   );
 }
