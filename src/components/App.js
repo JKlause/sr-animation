@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Cards from './Cards';
 import Footer from './Footer';
@@ -11,12 +11,18 @@ export default function App() {
   const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
 
+  const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAboutDrawerRendered(true);
+    }, 1000);
+  }, []);
   return (
     <section className={styles.App}>
       <Header/>
       <main>
-        <h1 className={`${isTitleInFinalPosition ? 'final-position' : ''}`}>
+        <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>
         <Cards displayIndex={displayIndex} />
@@ -28,7 +34,10 @@ export default function App() {
         isAboutDrawerOpen={isAboutDrawerOpen}
         openAboutDrawer={() => setIsAboutDrawerOpen(true)}
         closeAboutDrawer={() => setIsAboutDrawerOpen(false)}/>
-      <AboutDrawer isOpen={isAboutDrawerOpen}/>
+      { 
+        isAboutDrawerRendered &&
+          <AboutDrawer isOpen={isAboutDrawerOpen}/>
+      }
     </section>
   );
 }

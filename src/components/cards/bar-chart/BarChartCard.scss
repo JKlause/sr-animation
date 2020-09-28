@@ -1,12 +1,18 @@
 @import 'styles/variables.scss';
 
 :local(.BarChartCard) {
+ 
 
   .graph-container {
     height: 100%;
     width: 50%;
 
     overflow: scroll;
+  }
+
+  .info {
+    height: 100%;
+    width: 50%;
   }
 
 }

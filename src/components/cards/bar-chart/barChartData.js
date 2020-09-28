@@ -1,22 +1,22 @@
 export default [
   {
     label: 'Danny',
-    value: 4000,
+    value: 432,
   },
   {
     label: 'Marty',
-    value: 2000,
+    value: 126,
   },
   {
     label: 'Meghan',
-    value: 3000,
+    value: 523,
   },
   {
     label: 'Ryan',
-    value: 4500,
+    value: 630,
   },
   {
     label: 'Shannon',
-    value: 7000,
+    value: 700,
   },
 ];

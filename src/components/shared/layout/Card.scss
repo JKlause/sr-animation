@@ -6,6 +6,8 @@
   align-items: center;
 
   .content {
+    display: flex;
+    
     width: calc(100% - 150px);
     height: calc(100% - 150px);
     max-height: 500px;

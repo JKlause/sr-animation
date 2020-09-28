@@ -15,7 +15,7 @@
     height: calc(100% - #{$footerHeight} - #{$headerHeight});
     width: 100%;
 
-    h1 {
+    .title {
       position: absolute;
       right: calc(50% - 236px);
       top: calc(50% - 100px);
