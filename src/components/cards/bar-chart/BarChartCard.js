@@ -3,7 +3,7 @@ import { Group } from '@vx/group';
 import { scaleBand, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { Bar as VXBar } from '@vx/shape';
-import useDimensions from 'hooks/useDimensions';
+import useDimensions from '../../../hooks/useDimensions';
 import Card from 'shared/layout/Card';
 import styles from './BarChartCard.scss';
 
