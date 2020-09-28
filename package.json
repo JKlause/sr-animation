@@ -19,7 +19,8 @@
     }
   },
   "scripts": {
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run build",
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
