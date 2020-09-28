@@ -19,11 +19,11 @@
     }
   },
   "scripts": {
-    "heroku-prebuild": "npm install -f --dev",
     "heroku-postbuild": "npm run build",
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
-    "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
+    "start-dev": "webpack-dev-server --hot --mode development --devtool eval-source-map",
+    "start": "node server",
     "build": "webpack -p --devtool source-map",
     "lint": "eslint ."
   },
@@ -31,6 +31,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "path": "^0.12.7",
     "postcss": "^8.0.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

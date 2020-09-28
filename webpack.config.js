@@ -1,25 +1,33 @@
+/* eslint-disable no-undef */
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+
+const path = require('path');
 
 // eslint-disable-next-line
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.[hash].js',
-    publicPath: '/'
+    publicPath: '/',
+    path: `${__dirname}/public`
   },
   devServer: {
     port: 7890,
     historyApiFallback: true
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: 'public', to: 'dest' }]
-    }),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanWebpackPlugin(),
   ],
+  resolve: {
+    extensions: ['.esm.js', '.js'],
+    symlinks: true,
+    alias: {
+      styles: path.resolve(__dirname, 'src/styles'),
+      assets: path.resolve(__dirname, 'src/assets'),
+    },
+  },
   module: {
     rules: [
       {
