@@ -31,6 +31,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vx/axis": "0.0.199",
+    "@vx/gradient": "0.0.199",
+    "@vx/group": "0.0.199",
+    "@vx/scale": "0.0.199",
+    "@vx/shape": "0.0.199",
     "path": "^0.12.7",
     "postcss": "^8.0.9",
     "react": "^16.13.1",

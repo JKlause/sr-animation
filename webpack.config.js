@@ -27,6 +27,7 @@ module.exports = {
       styles: path.resolve(__dirname, 'src/styles'),
       assets: path.resolve(__dirname, 'src/assets'),
       shared: path.resolve(__dirname, 'src/components/shared'),
+      hooks: path.resolve(__dirname, 'src/hooks'),
     },
   },
   module: {
