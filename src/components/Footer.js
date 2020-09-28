@@ -43,7 +43,7 @@ export default function Footer({
     if(isPreviousButtonDisabled) return;
     setDisplayIndex(--displayIndex);
   };
-
+ 
   const handleNextButtonClick = () => {
     if(isNextButtonDisabled) return;
     setDisplayIndex(++displayIndex);
