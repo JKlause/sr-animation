@@ -4,7 +4,7 @@ import styles from './AboutDrawerDropdown.scss';
 
 export default function AboutDrawerDropdown({ isOpen }) {
 
-  
+   
   return (
     <section className={`${styles.AboutDrawerDropdown} ${isOpen ? 'open' : 'closed'}`}>
       <section className="content" >
