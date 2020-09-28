@@ -6,10 +6,13 @@ import { Bar as VXBar } from '@vx/shape';
 import useDimensions from 'hooks/useDimensions';
 import Card from 'shared/layout/Card';
 import styles from './BarChartCard.scss';
+import Button from 'shared/components/Button';
+import FillParent from 'shared/layout/FillParent';
 
 
 const xDataAccessor = d => d.label;
 const yDataAccessor = d => d.value;
+
 const multiplierSet = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 
@@ -88,30 +91,37 @@ export default function BarChartCard({ data }) {
               })
             }
             <AxisBottom 
-              label="Staff Member" 
+              label="Candidate" 
               scale={xScale} 
               top={yMax}
               labelOffset={15} />
           </Group>
         </svg>
       </section>
-      <section className="info">
-        <h1>
-          {'Favorite Instructor at Alchemy Poll Data'}
-        </h1>
-        <div className="sample-data">
-          <h2>
-            {'Sample Data'}
-          </h2>
-          <p>{'{'}</p>
-          <p className="indent">{'label: name'}</p>
-          <p className="indent">{'value: votes'}</p>
-          <p>{'}'}</p>
-        </div>
-        <button onClick={() => handleUpdateDataClick()}>
-          {'Update Data'}
-        </button>
+      <section className="info-container">
+        <FillParent className="info">
 
+          <h1>
+            {'Union President Election Results'}
+          </h1>
+          <div className="sample-data">
+            <h2>
+              {'Sample Data'}
+            </h2>
+            <article className="data">
+              <p>{'{'}</p>
+              <p className="indent">{'label: name'}</p>
+              <p className="indent">{'value: votes'}</p>
+              <p>{'}'}</p>
+            </article>
+          </div>
+          <Button
+            className="data-button"
+            text="Update Votes"
+            handleClick={() => handleUpdateDataClick()}
+            isVisible={true}/>
+
+        </FillParent>
       </section>
     </Card>
   );

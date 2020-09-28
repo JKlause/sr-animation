@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styles from './FooterButton.scss';
+import styles from './Button.scss';
 
-export default function FooterButton({ className, text, handleClick, isVisible, noClickAnimation }) {
+export default function Button({ className, text, handleClick, isVisible, noClickAnimation }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClickStart = () => {
@@ -16,7 +16,7 @@ export default function FooterButton({ className, text, handleClick, isVisible, 
   
   return (
     <button 
-      className={`${styles.FooterButton} ${className ? className : '' } ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''}`}
+      className={`${styles.Button} ${className ? className : '' } ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''}`}
       onClick={() => handleClick()}
       onMouseDown={() => handleClickStart()}
       onMouseUp={() => handleClickEnd()}

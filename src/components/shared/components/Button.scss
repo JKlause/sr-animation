@@ -1,6 +1,6 @@
 @import 'styles/variables.scss';
 
-:local(.FooterButton) {
+:local(.Button) {
   height: 50px;
   width: 70%;
   max-width: 200px;
@@ -9,7 +9,7 @@
   border-radius: 34px;
   background: $buttonPurple;
   
-  color: $blackText;
+
   font-family: $semiBold;
   font-size: 16px;
   

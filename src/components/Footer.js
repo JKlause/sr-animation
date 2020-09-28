@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Footer.scss';
-import FooterButton from './FooterButton';
+import Button from 'shared/components/Button';
 
 
 export default function Footer({ 
@@ -33,10 +33,11 @@ export default function Footer({
     }
   }, [displayIndex]);
 
-
-  setTimeout(() => {
-    setIsBeginButtonVisible(true);
-  }, 7500);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsBeginButtonVisible(true);
+    }, 7500);
+  }, []);
 
 
   const handlePreviousButtonClick = () => {
@@ -72,7 +73,7 @@ export default function Footer({
   return (
     <footer className={styles.Footer}>
       <div>
-        <FooterButton
+        <Button
           className={`previous ${isPreviousButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Previous"
           isVisible={areNavButtonsVisible}
@@ -82,14 +83,14 @@ export default function Footer({
       <div>
         {
           displayIndex === 0 
-            ? <FooterButton
+            ? <Button
                 className="begin"
                 text="Begin"
                 isVisible={isBeginButtonVisible}
                 noClickAnimation={isNoBeginButtonClickAnimation}
                 handleClick={() => handleBeginButtonClick()}/>
               
-            : <FooterButton
+            : <Button
                 className="about"
                 text={isAboutDrawerOpen ? 'Close' : 'About Joe'}
                 isVisible={isAboutButtonVisible} 
@@ -98,7 +99,7 @@ export default function Footer({
       </div>
 
       <div>
-        <FooterButton
+        <Button
           className={`next ${isNextButtonDisabled ? 'disabled' : 'enabled'}`}
           text="Next"
           isVisible={areNavButtonsVisible}
