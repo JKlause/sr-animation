@@ -1,5 +1,5 @@
 import React from 'react';
-import joeImg from '../../assets/joeImg.jpg';
+import joePic from '../../assets/joePic.jpg';
 import styles from './AboutDrawerContent.scss';
 
 
@@ -8,7 +8,7 @@ export default function AboutDrawerContent() {
   
   return (
     <section className={`${styles.AboutDrawerContent} disable-scrollbars`}>
-      <img src={joeImg} alt="Joe's Picture" />
+      <img src={joePic} alt="Joe" />
       <article className="paragraphs">
         <p>
           {'TL;DR == I\'m a fun, funny, passionate, creative, musical, business oriented team player who is super excited to be a part of the Sprinklr team here in PDX.'}
@@ -24,7 +24,7 @@ export default function AboutDrawerContent() {
           <a
             href="https://www.peacepieworld.com/"
             target="_blank"
-            rel="noreferrer">
+            rel="noopener noreferrer">
             {'PeacePieWorld.com'}
           </a>
           {' if you are interested in having your mouth water (I didn\'t build this site). This got old though; if anyone has been in food services, you probably know what it feels like to be a cog in the machine. And after awhile, well, that just got boring to me. I am still an owner of this company, and participate in overall business decisions.'}
@@ -37,14 +37,14 @@ export default function AboutDrawerContent() {
           <a
             href="https://www.rosecitybrasscompany.com/"
             target="_blank"
-            rel="noreferrer">
+            rel="noopener noreferrer">
             {'RoseCityBrassCompany.com'}
           </a>
           {' and '}
           <a
             href="https://www.musicwithjoe.com/"
             target="_blank"
-            rel="noreferrer">
+            rel="noopener noreferrer">
             {'MusicWithJoe.com'}
           </a>
           {' (both are square space sites so they don\'t count… and my MusicWithJoe hasn\'t been updated in a minute).'}
@@ -54,7 +54,7 @@ export default function AboutDrawerContent() {
           <a
             href="https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken#:~:text=Mike%20the%20Headless%20Chicken%20(April,head%20had%20been%20cut%20off."
             target="_blank"
-            rel="noreferrer">
+            rel="noopener noreferrer">
             {'important wiki article'}
           </a>
           {'), I decided to find something that fulfilled my love of problem solving, systems management, math, community, and stability while also leaving me time to continue to pursue what brings joy to my heart. The answer: coding.'}

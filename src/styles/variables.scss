@@ -4,10 +4,10 @@ $semiBold: 'semiBold';
 $bold: 'bold';
 
 $blackText: rgb(2,0,36);
-$blackTextDisabled: rgb(2,0,36,.4);
-$dropdownGreyText: rgb(2,0,36,.5);
+$blackTextDisabled: rgba(2,0,36,.4);
+$dropdownGreyText: rgba(2,0,36,.5);
 
-$boxShadowColor: rgb(2,0,36,.5);
+$boxShadowColor: rgba(2,0,36,.5);
 $buttonPurple: rgba(64,91,214,.7);
 $buttonPurpleHover: rgba(64,91,214,.9);
 $aboutMeTeal: rgb(0,212,255);
