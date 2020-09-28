@@ -1,8 +1,8 @@
 import React from 'react';
+import Card from './Card';
 import barChartData from './cards/bar-chart/barChartData';
 import BarChart from './cards/bar-chart/BarChart';
 import BarChartInfo from './cards/bar-chart/BarChartInfo';
-import Card from './Card';
 import FillParent from 'shared/layout/FillParent';
 import styles from './Cards.scss';
 

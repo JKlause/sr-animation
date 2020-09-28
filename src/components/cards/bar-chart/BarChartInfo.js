@@ -12,6 +12,7 @@ export default function BarChartInfo({ handleUpdateDataClick }) {
       <h1>
         { 'Union President Election Results' }
       </h1>
+      
       <div className="sample-data">
         <h2>
           {'Sample Data'}
@@ -23,6 +24,7 @@ export default function BarChartInfo({ handleUpdateDataClick }) {
           <p>{'}'}</p>
         </article>
       </div>
+
       <Button
         className="data-button"
         text="Update Votes"
