@@ -4,6 +4,8 @@
   height: 100vh;
   max-height: 100vh;
   width: 100vw;
+
+  color: $blackText;
   
   background: radial-gradient(circle, rgba(73,73,208,1) 0%, rgba(0,212,255,1) 100%);
   
@@ -15,7 +17,7 @@
     height: calc(100% - #{$footerHeight} - #{$headerHeight});
     width: 100%;
 
-    h1 {
+    .title {
       position: absolute;
       right: calc(50% - 236px);
       top: calc(50% - 100px);
@@ -25,7 +27,6 @@
       text-align: center;
       line-height: 50px;
 
-      color: $blackText;
       font-family: $semiBold;
       font-size: 40px;
 

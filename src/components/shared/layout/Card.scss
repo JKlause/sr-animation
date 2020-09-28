@@ -6,6 +6,8 @@
   align-items: center;
 
   .content {
+    display: flex;
+    
     width: calc(100% - 150px);
     height: calc(100% - 150px);
     max-height: 500px;
@@ -14,7 +16,7 @@
     margin-top: 50px;
 
     border: 2px solid $buttonPurple;
-    border-radius: 8px;
+    border-radius: $borderRadius;
     background: rgba(73,208,183,.6);
 
     @include mobile-view {
