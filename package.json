@@ -19,7 +19,7 @@
     }
   },
   "scripts": {
-    "heroku-prebuild": "npm install -f",
+    "heroku-prebuild": "npm install -f --dev",
     "heroku-postbuild": "npm run build",
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
