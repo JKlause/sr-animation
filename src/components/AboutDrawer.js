@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FillParent from 'shared/layout/FillParent';
 import AboutDrawerHeader from './about-drawer/AboutDrawerHeader';
 import AboutDrawerContent from './about-drawer/AboutDrawerContent';
 import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
@@ -10,13 +11,13 @@ export default function AboutDrawer({ isOpen }) {
 
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
-      <section className="content-container">
+      <FillParent tag="section" className="content-container">
         <AboutDrawerHeader 
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
         <AboutDrawerDropdown isOpen={isDropdownOpen}/>
         <AboutDrawerContent />
-      </section>
+      </FillParent>
     </section>
   );
 }
