@@ -13,7 +13,7 @@ export default function useDimensions(ref, isLandscape, isZoom) {
 
       if(isZoom) {
         setDim({
-          width: (cr.width - 154) < 770 ? (cr.width - 154) : 770,
+          width: (cr.width - 154) < 796 ? (cr.width - 154) : 796,
           height: (cr.height - 188) < 496 ? (cr.height - 188) : 462,
         });
       }
