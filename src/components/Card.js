@@ -28,10 +28,10 @@ export default function Card({ Visualization, Info, data }) {
 
 
   return (
-    <section className={styles.Card}>
-      <section className="content">
+    <section className={styles.Card} ref={containerRef}>
+      <section className="content" >
 
-        <section className="graph-container disable-scrollbars" ref={containerRef}>
+        <section className="graph-container disable-scrollbars" >
           <Visualization 
             data={renderedData} 
             containerRef={containerRef}/>
@@ -41,7 +41,8 @@ export default function Card({ Visualization, Info, data }) {
           <Info 
             handleUpdateDataClick={handleUpdateDataClick} 
             handleResetDataClick={handleResetDataClick}
-            isResetDisabled={isResetDisabled}/>
+            isResetDisabled={isResetDisabled}
+            containerRef={containerRef}/>
         </section>
 
       </section>
