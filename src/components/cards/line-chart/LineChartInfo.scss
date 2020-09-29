@@ -84,4 +84,19 @@
       margin-top: 20px;
     }
   }
+
+  @include narrow-view {
+    .flex-container {
+      .sample-data {
+        margin-bottom: 20px;
+      }
+    }
+    .button-container {
+      justify-content: flex-end;
+
+      .data-button {
+        margin: 0 0 20px;
+      }
+    }
+  }
 }

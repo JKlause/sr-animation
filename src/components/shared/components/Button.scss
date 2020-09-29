@@ -17,7 +17,7 @@
 
   user-select: none;
 
-  @include mobile-view {
+  @include narrow-view {
     width: 90%;
   }
   

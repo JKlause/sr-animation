@@ -74,7 +74,7 @@
     }
   }
 
-  @include mobile-view {
+  @include narrow-view {
     grid-template-columns: auto 1fr;
 
     .header-container {

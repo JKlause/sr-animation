@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useMobile } from 'shared/layout/useMedia';
+import { useNarrowView } from 'shared/layout/useMedia';
 import styles from './AboutDrawerHeader.scss';
 
 
 export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
-  const isMobile = useMobile();
+  const isNarrowView = useNarrowView();
   const [isNoClickEvents, setIsNoClickEvents] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
   return (
     <header className={styles.AboutDrawerHeader}>
 
-      { isMobile || <div/> }
+      { isNarrowView || <div/> }
 
       <div className="header-container">
         <h1>
