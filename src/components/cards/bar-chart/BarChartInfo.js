@@ -3,10 +3,27 @@ import Button from 'shared/components/Button';
 import useDimensions from 'hooks/useDimensions';
 import styles from './BarChartInfo.scss';
 
+const multiplierSet = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-export default function BarChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled, containerRef }) {
+export default function BarChartInfo({ 
+  data,
+  setData,
+  handleResetDataClick, 
+  enableResetButton,
+  isResetDisabled, 
+  containerRef,
+}) {
   let { width, height } = useDimensions(containerRef);
-
+  
+  const handleUpdateDataClick = () => {
+    setData(data.map(({ label, value }) => {
+      const multiplier = multiplierSet[Math.floor(Math.random() * multiplierSet.length)];
+      return {
+        label,
+        value: value + Math.floor((Math.random() * multiplier))
+      };
+    }));
+  };
 
   return (
     <section 
@@ -32,7 +49,10 @@ export default function BarChartInfo({ handleUpdateDataClick, handleResetDataCli
         <Button
           className="data-button update"
           text="Update Votes"
-          handleClick={() => handleUpdateDataClick()}
+          handleClick={() => {
+            enableResetButton();
+            handleUpdateDataClick();
+          }}
           isVisible={true}/>
 
         <Button
