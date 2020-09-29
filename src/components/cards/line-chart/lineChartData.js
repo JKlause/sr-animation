@@ -1,18 +1,18 @@
 export default [
   {
-    ounces: 5.6,
+    ounces: 3.2,
     date: 1595228400000,
   },
   {
-    ounces: 3.2,
+    ounces: 4.1,
     date: 1595314800000,
   },
   {
-    ounces: 7.9,
+    ounces: 5.6,
     date: 1595401200000,
   },
   {
-    ounces: 4.1,
+    ounces: 7.9,
     date: 1595487600000,
   },
   {

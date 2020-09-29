@@ -30,7 +30,13 @@ export default function AboutDrawerDropdown({ isOpen }) {
             rel="noopener noreferrer">
             {'line'}
           </a>
-          {' chart visualizations.'}
+          {' chart visualizations as well as the @vx/zoom '}
+          <a
+            href="https://vx-demo.now.sh/zoom-i"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'demo page.'}
+          </a>
         </p>
         <p>
           {'The site is meant to be viewed on desktops or tablets. It hasn\'t been fully vetted for mobile use.'}

@@ -10,7 +10,6 @@ export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
-
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
   useEffect(() => {
@@ -18,6 +17,8 @@ export default function App() {
       setIsAboutDrawerRendered(true);
     }, 1000);
   }, []);
+
+
   return (
     <section className={styles.App}>
       <Header/>

@@ -45,7 +45,7 @@ export default function LineChartInfo({
       className={styles.LineChartInfo}
       style={{ width: `${width - 8}px`, height: `${height - 34}px` }}>
       <h1>
-        { 'Ounces of Ice Cream Consumed Starting Covid Week 29' }
+        { 'Cumulative Ounces of Ice Cream Consumed Starting Covid Week 29' }
       </h1>
       
       <div className="flex-container">
