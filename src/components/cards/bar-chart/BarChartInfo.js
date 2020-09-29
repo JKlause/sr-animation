@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from 'shared/components/Button';
-
-import styles from './BarChartInfo.scss';
 import useDimensions from 'hooks/useDimensions';
+import styles from './BarChartInfo.scss';
 
 
 export default function BarChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled, containerRef }) {
@@ -10,7 +9,9 @@ export default function BarChartInfo({ handleUpdateDataClick, handleResetDataCli
 
 
   return (
-    <section style={{ width: `${width - 20}px`, height: `${height - 80}px` }} className={styles.BarChartInfo}>
+    <section 
+      className={styles.BarChartInfo}
+      style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
       <h1>
         { 'Union President Election Results' }
       </h1>

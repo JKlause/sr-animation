@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from 'react';
 
-export default function useDimensions(ref) {
+export default function useDimensions(ref, isLandscape) {
   const [dim, setDim] = useState({
     width: 0,
     height: 0,
@@ -9,11 +9,19 @@ export default function useDimensions(ref) {
   const ro = new ResizeObserver(entries => {
     for(let entry of entries) {
       const cr = entry.contentRect;
- 
-      setDim({
-        width: (cr.width - 154) / 2 < 400 ? (cr.width - 154) / 2 : 400,
-        height: (cr.height - 154) < 496 ? (cr.height - 154) : 496,
-      });
+
+      if(isLandscape) {
+        setDim({
+          width: (cr.width - 184) < 770 ? (cr.width - 184) : 770,
+          height: (cr.height - 154) / 2 < 248 ? (cr.height - 154) / 2 : 248,
+        });
+      }
+      else {
+        setDim({
+          width: (cr.width - 154) / 2 < 400 ? (cr.width - 154) / 2 : 400,
+          height: (cr.height - 154) < 496 ? (cr.height - 154) : 496,
+        });
+      }
     }
   });
 
