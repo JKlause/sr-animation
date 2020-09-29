@@ -44,39 +44,37 @@ export default function BarChart({ data, containerRef }) {
 
 
   return (
-    <section>
-      <svg width={width} height={height}>
-        <Group top={25} left={55}>
-          <AxisLeft 
-            label="Votes" 
-            scale={yScale} 
-            left={10} 
-            numTicks={4} />
-          {
-            data.map(datum => {
-              const label = xDataAccessor(datum);
-              const barWidth = xScale.bandwidth();
-              const barHeight = yMax - yScale(yDataAccessor(datum));
-              const barX = xScale(label);
-              const barY = yMax - barHeight;
+    <svg width={width} height={height}>
+      <Group top={25} left={55}>
+        <AxisLeft 
+          label="Votes" 
+          scale={yScale} 
+          left={10} 
+          numTicks={4} />
+        {
+          data.map(datum => {
+            const label = xDataAccessor(datum);
+            const barWidth = xScale.bandwidth();
+            const barHeight = yMax - yScale(yDataAccessor(datum));
+            const barX = xScale(label);
+            const barY = yMax - barHeight;
               
-              return (
-                <Bar 
-                  key={`bar-${label}`} 
-                  x={barX} 
-                  y={barY} 
-                  width={barWidth} 
-                  height={barHeight} />
-              );
-            })
-          }
-          <AxisBottom 
-            label="Candidate" 
-            scale={xScale} 
-            top={yMax}
-            labelOffset={15} />
-        </Group>
-      </svg>
-    </section>
+            return (
+              <Bar 
+                key={`bar-${label}`} 
+                x={barX} 
+                y={barY} 
+                width={barWidth} 
+                height={barHeight} />
+            );
+          })
+        }
+        <AxisBottom 
+          label="Candidate" 
+          scale={xScale} 
+          top={yMax}
+          labelOffset={15} />
+      </Group>
+    </svg>
   );
 }

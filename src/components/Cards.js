@@ -3,6 +3,10 @@ import Card from './Card';
 import barChartData from './cards/bar-chart/barChartData';
 import BarChart from './cards/bar-chart/BarChart';
 import BarChartInfo from './cards/bar-chart/BarChartInfo';
+import lineChartData from './cards/line-chart/lineChartData';
+import LineChart from './cards/line-chart/LineChart';
+import LineChartInfo from './cards/line-chart/LineChartInfo';
+
 import FillParent from 'shared/layout/FillParent';
 import styles from './Cards.scss';
 
@@ -18,7 +22,12 @@ export default function Cards({ displayIndex }) {
         Visualization={BarChart} 
         Info={BarChartInfo}
         data={barChartData} />
-      <div className="title-placeholder" />
+      <Card
+        Visualization={LineChart}
+        Info={LineChartInfo}
+        data={lineChartData} 
+        isLandscape={true}
+        isLineChart={true}/>
       <div className="title-placeholder" />
     </FillParent >
   );

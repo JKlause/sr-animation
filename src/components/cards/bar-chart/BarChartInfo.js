@@ -1,14 +1,17 @@
 import React from 'react';
 import Button from 'shared/components/Button';
-import FillParent from 'shared/layout/FillParent';
+import useDimensions from 'hooks/useDimensions';
 import styles from './BarChartInfo.scss';
 
 
-export default function BarChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled }) {
+export default function BarChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled, containerRef }) {
+  let { width, height } = useDimensions(containerRef);
 
 
   return (
-    <FillParent tag="section" className={styles.BarChartInfo}>
+    <section 
+      className={styles.BarChartInfo}
+      style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
       <h1>
         { 'Union President Election Results' }
       </h1>
@@ -19,7 +22,7 @@ export default function BarChartInfo({ handleUpdateDataClick, handleResetDataCli
         </h2>
         <article className="data">
           <p>{'{'}</p>
-          <p className="indent">{'label: name'}</p>
+          <p className="indent">{'label: name,'}</p>
           <p className="indent">{'value: votes'}</p>
           <p>{'}'}</p>
         </article>
@@ -38,6 +41,6 @@ export default function BarChartInfo({ handleUpdateDataClick, handleResetDataCli
           handleClick={() => handleResetDataClick()}
           isVisible={true} />
       </div> 
-    </FillParent>
+    </section>
   );
 }

@@ -44,4 +44,27 @@
       overflow: scroll;
     }
   }
+
+  &.landscape {
+    .content {
+      flex-direction: column-reverse;
+
+      @include mobile-view {
+        width: calc(100% - 150px);
+      }
+      
+      .graph-container {
+        height: 50%;
+        width: 100%;
+        padding: 0 15px;
+      }
+      
+      .info-container {
+        height: calc(50% - 30px);
+        width: calc(100% - 30px);
+        
+        margin: 15px;
+      }
+    }
+  }
 }
