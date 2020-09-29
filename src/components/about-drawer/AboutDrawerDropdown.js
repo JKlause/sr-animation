@@ -16,7 +16,21 @@ export default function AboutDrawerDropdown({ isOpen }) {
           {'It is deployed on Heroku, served up with a simple express server, built in VSCode utilizing Github, and was written over the weekend of 9/25/2020.'}
         </p>
         <p>
-          {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx bar and line chart visualizations.'}
+          {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx '}
+          <a
+            href="https://joelmturner.com/blog/data-vis-react-bar-chart-vx"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'bar'}
+          </a>
+          {' and '}
+          <a
+            href="https://joelmturner.com/blog/create-a-single-line-chart-in-react-with-@vx"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'line'}
+          </a>
+          {' chart visualizations.'}
         </p>
         <p>
           {'Copyright © 2020, Joseph Klause'}

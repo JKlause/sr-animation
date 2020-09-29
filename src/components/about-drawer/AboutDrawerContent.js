@@ -30,10 +30,10 @@ export default function AboutDrawerContent() {
           {' if you are interested in having your mouth water (I didn\'t build this site). This got old though; if anyone has been in food services, you probably know what it feels like to be a cog in the machine. And after awhile, well, that just got boring to me. I am still an owner of this company, and participate in overall business decisions.'}
         </p>
         <p>
-          {'I had been playing with Eugene Symphony since the end of my schooling (I lived in Eugene for about six months, and kept getting calls to come out to sub with the orchestra). I decided it was time to make the great journey West. I spent about a two years being a freelance musician in the PNW. I made it work, and have developed a lot of amazing playing and teaching opportunities. '}
+          {'I had been playing with Eugene Symphony since the end of my schooling (I lived in Eugene for about six months, and kept getting calls to come out to sub with the orchestra). I decided it was time to make the great journey West. I spent about two years being a freelance musician in the PNW. I made it work, and have developed a lot of amazing playing and teaching opportunities. '}
         </p>
         <p>
-          {'I am a member of the Eugene and the Portland Columbia Symphonies. I sub with the Oregon Ballet Theatre and Portland Opera. I am also working my way onto the sublist of the Oregon Symphony, and regularly (pre-covid) get called to play musicals. I also play with many chamber groups, including one of my biggest pet projects the Rose City Brass Quintet. I teach trumpet at Reed College and Clackamas Community College. I also have a number of private students out of my home (or on zoom due to covid times). If you\'re interested, you can check out these exploits at ' } 
+          {'I am a member of the Eugene and Portland Columbia Symphonies. I sub with the Oregon Ballet Theatre and Portland Opera. I am also working my way onto the sublist of the Oregon Symphony, and regularly get called to play musicals (pre-covid). I also play with many chamber groups, including one of my biggest pet projects the Rose City Brass Quintet. I teach trumpet at Reed College and Clackamas Community College. I also have a number of private students out of my home (or on zoom due to covid times). If you\'re interested, you can check out these exploits at ' } 
           <a
             href="https://www.rosecitybrasscompany.com/"
             target="_blank"
@@ -47,17 +47,17 @@ export default function AboutDrawerContent() {
             rel="noopener noreferrer">
             {'MusicWithJoe.com'}
           </a>
-          {' (both are square space sites so they don\'t count… and my MusicWithJoe hasn\'t been updated in a minute).'}
+          {' (both are square space sites so they don\'t count… also my MusicWithJoe hasn\'t been updated in a minute).'}
         </p>
         <p>
-          {'Anyway, after a few years of running around like a chicken missing it\'s head (see incredibly '}
+          {'Anyway, after a few years of running around like a chicken missing it\'s head ('}
           <a
             href="https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken#:~:text=Mike%20the%20Headless%20Chicken%20(April,head%20had%20been%20cut%20off."
             target="_blank"
             rel="noopener noreferrer">
-            {'important wiki article'}
+            {'see incredibly important wiki article'}
           </a>
-          {'), I decided to find something that fulfilled my love of problem solving, systems management, math, community, and stability while also leaving me time to continue to pursue what brings joy to my heart. The answer: coding.'}
+          {'), I decided to find something that fulfilled my love of problem solving, systems management, math, community, and stability while also leaving me time to continue pursuing what brings joy to my heart. The answer: coding.'}
         </p>
         <p>
           {'In the six months that I spent at Alchemy, I managed to maintain a perfect GPA while continuing all of my musical commitments and drinking lots of coffee. I then moved into a contract position working with a Chinese language learning company. Since the beginning of this year, I have been building their first app/updated website. This involves building a full-stack MERN app based on Sketch designs that were provided to me, as well as migrating a sql database to a mongoDB. As the only developer on the team (and the team being very small), I\'m acting as their CTO: speaking to the needs of the business, and how those needs have to be reflected in the code that I write. I am responsible for managing myself through this massive undertaking. I\'ve learned a great deal about front-end architecture, using custom hooks, redux, transitions/animations, mongoDB pipeline aggregations, sql querying, schema methods, and express routes. It\'s great, but incomplete. I don\'t have PTO, I don\'t have vacation time, I don\'t have benefits, and most importantly I don\'t have a team.'}
@@ -66,7 +66,7 @@ export default function AboutDrawerContent() {
           {'I learn best from others. I work best with others. I want to feel inspired by my teammates. I want to grow with them. I want to collaborate. I want to build a team identity. And I want to get shit done with them (excusez mon français, I curse with the fluency of a person born in New Jersey).'}
         </p>
         <p>
-          {'As a deeply spiritual person (I vibe with crystals, Buddah, Jesus, Grandma Spider, my ancestral guides, the moon, the fire gods, etc…), I believe that in this time we must be the light in the world. I believe that we do this, not in what we do, but in how we do it. Sprinklr\'s vision is "to be the world\'s most loved enterprise software company, ever." That is how the world changes, by people and entities striving, not to be the best, but to be the most loved and loving. I want to put my creative and mental energy behind an initiative like that. And on the way, write the World Health Organization\'s home page. Let\'s do this yo!'}
+          {'As a deeply spiritual person (I vibe with crystals, Buddah, Jesus, Grandma Spider, my ancestral guides, the moon, the fire gods, etc…), I believe that in this time we must be the light in the world. I believe that we do this not in what we do, but in how we do it. Sprinklr\'s vision is "to be the world\'s most loved enterprise software company, ever." That is how the world changes, by people and entities striving, not to be the best, but to be the most loved and loving. I want to put my creative and mental energy behind an initiative like that. And on the way, write the World Health Organization\'s home page. Let\'s do this yo!'}
         </p>
       </article>
     </section>
