@@ -39,7 +39,7 @@ export default function LineChartInfo({ handleUpdateDataClick, handleResetDataCl
           </h2>
           <article className="data">
             <p>{'{'}</p>
-            <p className="indent">{'ounces: decimal'}</p>
+            <p className="indent">{'ounces: decimal,'}</p>
             <p className="indent">{'date: unix timestamp'}</p>
             <p>{'}'}</p>
           </article>

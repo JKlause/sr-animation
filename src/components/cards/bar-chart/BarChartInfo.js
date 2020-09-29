@@ -22,7 +22,7 @@ export default function BarChartInfo({ handleUpdateDataClick, handleResetDataCli
         </h2>
         <article className="data">
           <p>{'{'}</p>
-          <p className="indent">{'label: name'}</p>
+          <p className="indent">{'label: name,'}</p>
           <p className="indent">{'value: votes'}</p>
           <p>{'}'}</p>
         </article>
