@@ -12,17 +12,23 @@
     height: calc(100% - 150px);
     max-height: 500px;
     max-width: 800px;
-
+    
     margin-top: 50px;
-
+    
     border: 2px solid $buttonPurple;
     border-radius: $borderRadius;
     background: rgba(73,208,183,.6);
-
+    
     @include narrow-view {
       width: calc(100% - 40px);
-
+      
       margin-top: 80px;
+    }
+    
+    &.is-zoom {
+      @include narrow-view {
+        width: calc(100% - 150px);
+      }
     }
 
     .graph-container {

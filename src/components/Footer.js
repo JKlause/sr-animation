@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Footer.scss';
 import Button from 'shared/components/Button';
+import styles from './Footer.scss';
 
 
 export default function Footer({ 
@@ -23,7 +23,7 @@ export default function Footer({
     if(displayIndex === 1) {
       setTimeout(() => {
         setAreNavButtonsVisible(true);
-      }, 800);
+      }, 650);
     }
 
     if(displayIndex === 3) {
