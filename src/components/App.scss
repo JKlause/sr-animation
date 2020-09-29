@@ -46,7 +46,7 @@
         animation-fill-mode: both;
       }
 
-      @include mobile-view {
+      @include narrow-view {
         width: calc(100% - 40px);
         right: calc(50% - calc((100% - 40px) / 2));
 

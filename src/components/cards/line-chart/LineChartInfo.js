@@ -19,10 +19,26 @@ const sadButtonTextOptions = [
 ];
 
 
-export default function LineChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled, containerRef, isLandscape }) {
+export default function LineChartInfo({ 
+  data,
+  setData,
+  handleResetDataClick, 
+  enableResetButton,
+  isResetDisabled, 
+  containerRef, 
+  isLandscape,
+}) {
   let { width, height } = useDimensions(containerRef, isLandscape);
   const [textIndex, setTextIndex] = useState(null);
 
+  const handleUpdateDataClick = () => {
+    const { ounces, date } = data[data.length - 1];
+    const newData = {
+      ounces: ounces + (Math.random() * 8),
+      date: date + 86400000
+    };
+    setData([...data, newData]);
+  };
 
   return (
     <section 
@@ -50,6 +66,7 @@ export default function LineChartInfo({ handleUpdateDataClick, handleResetDataCl
             className="data-button update"
             text={textIndex === null ? 'No One Loves Me' : sadButtonTextOptions[textIndex]}
             handleClick={() => {
+              enableResetButton();
               setTextIndex(Math.floor(Math.random() * sadButtonTextOptions.length));
               handleUpdateDataClick();
             }}

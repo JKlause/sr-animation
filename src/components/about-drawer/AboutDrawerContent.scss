@@ -30,7 +30,7 @@
     }
   }
 
-  @include mobile-view {
+  @include narrow-view {
     display: flex;
     flex-direction: column;
 

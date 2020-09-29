@@ -5,7 +5,7 @@ import styles from './AboutDrawerDropdown.scss';
 
 export default function AboutDrawerDropdown({ isOpen }) {
 
-   
+
   return (
     <section className={`${styles.AboutDrawerDropdown} ${isOpen ? 'open' : 'closed'}`}>
       <FillParent tag="section" className="content disable-scrollbars" >
@@ -31,6 +31,9 @@ export default function AboutDrawerDropdown({ isOpen }) {
             {'line'}
           </a>
           {' chart visualizations.'}
+        </p>
+        <p>
+          {'The site is meant to be viewed on desktops or tablets. It hasn\'t been fully vetted for mobile use.'}
         </p>
         <p>
           {'Copyright © 2020, Joseph Klause'}

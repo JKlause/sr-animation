@@ -3,10 +3,7 @@ import Card from './Card';
 import barChartData from './cards/bar-chart/barChartData';
 import BarChart from './cards/bar-chart/BarChart';
 import BarChartInfo from './cards/bar-chart/BarChartInfo';
-import lineChartData from './cards/line-chart/lineChartData';
-import LineChart from './cards/line-chart/LineChart';
-import LineChartInfo from './cards/line-chart/LineChartInfo';
-
+import cardsData from './cards/cardsData';
 import FillParent from 'shared/layout/FillParent';
 import styles from './Cards.scss';
 
@@ -18,17 +15,21 @@ export default function Cards({ displayIndex }) {
   return (
     <FillParent tag="section" className={styles.Cards} style={pageStyle}>
       <div className="title-placeholder" />
+      {
+        cardsData.map(({ Visualization, Info, data, isLandscape }, i) => (
+          <Card 
+            key={`card-${i}`}
+            Visualization={Visualization}
+            Info={Info}
+            data={data} 
+            isLandscape={isLandscape} />
+        ))
+      }
       <Card 
         Visualization={BarChart} 
         Info={BarChartInfo}
         data={barChartData} />
-      <Card
-        Visualization={LineChart}
-        Info={LineChartInfo}
-        data={lineChartData} 
-        isLandscape={true}
-        isLineChart={true}/>
-      <div className="title-placeholder" />
+
     </FillParent >
   );
 }

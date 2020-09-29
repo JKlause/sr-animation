@@ -45,7 +45,7 @@
     }
   }
 
-  @include mobile-view {
+  @include narrow-view {
     flex-direction: row;
     justify-content: flex-end;
     
