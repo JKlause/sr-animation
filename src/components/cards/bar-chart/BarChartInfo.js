@@ -4,16 +4,16 @@ import FillParent from 'shared/layout/FillParent';
 import styles from './BarChartInfo.scss';
 
 
-export default function BarChartInfo({ handleUpdateDataClick }) {
+export default function BarChartInfo({ handleUpdateDataClick, handleResetDataClick, isResetDisabled }) {
 
 
   return (
-    <FillParent className={styles.BarChartInfo}>
+    <FillParent tag="section" className={styles.BarChartInfo}>
       <h1>
         { 'Union President Election Results' }
       </h1>
       
-      <div className="sample-data">
+      <section className="sample-data">
         <h2>
           {'Sample Data'}
         </h2>
@@ -23,13 +23,21 @@ export default function BarChartInfo({ handleUpdateDataClick }) {
           <p className="indent">{'value: votes'}</p>
           <p>{'}'}</p>
         </article>
-      </div>
+      </section>
 
-      <Button
-        className="data-button"
-        text="Update Votes"
-        handleClick={() => handleUpdateDataClick()}
-        isVisible={true}/>
+      <div className="button-container" >
+        <Button
+          className="data-button update"
+          text="Update Votes"
+          handleClick={() => handleUpdateDataClick()}
+          isVisible={true}/>
+
+        <Button
+          className={`data-button ${isResetDisabled ? 'disabled' : 'enabled'}`}
+          text="Reset Votes"
+          handleClick={() => handleResetDataClick()}
+          isVisible={true} />
+      </div> 
     </FillParent>
   );
 }

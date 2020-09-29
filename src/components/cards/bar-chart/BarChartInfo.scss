@@ -23,6 +23,9 @@
   }
 
   .sample-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
       margin-bottom: 10px;
@@ -49,13 +52,25 @@
       }
     }
   }
-  
-  .data-button {
-    height: 40px;
-    width: 160px;
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
     
-    font-size: 14px;
-    
-    overflow: scroll;
+    .data-button {
+      height: 40px;
+      width: 160px;
+      
+      font-size: 14px;
+      
+      overflow: scroll;
+
+      &.update {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
