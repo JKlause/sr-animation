@@ -1,5 +1,16 @@
 import React, { Fragment, useState } from 'react';
-import { interpolateBuPu } from 'd3-scale-chromatic';
+import { 
+  interpolateBuPu,
+  interpolateBrBG,
+  interpolateSpectral,
+  interpolateViridis,
+  interpolatePlasma,
+  interpolateCool,
+  interpolateYlGnBu,
+  interpolateRainbow,
+  interpolateCubehelixDefault,
+  interpolatePiYG,
+} from 'd3-scale-chromatic';
 import { Zoom } from '@vx/zoom';
 import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
@@ -13,11 +24,6 @@ import { useNarrowView } from 'shared/layout/useMedia';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
 
-
-const points = [...new Array(1000)];
-
-const colorScale = scaleLinear({ domain: [0, 1000], range: [0, 1] });
-const sizeScale = scaleLinear({ domain: [0, 600], range: [0.5, 8] });
 
 const initialTransform = {
   scaleX: 1.27,
@@ -36,6 +42,7 @@ const ControlButton = ({ className, text, handleClick }) => (
     text={text}/>
 );
 
+//change radius
 
 
 export default function PhyloZoom({ containerRef }) {
@@ -43,7 +50,56 @@ export default function PhyloZoom({ containerRef }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let { width, height } = useDimensions(containerRef, false, true);
 
-  const generator = genPhyllotaxis({ radius: 10, width, height });
+
+
+  const [colorFamily, setColorFamily] = useState(1);
+  const [backgroundColor, setBackgroundColor] = useState('transparent');
+
+  const [numberOfPoints, setNumberOfPoints] = useState(1000);
+  const [phyloRadius, setPhyloRadius] = useState(10);
+
+  const [colorScaleDomainMin, setColorScaleDomainMin] = useState(0);
+  const [colorScaleDomainMax, setColorScaleDomainMax] = useState(1000);
+  const [colorScaleRangeMin, setColorScaleRangeMin] = useState(0);
+  const [colorScaleRangeMax, setColorScaleRangeMax] = useState(1);
+
+  const [sizeScaleDomainMax, setSizeScaleDomainMax] = useState(600);
+  const [sizeScaleRangeMin, setSizeScaleRangeMin] = useState(0.5);
+  const [sizeScaleRangeMax, setSizeScaleRangeMax] = useState(8);
+
+  const dropdownState = {
+    colorFamily,
+    setColorFamily,
+    backgroundColor,
+    setBackgroundColor,
+    numberOfPoints,
+    setNumberOfPoints,
+    phyloRadius,
+    setPhyloRadius,
+    colorScaleDomainMin,
+    setColorScaleDomainMin,
+    colorScaleDomainMax,
+    setColorScaleDomainMax,
+    colorScaleRangeMin,
+    setColorScaleRangeMin,
+    colorScaleRangeMax,
+    setColorScaleRangeMax,
+    sizeScaleDomainMax,
+    setSizeScaleDomainMax,
+    sizeScaleRangeMin,
+    setSizeScaleRangeMin,
+    sizeScaleRangeMax,
+    setSizeScaleRangeMax,
+  };
+
+
+
+  const points = [...new Array(numberOfPoints)];
+
+  const colorScale = scaleLinear({ domain: [colorScaleDomainMin, colorScaleDomainMax], range: [colorScaleRangeMin, colorScaleRangeMax] });
+  const sizeScale = scaleLinear({ domain: [0, sizeScaleDomainMax], range: [sizeScaleRangeMin, sizeScaleRangeMax] });
+
+  const generator = genPhyllotaxis({ radius: phyloRadius, width, height });
   const phyllotaxis = points.map((d, i) => generator(i));
 
 
@@ -55,7 +111,9 @@ export default function PhyloZoom({ containerRef }) {
         buttonText="Customize"
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
-      <CustomizeDropdown isOpen={isDropdownOpen} />
+      <CustomizeDropdown 
+        isOpen={isDropdownOpen} 
+        state={dropdownState}/>
       <Zoom
         width={width}
         height={height}
@@ -80,8 +138,8 @@ export default function PhyloZoom({ containerRef }) {
                 <rect 
                   width={width} 
                   height={height} 
-                  rx={14} 
-                  fill="transparent" />
+                  rx={0} 
+                  fill={backgroundColor} />
 
                 <g transform={zoom.toString()}>
                   {
@@ -90,8 +148,27 @@ export default function PhyloZoom({ containerRef }) {
                         <circle
                           cx={x}
                           cy={y}
-                          r={i > 500 ? sizeScale(1000 - i) : sizeScale(i)}
-                          fill={interpolateBuPu(colorScale(i))}/>
+                          r={i > 500 && 1000 - i > 0 ? sizeScale(1000 - i) : sizeScale(i)}
+                          fill={
+                            colorFamily == 1 
+                              ? interpolateBuPu(colorScale(i)) 
+                              : colorFamily == 2 
+                                ? interpolateBrBG(colorScale(i)) 
+                                : colorFamily == 3
+                                  ? interpolateSpectral(colorScale(i))
+                                  : colorFamily == 4
+                                    ? interpolateViridis(colorScale(i))
+                                    : colorFamily == 5
+                                      ? interpolatePlasma(colorScale(i))
+                                      : colorFamily == 6
+                                        ? interpolateCool(colorScale(i))
+                                        : colorFamily == 7
+                                          ? interpolateYlGnBu(colorScale(i))
+                                          : colorFamily == 8
+                                            ? interpolateRainbow(colorScale(i))
+                                            : colorFamily == 9
+                                              ? interpolateCubehelixDefault(colorScale(i))
+                                              : interpolatePiYG(colorScale(i))}/>
                       </Fragment>
                     ))
                   }
@@ -100,7 +177,7 @@ export default function PhyloZoom({ containerRef }) {
                 <rect
                   width={width}
                   height={height}
-                  rx={14}
+                  rx={0}
                   fill="transparent"
                   onTouchStart={zoom.dragStart}
                   onTouchMove={zoom.dragMove}
