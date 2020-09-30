@@ -1,6 +1,7 @@
 @import 'styles/variables.scss';
 
 :local(.ZoomPhylo) {
+  position: relative;
 
   .header {
     height: 34px;
@@ -29,6 +30,7 @@
   }
 
   .zoom-container {
+    z-index: 80;
     position: relative;
 
     .controls {

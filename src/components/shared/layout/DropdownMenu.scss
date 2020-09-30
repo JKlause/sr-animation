@@ -13,7 +13,8 @@
   transform-origin: top right;
   transform: scale(0,0);
   
-  .content {
+  .dropdown-content {
+    min-height: 140px;
     max-height: 260px;
 
     padding: 20px 20px 10px;

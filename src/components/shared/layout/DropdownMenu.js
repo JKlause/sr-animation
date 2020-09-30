@@ -7,7 +7,7 @@ export default function DropdownMenu({ className = '', isOpen, children, ...prop
 
   return (
     <section className={`${styles.DropdownMenu} ${isOpen ? 'open' : 'closed'} ${className}`} {...props}>
-      <FillParent tag="section" className="content disable-scrollbars" >
+      <FillParent tag="section" className="dropdown-content disable-scrollbars" >
         { children }
       </FillParent>
     </section>

@@ -11,6 +11,7 @@ import useDimensions from 'hooks/useDimensions';
 import styles from './ZoomPhylo.scss';
 import { useNarrowView } from 'shared/layout/useMedia';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
+import CustomizeDropdown from './CustomizeDropdown';
 
 
 const points = [...new Array(1000)];
@@ -54,6 +55,7 @@ export default function PhyloZoom({ containerRef }) {
         buttonText="Customize"
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
+      <CustomizeDropdown isOpen={isDropdownOpen} />
       <Zoom
         width={width}
         height={height}

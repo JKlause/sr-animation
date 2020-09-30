@@ -2,7 +2,7 @@
 
 :local(.AboutDrawerDropdown) {
   
-  .content {
+  .dropdown-content {
     p {
       margin-bottom: 10px;
 
@@ -15,7 +15,7 @@
   }
 
   &.open {
-    .content {
+    .dropdown-content {
       p {
         opacity: 1;
         transition: opacity .5s linear 1s
@@ -24,7 +24,7 @@
   }
   
   &.closed {
-    .content {
+    .dropdown-content {
       p {
         opacity: 0;
         transition: opacity .5s

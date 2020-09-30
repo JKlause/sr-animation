@@ -1,0 +1,11 @@
+@import 'styles/variables.scss';
+
+:local(.CustomizeDropdown) {
+  top: 32px;
+  z-index: 90;
+
+  .dropdown-content {
+   border: 2px solid rgba(64, 91, 214, 0.7);
+   border-top: none;
+  }
+}
