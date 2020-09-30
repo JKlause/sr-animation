@@ -3,6 +3,10 @@
 :local(.CustomizeDropdown) {
   top: 32px;
   z-index: 90;
+
+  @include narrow-view {
+    width: 240px;
+  }
   
   .dropdown-content {
     text-align: center;
