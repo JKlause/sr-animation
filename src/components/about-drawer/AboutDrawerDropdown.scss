@@ -1,30 +1,8 @@
 @import 'styles/variables.scss';
 
 :local(.AboutDrawerDropdown) {
-  position: absolute;
-  top: calc(#{$aboutDrawerHeaderHeight} - 2px);
-  right: 10px;
-
-  height: fit-content;
-  width: 300px;
-  
-  background: $aboutMeTeal;
-
-  transform-origin: top right;
-  transform: scale(0,0);
   
   .content {
-    max-height: 260px;
-
-    padding: 20px 20px 10px;
-
-    border: 2px solid $aboutMeTeal;
-    border-top: none;
-    box-shadow: 0px 12px 12px 3px $boxShadowColor;
-    background: $buttonPurple;
-
-    overflow: scroll;
-
     p {
       margin-bottom: 10px;
 
@@ -37,10 +15,6 @@
   }
 
   &.open {
-    animation-name: dropdown-open;
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-
     .content {
       p {
         opacity: 1;
@@ -50,11 +24,6 @@
   }
   
   &.closed {
-    animation-name: dropdown-close;
-    animation-delay: 500ms;
-    animation-duration: 1000ms;
-    animation-fill-mode: both;
-
     .content {
       p {
         opacity: 0;

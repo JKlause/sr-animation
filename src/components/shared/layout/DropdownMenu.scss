@@ -1,6 +1,6 @@
 @import 'styles/variables.scss';
 
-:local(.AboutDrawerDropdown) {
+:local(.DropdownMenu) {
   position: absolute;
   top: calc(#{$aboutDrawerHeaderHeight} - 2px);
   right: 10px;
@@ -24,29 +24,12 @@
     background: $buttonPurple;
 
     overflow: scroll;
-
-    p {
-      margin-bottom: 10px;
-
-      line-height: 19px;
-      
-      color: #020024;
-      font-size: 16px;
-      font-family: $regular;
-    }
   }
 
   &.open {
     animation-name: dropdown-open;
     animation-duration: 1000ms;
     animation-fill-mode: both;
-
-    .content {
-      p {
-        opacity: 1;
-        transition: opacity .5s linear 1s
-      }
-    }
   }
   
   &.closed {
@@ -54,13 +37,6 @@
     animation-delay: 500ms;
     animation-duration: 1000ms;
     animation-fill-mode: both;
-
-    .content {
-      p {
-        opacity: 0;
-        transition: opacity .5s
-      }
-    }
   }
 
   

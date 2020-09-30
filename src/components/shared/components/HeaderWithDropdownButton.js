@@ -3,7 +3,7 @@ import { useNarrowView } from 'shared/layout/useMedia';
 import styles from './HeaderWithDropdownButton.scss';
 
 
-export default function HeaderWithDropdownButton({ className, headerText, buttonText, isDropdownOpen, toggleDropdown }) {
+export default function HeaderWithDropdownButton({ className = '', headerText, buttonText, isDropdownOpen, toggleDropdown }) {
   const isNarrowView = useNarrowView();
   const [isNoClickEvents, setIsNoClickEvents] = useState(false);
 
@@ -13,7 +13,7 @@ export default function HeaderWithDropdownButton({ className, headerText, button
 
   
   return (
-    <header className={`${styles.HeaderWithDropdownButton} ${className ? className : ''}`}>
+    <header className={`${styles.HeaderWithDropdownButton} ${className}`}>
 
       { isNarrowView || <div/> }
 
