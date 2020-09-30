@@ -2,16 +2,16 @@
 
 :local(.Contact) {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-end;
   flex-wrap: wrap;
 
   width: 100%;
 
   .paragraph-container {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
     flex-wrap: wrap;
 
     p {
@@ -29,34 +29,48 @@
     }
     
     .phone {
-      animation-delay: 3000ms;
+      animation-delay: 4200ms;
     }
     
     .email {
-      animation-delay: 3400ms;
-    }
-    
-    .linked-in {
       animation-delay: 3800ms;
     }
     
     .git-hub {
-      animation-delay: 4200ms;
+      animation-delay: 3400ms;
     }
+    
+    .linked-in {
+      animation-delay: 3000ms;
+    }
+    
   }
 
   @include narrow-view {
-    flex-direction: row;
-    justify-content: flex-end;
     
     .paragraph-container {
-      flex-direction: row;
-      justify-content: flex-end;
 
       p {
+        width: 100%;
         margin-right: 0;
         
         font-size: 12px;
+      }
+
+      .phone {
+        animation-delay: 3000ms;
+      }
+      
+      .email {
+        animation-delay: 3400ms;
+      }
+      
+      .git-hub {
+        animation-delay: 3800ms;
+      }
+      
+      .linked-in {
+        animation-delay: 4200ms;
       }
     }
   }

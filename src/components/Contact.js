@@ -16,11 +16,21 @@ export default function Contact() {
       </div>
 
       <div className="paragraph-container">
-        <p className="linked-in">
-          {'linkedin.com/in/joe-klause'}
-        </p>
         <p className="git-hub">
-          {'github.com/JKlause'}
+          <a
+            href="https://github.com/JKlause"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'github.com/JKlause'}
+          </a>
+        </p>
+        <p className="linked-in">
+          <a
+            href="https://www.linkedin.com/in/joe-klause/"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'linkedin.com/in/joe-klause'}
+          </a>
         </p>
       </div>
       
