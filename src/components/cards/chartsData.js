@@ -4,6 +4,7 @@ import BarChartInfo from './bar-chart/BarChartInfo';
 import lineChartData from './line-chart/lineChartData';
 import LineChart from './line-chart/LineChart';
 import LineChartInfo from './line-chart/LineChartInfo';
+import ZoomPhylo from './zoom-phylo/ZoomPhylo';
 
 export default [
   {
@@ -18,4 +19,8 @@ export default [
     data: lineChartData,
     isLandscape: true,
   },
+  {
+    Visualization: ZoomPhylo,
+    isZoom: true,
+  }
 ];

@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from './Card';
 import chartsData from './cards/chartsData';
-import ZoomPhylo from './cards/ZoomPhylo';
 import FillParent from 'shared/layout/FillParent';
 import styles from './Cards.scss';
 
@@ -14,17 +13,16 @@ export default function Cards({ displayIndex }) {
     <FillParent tag="section" className={styles.Cards} style={pageStyle}>
       <div className="title-placeholder" />
       {
-        chartsData.map(({ Visualization, Info, data, isLandscape }, i) => (
+        chartsData.map(({ Visualization, Info, data, isLandscape, isZoom }, i) => (
           <Card 
             key={`card-${i}`}
             Visualization={Visualization}
             Info={Info}
             data={data} 
-            isLandscape={isLandscape} />
+            isLandscape={isLandscape} 
+            isZoom={isZoom}/>
         ))
       }
-      <Card Visualization={ZoomPhylo} isZoom={true}/>
-
     </FillParent >
   );
 }
