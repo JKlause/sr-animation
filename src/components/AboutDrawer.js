@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import AboutDrawerContent from './about-drawer/AboutDrawerContent';
 import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
+import useDropdown from 'hooks/useDropdown';
 import styles from './AboutDrawer.scss';
 
 export default function AboutDrawer({ isOpen }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [ref, isDropdownOpen, setIsDropdownOpen] = useDropdown();
 
 
   return (
@@ -17,7 +18,7 @@ export default function AboutDrawer({ isOpen }) {
           buttonText="About this site"
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
-        <AboutDrawerDropdown isOpen={isDropdownOpen}/>
+        <AboutDrawerDropdown isOpen={isDropdownOpen} dropdownRef={ref}/>
         <AboutDrawerContent />
       </FillParent>
     </section>

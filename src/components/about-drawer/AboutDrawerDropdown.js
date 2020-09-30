@@ -3,11 +3,11 @@ import DropdownMenu from 'shared/layout/DropdownMenu';
 import styles from './AboutDrawerDropdown.scss';
 
 
-export default function AboutDrawerDropdown({ isOpen }) {
+export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
 
 
   return (
-    <DropdownMenu className={styles.AboutDrawerDropdown} isOpen={isOpen}>
+    <DropdownMenu className={styles.AboutDrawerDropdown} isOpen={isOpen} dropdownRef={dropdownRef}>
       <p>
         {'This site was written using React.js, Sass, the @vx library, and a plethora of animations and transitions.'}
       </p>

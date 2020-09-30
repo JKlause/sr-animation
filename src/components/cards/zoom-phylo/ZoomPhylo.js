@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { 
   interpolateBuPu,
   interpolateBrBG,
@@ -19,11 +19,13 @@ import { scaleLinear } from '@vx/scale';
 import FillParent from 'shared/layout/FillParent';
 import Button from 'shared/components/Button';
 import useDimensions from 'hooks/useDimensions';
-import styles from './ZoomPhylo.scss';
 import { useNarrowView } from 'shared/layout/useMedia';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
 import useCustomizations from 'hooks/useCustomizations';
+import useDropdown from 'hooks/useDropdown';
+import styles from './ZoomPhylo.scss';
+
 
 
 const initialTransform = {
@@ -47,7 +49,7 @@ const ControlButton = ({ className, text, handleClick }) => (
 
 export default function PhyloZoom({ containerRef }) {
   const isNarrowView = useNarrowView();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [ref, isDropdownOpen, setIsDropdownOpen] = useDropdown();
   let { width, height } = useDimensions(containerRef, false, true);
 
   const {
@@ -121,6 +123,7 @@ export default function PhyloZoom({ containerRef }) {
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
       <CustomizeDropdown 
+        dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
         handleResetClick={() => resetState()}
