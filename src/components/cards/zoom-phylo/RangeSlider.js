@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import styles from './RangeSlider.scss';
+import styles from './Slider.scss';
 
 
 function valueText(value) {
@@ -27,7 +27,7 @@ export default function RangeSlider({
   };
 
   return (
-    <div className={styles.RangeSlider}>
+    <div className={styles.Slider}>
       <Typography id="range-slider" gutterBottom>
         { label }
       </Typography>

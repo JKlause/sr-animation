@@ -7,7 +7,7 @@ import styles from './App.scss';
 
 
 export default function App() {
-  const [displayIndex, setDisplayIndex] = useState(3);
+  const [displayIndex, setDisplayIndex] = useState(0);
   const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
@@ -23,9 +23,9 @@ export default function App() {
     <section className={styles.App}>
       <Header/>
       <main>
-        {/* <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
+        <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
-        </h1> */}
+        </h1>
         <Cards displayIndex={displayIndex} />
       </main>
       <Footer 

@@ -23,6 +23,7 @@ import styles from './ZoomPhylo.scss';
 import { useNarrowView } from 'shared/layout/useMedia';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
+import useCustomizations from 'hooks/useCustomizations';
 
 
 const initialTransform = {
@@ -42,7 +43,6 @@ const ControlButton = ({ className, text, handleClick }) => (
     text={text}/>
 );
 
-//change radius
 
 
 export default function PhyloZoom({ containerRef }) {
@@ -50,22 +50,32 @@ export default function PhyloZoom({ containerRef }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let { width, height } = useDimensions(containerRef, false, true);
 
-
-
-  const [colorFamily, setColorFamily] = useState(1);
-  const [backgroundColor, setBackgroundColor] = useState('transparent');
-
-  const [numberOfPoints, setNumberOfPoints] = useState(1000);
-  const [phyloRadius, setPhyloRadius] = useState(10);
-
-  const [colorScaleDomainMin, setColorScaleDomainMin] = useState(0);
-  const [colorScaleDomainMax, setColorScaleDomainMax] = useState(1000);
-  const [colorScaleRangeMin, setColorScaleRangeMin] = useState(0);
-  const [colorScaleRangeMax, setColorScaleRangeMax] = useState(1);
-
-  const [sizeScaleDomainMax, setSizeScaleDomainMax] = useState(600);
-  const [sizeScaleRangeMin, setSizeScaleRangeMin] = useState(0.5);
-  const [sizeScaleRangeMax, setSizeScaleRangeMax] = useState(8);
+  const {
+    colorFamily,
+    setColorFamily,
+    backgroundColor,
+    setBackgroundColor,
+    numberOfPoints,
+    setNumberOfPoints,
+    phyloRadius,
+    setPhyloRadius,
+    colorScaleDomainMin,
+    setColorScaleDomainMin,
+    colorScaleDomainMax,
+    setColorScaleDomainMax,
+    colorScaleRangeMin,
+    setColorScaleRangeMin,
+    colorScaleRangeMax,
+    setColorScaleRangeMax,
+    sizeScaleDomainMax,
+    setSizeScaleDomainMax,
+    sizeScaleRangeMin,
+    setSizeScaleRangeMin,
+    sizeScaleRangeMax,
+    setSizeScaleRangeMax,
+    resetState,
+    isInitialState,
+  } = useCustomizations();
 
   const dropdownState = {
     colorFamily,
@@ -93,7 +103,6 @@ export default function PhyloZoom({ containerRef }) {
   };
 
 
-
   const points = [...new Array(numberOfPoints)];
 
   const colorScale = scaleLinear({ domain: [colorScaleDomainMin, colorScaleDomainMax], range: [colorScaleRangeMin, colorScaleRangeMax] });
@@ -113,7 +122,9 @@ export default function PhyloZoom({ containerRef }) {
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
       <CustomizeDropdown 
         isOpen={isDropdownOpen} 
-        state={dropdownState}/>
+        state={dropdownState}
+        handleResetClick={() => resetState()}
+        isResetEnabled={!isInitialState}/>
       <Zoom
         width={width}
         height={height}

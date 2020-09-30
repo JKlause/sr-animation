@@ -3,9 +3,10 @@ import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';
 import styles from './CustomizeDropdown.scss';
+import Button from 'shared/components/Button';
 
 
-export default function CustomizeDropdown({ isOpen, state }) {
+export default function CustomizeDropdown({ isOpen, state, handleResetClick, isResetEnabled }) {
 
   const {
     colorFamily,
@@ -35,43 +36,47 @@ export default function CustomizeDropdown({ isOpen, state }) {
 
   return (
     <DropdownMenu className={styles.CustomizeDropdown} isOpen={isOpen} >
-      <label htmlFor="colors">
-        {'Change Color Family'}
-      </label>
-      <select 
-        name="colors" 
-        value={colorFamily}
-        onChange={({ target }) => setColorFamily(target.value)}>
-        <option value={1}>{'Blue to Purple'}</option>
-        <option value={2}>{'Blue to Gold'}</option>
-        <option value={3}>{'Spectral'}</option>
-        <option value={4}>{'Veridis'}</option>
-        <option value={5}>{'Plasma'}</option>
-        <option value={6}>{'Cool'}</option>
-        <option value={7}>{'Green to Blue'}</option>
-        <option value={8}>{'Rainbow'}</option>
-        <option value={9}>{'Cube Helix'}</option>
-        <option value={10}>{'Pink to YellowGreen'}</option>
-      </select>
+      <div className="select">
+        <label htmlFor="colors">
+          {'Change Color Family'}
+        </label>
+        <select 
+          name="colors" 
+          value={colorFamily}
+          onChange={({ target }) => setColorFamily(target.value)}>
+          <option value={1}>{'Blue to Purple'}</option>
+          <option value={2}>{'Blue to Gold'}</option>
+          <option value={3}>{'Spectral'}</option>
+          <option value={4}>{'Veridis'}</option>
+          <option value={5}>{'Plasma'}</option>
+          <option value={6}>{'Cool'}</option>
+          <option value={7}>{'Green to Blue'}</option>
+          <option value={8}>{'Rainbow'}</option>
+          <option value={9}>{'Cube Helix'}</option>
+          <option value={10}>{'Pink to YellowGreen'}</option>
+        </select>
+      </div>
 
-      <label htmlFor="background">
-        {'Change Background Color'}
-      </label>
-      <select 
-        name="background" 
-        value={backgroundColor}
-        onChange={({ target }) => setBackgroundColor(target.value)}>
-        <option value={'transparent'}>{'Website Teal'}</option>
-        <option value={'rgb(73,73,208)'}>{'Website Purple'}</option>
-        <option value={'#FFFAFA'}>{'Snow White'}</option>
-        <option value={'#8e1e1d'}>{'Lipstick Red'}</option>
-        <option value={'#228B22'}>{'Forest Green'}</option>
-        <option value={'#0077be'}>{'Ocean Blue'}</option>
-        <option value={'#ffcccb'}>{'Sea Shell Pink'}</option>
-        <option value={'#323639'}>{'Night Black'}</option>
-        <option value={'#f88624'}>{'Citrus Orange'}</option>
-        <option value={'#7a5901'}>{'Poop Brown'}</option>
-      </select>
+      <div className="select" >
+        <label htmlFor="background">
+          {'Change Background Color'}
+        </label>
+        <select 
+          name="background" 
+          value={backgroundColor}
+          onChange={({ target }) => setBackgroundColor(target.value)}>
+          <option value={'transparent'}>{'Website Teal'}</option>
+          <option value={'rgb(73,73,208)'}>{'Website Purple'}</option>
+          <option value={'#FFFAFA'}>{'Snow White'}</option>
+          <option value={'#8e1e1d'}>{'Lipstick Red'}</option>
+          <option value={'#228B22'}>{'Forest Green'}</option>
+          <option value={'#0077be'}>{'Ocean Blue'}</option>
+          <option value={'#ffcccb'}>{'Sea Shell Pink'}</option>
+          <option value={'#323639'}>{'Night Black'}</option>
+          <option value={'#f88624'}>{'Citrus Orange'}</option>
+          <option value={'#7a5901'}>{'Poop Brown'}</option>
+        </select>
+      </div>
 
       <SingleSlider
         label={'Phylo Radius'}
@@ -122,6 +127,12 @@ export default function CustomizeDropdown({ isOpen, state }) {
         currentMax={sizeScaleRangeMax}
         setMin={setSizeScaleRangeMin}
         setMax={setSizeScaleRangeMax} />
+
+      <Button 
+        className={`reset-button ${isResetEnabled ? 'enabled' : 'disabled'}`}
+        text={'Reset'}
+        handleClick={() => handleResetClick()}
+        isVisible={true}/>
 
     </DropdownMenu>
   );

@@ -7,6 +7,8 @@
     height: 34px;
     padding: 0;
 
+    box-shadow: none;
+
     .header-container {
       margin-right: 5px;
 
@@ -51,7 +53,7 @@
         
         background: $buttonPurple;
         box-shadow: 2px 1px 3px 0px $boxShadowColor;
-        border-radius: 8px;
+        border-radius: $borderRadius;
         
         text-align: center;
         font-family: $semiBold;

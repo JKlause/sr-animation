@@ -18,6 +18,8 @@
     border: 2px solid $buttonPurple;
     border-radius: $borderRadius;
     background: rgba(73,208,183,.6);
+    box-shadow: 4px 5px 6px 0px $cardBoxShadowColor;
+
     
     @include narrow-view {
       width: calc(100% - 40px);
