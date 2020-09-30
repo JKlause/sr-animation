@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNarrowView } from 'shared/layout/useMedia';
-import styles from './AboutDrawerHeader.scss';
+import styles from './HeaderWithDropdownButton.scss';
 
 
-export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
+export default function HeaderWithDropdownButton({ className, headerText, buttonText, isDropdownOpen, toggleDropdown }) {
   const isNarrowView = useNarrowView();
   const [isNoClickEvents, setIsNoClickEvents] = useState(false);
 
@@ -13,13 +13,13 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
 
   
   return (
-    <header className={styles.AboutDrawerHeader}>
+    <header className={`${styles.HeaderWithDropdownButton} ${className ? className : ''}`}>
 
       { isNarrowView || <div/> }
 
       <div className="header-container">
         <h1>
-          { 'Hi, I\'m Joe.'}
+          { headerText }
         </h1>
       </div>
 
@@ -30,7 +30,7 @@ export default function AboutDrawerHeader({ isDropdownOpen, toggleDropdown }) {
           onAnimationEnd={() => setIsNoClickEvents(false)}>
 
           <p className="text">
-            {'About this site'}
+            { buttonText }
           </p>
           <p className={`chevron ${isDropdownOpen ? 'open' : 'closed'}`}>
             {'^'}

@@ -2,19 +2,30 @@
 
 :local(.ZoomPhylo) {
 
-  h1 {
-    width: 100%;
+  .header {
     height: 34px;
+    padding: 0;
 
-    padding: 5px;
+    .header-container {
+      margin-right: 5px;
 
-    border-bottom: 2px solid $buttonPurple;
+      h1 {
+        font-size: 18px;
+      }
+    }
 
-    text-align:center;
-    line-height: 22px;
+    @include narrow-view {
+      .header-container {
+        padding-left: 10px;
 
-    font-family: $semiBold;
-    font-size: 18px;
+        h1 {
+          font-size: 14px;
+        }
+      }
+      .dropdown-button-container {
+        padding-right: 10px;
+      }
+    }
   }
 
   .zoom-container {

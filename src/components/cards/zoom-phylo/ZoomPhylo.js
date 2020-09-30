@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { interpolateBuPu } from 'd3-scale-chromatic';
 import { Zoom } from '@vx/zoom';
 import { localPoint } from '@vx/event';
@@ -9,6 +9,8 @@ import FillParent from 'shared/layout/FillParent';
 import Button from 'shared/components/Button';
 import useDimensions from 'hooks/useDimensions';
 import styles from './ZoomPhylo.scss';
+import { useNarrowView } from 'shared/layout/useMedia';
+import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 
 
 const points = [...new Array(1000)];
@@ -36,6 +38,8 @@ const ControlButton = ({ className, text, handleClick }) => (
 
 
 export default function PhyloZoom({ containerRef }) {
+  const isNarrowView = useNarrowView();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let { width, height } = useDimensions(containerRef, false, true);
 
   const generator = genPhyllotaxis({ radius: 10, width, height });
@@ -44,9 +48,12 @@ export default function PhyloZoom({ containerRef }) {
 
   return (
     <FillParent className={styles.ZoomPhylo}>
-      <h1>
-        { 'Some Beautiful Sh*t :-)'}
-      </h1>
+      <HeaderWithDropdownButton 
+        className="header"
+        headerText={`${isNarrowView ? '' : 'Some '}Beautiful Sh*t :-)`}
+        buttonText="Customize"
+        isDropdownOpen={isDropdownOpen}
+        toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
       <Zoom
         width={width}
         height={height}
