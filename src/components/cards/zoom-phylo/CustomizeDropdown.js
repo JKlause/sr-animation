@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';
-import styles from './CustomizeDropdown.scss';
 import Button from 'shared/components/Button';
+import styles from './CustomizeDropdown.scss';
 
 
 export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleResetClick, isResetEnabled }) {
+
+  const [isResetButtonVisible, setIsResetButtonVisible] = useState(false);
+
+  useEffect(() => {
+    if(isOpen) {
+      setTimeout(() => {
+        setIsResetButtonVisible(true);
+      }, 970);
+    }
+    else setIsResetButtonVisible(false);
+  }, [isOpen]);
 
   const {
     colorFamily,
@@ -102,7 +113,7 @@ export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleRe
         setMax={setColorScaleDomainMax} />
 
       <RangeSlider
-        label={'Color Rage'}
+        label={'Color Range'}
         minValue={0}
         maxValue={1}
         step={.05}
@@ -119,7 +130,7 @@ export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleRe
         setCurrentValue={setSizeScaleDomainMax} />
 
       <RangeSlider
-        label={'Size Rage'}
+        label={'Size Range'}
         minValue={0}
         maxValue={20}
         step={.2}
@@ -129,10 +140,11 @@ export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleRe
         setMax={setSizeScaleRangeMax} />
 
       <Button 
-        className={`reset-button ${isResetEnabled ? 'enabled' : 'disabled'}`}
+        className="reset-button"
         text={'Reset'}
         handleClick={() => handleResetClick()}
-        isVisible={true}/>
+        isVisible={!isOpen ? false : isResetButtonVisible}
+        isEnabled={isResetEnabled}/>
 
     </DropdownMenu>
   );

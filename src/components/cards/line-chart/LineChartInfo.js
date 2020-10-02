@@ -62,6 +62,7 @@ export default function LineChartInfo({
         </section>
 
         <div className="button-container" >
+
           <Button
             className="data-button update"
             text={textIndex === null ? 'No One Loves Me' : sadButtonTextOptions[textIndex]}
@@ -70,13 +71,16 @@ export default function LineChartInfo({
               setTextIndex(Math.floor(Math.random() * sadButtonTextOptions.length));
               handleUpdateDataClick();
             }}
-            isVisible={true}/>
+            isVisible={true}
+            isEnabled={true}/>
 
           <Button
-            className={`data-button ${isResetDisabled ? 'disabled' : 'enabled'}`}
+            className="data-button"
             text="Purposeful Amnesia"
             handleClick={() => handleResetDataClick()}
-            isVisible={true} />
+            isVisible={true} 
+            isEnabled={!isResetDisabled}/>
+            
         </div> 
       </div>
     </section>

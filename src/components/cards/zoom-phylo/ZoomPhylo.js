@@ -14,15 +14,15 @@ import {
 import { Zoom } from '@vx/zoom';
 import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
-import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 import { scaleLinear } from '@vx/scale';
+import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
+import CustomizeDropdown from './CustomizeDropdown';
 import FillParent from 'shared/layout/FillParent';
 import Button from 'shared/components/Button';
-import useDimensions from 'hooks/useDimensions';
-import { useNarrowView } from 'shared/layout/useMedia';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
-import CustomizeDropdown from './CustomizeDropdown';
+import { useNarrowView } from 'shared/layout/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
+import useDimensions from 'hooks/useDimensions';
 import useDropdown from 'hooks/useDropdown';
 import styles from './ZoomPhylo.scss';
 
@@ -42,6 +42,7 @@ const ControlButton = ({ className, text, handleClick }) => (
     className={className} 
     handleClick={() => handleClick()}
     isVisible={true}
+    isEnabled={true}
     text={text}/>
 );
 
@@ -116,18 +117,21 @@ export default function PhyloZoom({ containerRef }) {
 
   return (
     <FillParent className={styles.ZoomPhylo}>
+
       <HeaderWithDropdownButton 
         className="header"
         headerText={`${isNarrowView ? '' : 'Some '}Beautiful Sh*t :-)`}
         buttonText="Customize"
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
+
       <CustomizeDropdown 
         dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
+
       <Zoom
         width={width}
         height={height}
@@ -136,6 +140,7 @@ export default function PhyloZoom({ containerRef }) {
         scaleYMin={1 / 2}
         scaleYMax={4}
         transformMatrix={initialTransform}>
+
         {
           zoom => (
             <div className="zoom-container">
@@ -219,14 +224,17 @@ export default function PhyloZoom({ containerRef }) {
                     text="-"
                     handleClick={() => zoom.scale({ scaleX: 0.8, scaleY: 0.8 })}/>
                 </div>
+
                 <ControlButton
                   className="button-text" 
                   text="Center"
                   handleClick={zoom.center}/>
+
                 <ControlButton
                   className="button-text"
                   text="Reset"
                   handleClick={zoom.reset}/>
+
                 <ControlButton
                   className="button-text"
                   text="Clear" 
@@ -235,6 +243,7 @@ export default function PhyloZoom({ containerRef }) {
             </div>
           )
         }
+
       </Zoom>
     </FillParent>
   );

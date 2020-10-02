@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Button.scss';
 
-export default function Button({ className, text, handleClick, isVisible, noClickAnimation }) {
+export default function Button({ className = '', text, handleClick, isVisible, noClickAnimation, isEnabled }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClickStart = () => {
@@ -16,7 +16,7 @@ export default function Button({ className, text, handleClick, isVisible, noClic
   
   return (
     <button 
-      className={`${styles.Button} ${className ? className : '' } ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''}`}
+      className={`${styles.Button} ${className} ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''} ${isEnabled ? 'enabled' : 'disabled'}`}
       onClick={() => handleClick()}
       onMouseDown={() => handleClickStart()}
       onMouseUp={() => handleClickEnd()}
