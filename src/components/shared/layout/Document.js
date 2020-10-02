@@ -1,4 +1,4 @@
-import React, { createContext, useRef } from 'react';
+import React, { createContext, useState } from 'react';
 
 class Emitter {
   listeners = new Set();
@@ -18,7 +18,7 @@ class Emitter {
 export const DocumentContext = createContext(null);
 
 export default function Document({ children }) {
-  const { current: emitter } = useRef(new Emitter());
+  const [emitter] = useState(new Emitter());
 
   return (
     <DocumentContext.Provider value={listener => emitter.register(listener)}>
