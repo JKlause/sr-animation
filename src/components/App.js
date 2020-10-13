@@ -22,12 +22,14 @@ export default function App() {
   return (
     <section className={styles.App}>
       <Header/>
+
       <main>
         <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>
         <Cards displayIndex={displayIndex} />
       </main>
+
       <Footer 
         displayIndex={displayIndex}
         setDisplayIndex={setDisplayIndex}
@@ -35,10 +37,12 @@ export default function App() {
         isAboutDrawerOpen={isAboutDrawerOpen}
         openAboutDrawer={() => setIsAboutDrawerOpen(true)}
         closeAboutDrawer={() => setIsAboutDrawerOpen(false)}/>
+
       { 
         isAboutDrawerRendered &&
           <AboutDrawer isOpen={isAboutDrawerOpen}/>
       }
+
     </section>
   );
 }

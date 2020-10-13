@@ -3,6 +3,7 @@
 :local(.AboutDrawerDropdown) {
   
   .dropdown-content {
+
     p {
       margin-bottom: 10px;
 
@@ -11,53 +12,6 @@
       color: #020024;
       font-size: 16px;
       font-family: $regular;
-    }
-  }
-
-  &.open {
-    .dropdown-content {
-      p {
-        opacity: 1;
-        transition: opacity .5s linear 1s
-      }
-    }
-  }
-  
-  &.closed {
-    .dropdown-content {
-      p {
-        opacity: 0;
-        transition: opacity .5s
-      }
-    }
-  }
-
-  
-  @keyframes dropdown-open {
-    0% {
-      transform: scale(.01, 0)
-    }
-    50% {
-      transform: scale(.01, 1)
-    }
-    100% {
-      transform: scale(1, 1)
-    }
-  }
-
-  @keyframes dropdown-close {
-    0% {
-      transform: scale(1, 1)
-    }
-    50% {
-      transform: scale(.01, 1)
-    }
-    99% {
-
-      transform: scale(.01, 0)
-    }
-    100% {
-      transform: scale(0, 0)
     }
   }
 }

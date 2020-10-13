@@ -40,12 +40,14 @@ export default function LineChart({ data, containerRef, isLandscape }) {
           label="Ounces" 
           scale={yScale} 
           numTicks={4} />
+          
         <AxisBottom 
           label="Day" 
           scale={xScale} 
           numTicks={data.length}
           top={yMax}
           labelOffset={15} />
+
         {
           data.map((point, pointIndex) => (
             <circle
@@ -59,6 +61,7 @@ export default function LineChart({ data, containerRef, isLandscape }) {
             />
           ))
         } 
+
         <LinePath
           data={data}
           curve={curveLinear}

@@ -14,8 +14,8 @@ import {
 import { Zoom } from '@vx/zoom';
 import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
-import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 import { scaleLinear } from '@vx/scale';
+import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 import { useNarrowView } from 'shared/layout/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
 import useDimensions from 'hooks/useDimensions';
@@ -41,6 +41,7 @@ const ControlButton = ({ className, text, handleClick }) => (
     className={className} 
     handleClick={() => handleClick()}
     isVisible={true}
+    isEnabled={true}
     text={text}/>
 );
 
@@ -137,6 +138,7 @@ export default function PhyloZoom({ containerRef }) {
         scaleYMin={1 / 2}
         scaleYMax={4}
         transformMatrix={initialTransform}>
+
         {
           zoom => (
             <div className="zoom-container">
@@ -220,14 +222,17 @@ export default function PhyloZoom({ containerRef }) {
                     text="-"
                     handleClick={() => zoom.scale({ scaleX: 0.8, scaleY: 0.8 })}/>
                 </div>
+
                 <ControlButton
                   className="button-text" 
                   text="Center"
                   handleClick={zoom.center}/>
+
                 <ControlButton
                   className="button-text"
                   text="Reset"
                   handleClick={zoom.reset}/>
+
                 <ControlButton
                   className="button-text"
                   text="Clear" 
@@ -236,6 +241,7 @@ export default function PhyloZoom({ containerRef }) {
             </div>
           )
         }
+
       </Zoom>
 
     </FillParent>

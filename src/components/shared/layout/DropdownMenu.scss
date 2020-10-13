@@ -31,6 +31,14 @@
     animation-name: dropdown-open;
     animation-duration: 1000ms;
     animation-fill-mode: both;
+
+    .dropdown-content {
+
+      > * {
+        opacity: 1;
+        transition: opacity .5s linear 1s
+      }
+    }
   }
   
   &.closed {
@@ -38,6 +46,14 @@
     animation-delay: 500ms;
     animation-duration: 1000ms;
     animation-fill-mode: both;
+
+    .dropdown-content {
+
+      > * {
+        opacity: 0;
+        transition: opacity .5s
+      }
+    }
   }
 
   

@@ -74,10 +74,11 @@ export default function Footer({
     <footer className={styles.Footer}>
       <div>
         <Button
-          className={`previous ${isPreviousButtonDisabled ? 'disabled' : 'enabled'}`}
+          className="previous"
           text="Previous"
           isVisible={areNavButtonsVisible}
-          handleClick={() => handlePreviousButtonClick()}/>
+          handleClick={() => handlePreviousButtonClick()}
+          isEnabled={!isPreviousButtonDisabled}/>
       </div>
 
       <div>
@@ -88,22 +89,25 @@ export default function Footer({
                 text="Begin"
                 isVisible={isBeginButtonVisible}
                 noClickAnimation={isNoBeginButtonClickAnimation}
-                handleClick={() => handleBeginButtonClick()}/>
+                handleClick={() => handleBeginButtonClick()}
+                isEnabled={true}/>
               
             : <Button
                 className="about"
                 text={isAboutDrawerOpen ? 'Close' : 'About Joe'}
                 isVisible={isAboutButtonVisible} 
-                handleClick={() => handleAboutButtonClick()}/>
+                handleClick={() => handleAboutButtonClick()}
+                isEnabled={true}/>
         }
       </div>
 
       <div>
         <Button
-          className={`next ${isNextButtonDisabled ? 'disabled' : 'enabled'}`}
+          className="next"
           text="Next"
           isVisible={areNavButtonsVisible}
-          handleClick={() => handleNextButtonClick()}/>
+          handleClick={() => handleNextButtonClick()}
+          isEnabled={!isNextButtonDisabled}/>
       </div>
     </footer>
   );

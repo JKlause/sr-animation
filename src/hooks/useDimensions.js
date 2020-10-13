@@ -14,7 +14,7 @@ export default function useDimensions(ref, isLandscape, isFillParent) {
       if(isFillParent) {
         setDim({
           width: (cr.width - 154) < 796 ? (cr.width - 154) : 796,
-          height: (cr.height - 188) < 496 ? (cr.height - 188) : 462,
+          height: (cr.height - 188) < 462 ? (cr.height - 188) : 462,
         });
       }
 

@@ -13,13 +13,17 @@ export default function AboutDrawer({ isOpen }) {
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
       <FillParent tag="section" className="content-container">
+
         <HeaderWithDropdownButton 
           headerText="Hi, I'm Joe."
           buttonText="About this site"
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
+
         <AboutDrawerDropdown isOpen={isDropdownOpen} dropdownRef={ref}/>
+
         <AboutDrawerContent />
+        
       </FillParent>
     </section>
   );

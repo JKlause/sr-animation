@@ -51,6 +51,7 @@ export default function BarChart({ data, containerRef }) {
           scale={yScale} 
           left={10} 
           numTicks={4} />
+
         {
           data.map(datum => {
             const label = xDataAccessor(datum);
@@ -69,6 +70,7 @@ export default function BarChart({ data, containerRef }) {
             );
           })
         }
+        
         <AxisBottom 
           label="Candidate" 
           scale={xScale} 

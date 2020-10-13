@@ -46,6 +46,7 @@ export default function BarChartInfo({
       </section>
 
       <div className="button-container" >
+
         <Button
           className="data-button update"
           text="Update Votes"
@@ -53,13 +54,16 @@ export default function BarChartInfo({
             enableResetButton();
             handleUpdateDataClick();
           }}
-          isVisible={true}/>
+          isVisible={true}
+          isEnabled={true}/>
 
         <Button
-          className={`data-button ${isResetDisabled ? 'disabled' : 'enabled'}`}
+          className="data-button"
           text="Reset Votes"
           handleClick={() => handleResetDataClick()}
-          isVisible={true} />
+          isVisible={true} 
+          isEnabled={!isResetDisabled}/>
+          
       </div> 
     </section>
   );
