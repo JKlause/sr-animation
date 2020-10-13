@@ -6,7 +6,7 @@ import Button from 'shared/components/Button';
 import styles from './CustomizeDropdown.scss';
 
 
-export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleResetClick, isResetEnabled }) {
+export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleResetClick, isResetEnabled, height }) {
 
   const [isResetButtonVisible, setIsResetButtonVisible] = useState(false);
 
@@ -46,7 +46,11 @@ export default function CustomizeDropdown({ dropdownRef, isOpen, state, handleRe
   
 
   return (
-    <DropdownMenu className={styles.CustomizeDropdown} isOpen={isOpen} dropdownRef={dropdownRef} >
+    <DropdownMenu 
+      className={styles.CustomizeDropdown} 
+      isOpen={isOpen} 
+      dropdownRef={dropdownRef} 
+      contentStyle={{ maxHeight: `${height - 20}px` }}>
       <div className="select">
         <label htmlFor="colors">
           {'Change Color Family'}

@@ -125,10 +125,11 @@ export default function PhyloZoom({ containerRef }) {
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
 
-      <CustomizeDropdown 
+      <CustomizeDropdown
         dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
+        height={height}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
 
