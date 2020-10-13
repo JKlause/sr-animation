@@ -16,10 +16,12 @@ import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
 import { scaleLinear } from '@vx/scale';
 import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
+
 import { useNarrowView } from 'shared/layout/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
 import useDimensions from 'hooks/useDimensions';
 import useDropdown from 'hooks/useDropdown';
+
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
