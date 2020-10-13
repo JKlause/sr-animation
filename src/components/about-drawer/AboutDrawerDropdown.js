@@ -19,7 +19,7 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
           rel="noopener noreferrer">
           {'source code'}
         </a>
-        {' is on GitHub, and was written primarily over the weekend of 9/25/2020.'}
+        {' is available on GitHub, and was written primarily over the weekend of 9/25/2020.'}
       </p>
       <p>
         {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx '}
