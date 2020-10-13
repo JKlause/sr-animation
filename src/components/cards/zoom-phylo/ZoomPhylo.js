@@ -129,7 +129,7 @@ export default function PhyloZoom({ containerRef }) {
         dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
-        height={height}
+        menuHeight={height - 20}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
 
