@@ -31,6 +31,7 @@ export default function RangeSlider({
       <Typography id="range-slider" gutterBottom>
         { label }
       </Typography>
+      
       <Slider
         value={[currentMin, currentMax]}
         onChange={handleChange}

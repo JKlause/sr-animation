@@ -26,6 +26,7 @@ export default function SingleSlider({
       <Typography id="slider" gutterBottom>
         { label }
       </Typography>
+      
       <Slider
         value={currentValue}
         onChange={handleChange}

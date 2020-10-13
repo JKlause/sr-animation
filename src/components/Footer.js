@@ -18,6 +18,12 @@ export default function Footer({
 
   const isPreviousButtonDisabled = displayIndex === 1 || isAboutDrawerOpen;
   const isNextButtonDisabled = displayIndex === 3 || isAboutDrawerOpen;
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setIsBeginButtonVisible(true);
+    }, 7500);
+  }, []);
 
   useEffect(() => {
     if(displayIndex === 1) {
@@ -32,12 +38,6 @@ export default function Footer({
       }, 500);
     }
   }, [displayIndex]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsBeginButtonVisible(true);
-    }, 7500);
-  }, []);
 
 
   const handlePreviousButtonClick = () => {

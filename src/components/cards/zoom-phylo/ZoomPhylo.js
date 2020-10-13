@@ -16,16 +16,15 @@ import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
 import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 import { scaleLinear } from '@vx/scale';
-import FillParent from 'shared/layout/FillParent';
-import Button from 'shared/components/Button';
-import useDimensions from 'hooks/useDimensions';
 import { useNarrowView } from 'shared/layout/useMedia';
+import useCustomizations from 'hooks/useCustomizations';
+import useDimensions from 'hooks/useDimensions';
+import useDropdown from 'hooks/useDropdown';
+import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
-import useCustomizations from 'hooks/useCustomizations';
-import useDropdown from 'hooks/useDropdown';
+import Button from 'shared/components/Button';
 import styles from './ZoomPhylo.scss';
-
 
 
 const initialTransform = {
@@ -44,7 +43,6 @@ const ControlButton = ({ className, text, handleClick }) => (
     isVisible={true}
     text={text}/>
 );
-
 
 
 export default function PhyloZoom({ containerRef }) {
@@ -116,18 +114,21 @@ export default function PhyloZoom({ containerRef }) {
 
   return (
     <FillParent className={styles.ZoomPhylo}>
+
       <HeaderWithDropdownButton 
         className="header"
         headerText={`${isNarrowView ? '' : 'Some '}Beautiful Sh*t :-)`}
         buttonText="Customize"
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
+
       <CustomizeDropdown 
         dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
+
       <Zoom
         width={width}
         height={height}
@@ -236,6 +237,7 @@ export default function PhyloZoom({ containerRef }) {
           )
         }
       </Zoom>
+
     </FillParent>
   );
 }

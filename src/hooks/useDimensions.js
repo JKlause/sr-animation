@@ -1,17 +1,17 @@
 import { useState, useLayoutEffect } from 'react';
 
-export default function useDimensions(ref, isLandscape, isZoom) {
+export default function useDimensions(ref, isLandscape, isFillParent) {
   const [dim, setDim] = useState({
     width: 0,
     height: 0,
   });
 
 
-  const ro = new ResizeObserver(entries => {
+  const resizeObserver = new ResizeObserver(entries => {
     for(let entry of entries) {
       const cr = entry.contentRect;
 
-      if(isZoom) {
+      if(isFillParent) {
         setDim({
           width: (cr.width - 154) < 796 ? (cr.width - 154) : 796,
           height: (cr.height - 188) < 496 ? (cr.height - 188) : 462,
@@ -36,7 +36,7 @@ export default function useDimensions(ref, isLandscape, isZoom) {
 
 
   useLayoutEffect(() => {
-    if(ref && ref.current) ro.observe(ref.current);
+    if(ref && ref.current) resizeObserver.observe(ref.current);
   }, [ref.current]);
 
   
