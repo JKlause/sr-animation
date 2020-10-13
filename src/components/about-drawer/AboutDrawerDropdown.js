@@ -48,7 +48,7 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
         {'The site is meant to be viewed on desktops or tablets. It hasn\'t been fully vetted for mobile use.'}
       </p>
       <p>
-        {'Copyright © 2020, Joseph Klause'}
+        {'Copyright © 2020, Joseph Klause '}
       </p>
     </DropdownMenu>
   );
