@@ -21,6 +21,7 @@ export default [
   },
   {
     Visualization: ZoomPhylo,
+    isLandscape: false,
     isZoom: true,
   }
 ];

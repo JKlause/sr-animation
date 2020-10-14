@@ -1,20 +1,18 @@
 import React from 'react';
 import Button from 'shared/components/Button';
-import useDimensions from 'hooks/useDimensions';
 import styles from './BarChartInfo.scss';
 
 const multiplierSet = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function BarChartInfo({ 
   data,
+  containerWidth,
+  containerHeight,
   setData,
   handleResetDataClick, 
   enableResetButton,
   isResetDisabled, 
-  containerRef,
-}) {
-  let { width, height } = useDimensions(containerRef);
-  
+}) {  
   const handleUpdateDataClick = () => {
     setData(data.map(({ label, value }) => {
       const multiplier = multiplierSet[Math.floor(Math.random() * multiplierSet.length)];
@@ -29,7 +27,7 @@ export default function BarChartInfo({
   return (
     <section 
       className={styles.BarChartInfo}
-      style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
+      style={{ width: `${containerWidth - 20}px`, height: `${containerHeight - 80}px` }}>
       <h1>
         { 'Union President Election Results' }
       </h1>

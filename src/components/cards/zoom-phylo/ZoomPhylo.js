@@ -19,7 +19,6 @@ import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 
 import { useNarrowView } from 'shared/layout/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
-import useDimensions from 'hooks/useDimensions';
 import useDropdown from 'hooks/useDropdown';
 
 import FillParent from 'shared/layout/FillParent';
@@ -48,10 +47,9 @@ const ControlButton = ({ className, text, handleClick }) => (
 );
 
 
-export default function PhyloZoom({ containerRef }) {
+export default function PhyloZoom({ containerWidth, containerHeight }) {
   const isNarrowView = useNarrowView();
   const [ref, isDropdownOpen, setIsDropdownOpen] = useDropdown();
-  let { width, height } = useDimensions(containerRef, false, true);
 
   const {
     colorFamily,
@@ -105,13 +103,18 @@ export default function PhyloZoom({ containerRef }) {
     setSizeScaleRangeMax,
   };
 
+  if(!containerWidth) return <div></div>;
 
   const points = [...new Array(numberOfPoints)];
 
   const colorScale = scaleLinear({ domain: [colorScaleDomainMin, colorScaleDomainMax], range: [colorScaleRangeMin, colorScaleRangeMax] });
   const sizeScale = scaleLinear({ domain: [0, sizeScaleDomainMax], range: [sizeScaleRangeMin, sizeScaleRangeMax] });
 
-  const generator = genPhyllotaxis({ radius: phyloRadius, width, height });
+  const generator = genPhyllotaxis({ 
+    radius: phyloRadius, 
+    width: containerWidth, 
+    height: containerHeight 
+  });
   const phyllotaxis = points.map((d, i) => generator(i));
 
 
@@ -129,13 +132,13 @@ export default function PhyloZoom({ containerRef }) {
         dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
-        menuHeight={height - 20}
+        menuHeight={containerHeight - 20}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
 
       <Zoom
-        width={width}
-        height={height}
+        width={containerWidth}
+        height={containerHeight}
         scaleXMin={1 / 2}
         scaleXMax={4}
         scaleYMin={1 / 2}
@@ -146,18 +149,18 @@ export default function PhyloZoom({ containerRef }) {
           zoom => (
             <div className="zoom-container">
               <svg
-                width={width}
-                height={height}
+                width={containerWidth}
+                height={containerHeight}
                 style={{ cursor: zoom.isDragging ? 'grabbing' : 'grab' }}>
                 
                 <RectClipPath 
                   id="zoom-clip" 
-                  width={width} 
-                  height={height} />
+                  width={containerWidth} 
+                  height={containerHeight} />
 
                 <rect 
-                  width={width} 
-                  height={height} 
+                  width={containerWidth} 
+                  height={containerHeight} 
                   rx={0} 
                   fill={backgroundColor} />
 
@@ -195,8 +198,8 @@ export default function PhyloZoom({ containerRef }) {
                 </g>
 
                 <rect
-                  width={width}
-                  height={height}
+                  width={containerWidth}
+                  height={containerHeight}
                   rx={0}
                   fill="transparent"
                   onTouchStart={zoom.dragStart}

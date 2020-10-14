@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from 'shared/components/Button';
-import useDimensions from 'hooks/useDimensions';
 import styles from './LineChartInfo.scss';
 
 
@@ -21,14 +20,13 @@ const sadButtonTextOptions = [
 
 export default function LineChartInfo({ 
   data,
+  containerWidth,
+  containerHeight,
   setData,
   handleResetDataClick, 
   enableResetButton,
   isResetDisabled, 
-  containerRef, 
-  isLandscape,
 }) {
-  let { width, height } = useDimensions(containerRef, isLandscape);
   const [textIndex, setTextIndex] = useState(null);
 
   const handleUpdateDataClick = () => {
@@ -43,7 +41,7 @@ export default function LineChartInfo({
   return (
     <section 
       className={styles.LineChartInfo}
-      style={{ width: `${width - 8}px`, height: `${height - 34}px` }}>
+      style={{ width: `${containerWidth - 8}px`, height: `${containerHeight - 34}px` }}>
       <h1>
         { 'Cumulative Ounces of Ice Cream Consumed Starting Covid Week 29' }
       </h1>
