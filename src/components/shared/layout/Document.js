@@ -15,7 +15,9 @@ class Emitter {
   }
 }
 
+
 export const DocumentContext = createContext(null);
+
 
 export default function Document({ children }) {
   const { current: emitter } = useRef(new Emitter());

@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card';
 import FillParent from 'shared/layout/FillParent';
+import Card from './Card';
 import chartsData from './cards/chartsData';
 import styles from './Cards.scss';
 

@@ -25,6 +25,7 @@ export default function BarChartInfo({
     }));
   };
 
+
   return (
     <section 
       className={styles.BarChartInfo}
@@ -46,7 +47,6 @@ export default function BarChartInfo({
       </section>
 
       <div className="button-container" >
-
         <Button
           className="data-button update"
           text="Update Votes"
@@ -63,7 +63,6 @@ export default function BarChartInfo({
           handleClick={() => handleResetDataClick()}
           isVisible={true} 
           isEnabled={!isResetDisabled}/>
-          
       </div> 
     </section>
   );

@@ -3,7 +3,13 @@ import styles from './Card.scss';
 
 
 
-export default function Card({ Visualization, Info, data, isLandscape, isZoom }) {
+export default function Card({ 
+  Visualization, 
+  Info, 
+  data, 
+  isLandscape, 
+  isZoom 
+}) {
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
@@ -19,7 +25,9 @@ export default function Card({ Visualization, Info, data, isLandscape, isZoom })
 
 
   return (
-    <section className={`${styles.Card} ${isLandscape ? 'landscape' : ''}`} ref={containerRef}>
+    <section 
+      className={`${styles.Card} ${isLandscape ? 'landscape' : ''}`} 
+      ref={containerRef}>
       {
         isZoom 
           ? <section className={`content ${isZoom ? 'is-zoom' : ''}`} > 

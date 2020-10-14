@@ -15,7 +15,6 @@ export default function useCustomization() {
     sizeScaleRangeMax: 8,
   };
 
-
   const [colorFamily, setColorFamily] = useState(initialState.colorFamily);
   const [backgroundColor, setBackgroundColor] = useState(initialState.backgroundColor);
 
@@ -30,6 +29,19 @@ export default function useCustomization() {
   const [sizeScaleDomainMax, setSizeScaleDomainMax] = useState(initialState.sizeScaleDomainMax);
   const [sizeScaleRangeMin, setSizeScaleRangeMin] = useState(initialState.sizeScaleRangeMin);
   const [sizeScaleRangeMax, setSizeScaleRangeMax] = useState(initialState.sizeScaleRangeMax);
+  
+  const isInitialState = 
+  initialState.colorFamily == colorFamily &&
+  initialState.backgroundColor == backgroundColor &&
+  initialState.numberOfPoints == numberOfPoints &&
+  initialState.phyloRadius == phyloRadius &&
+  initialState.colorScaleDomainMin == colorScaleDomainMin &&
+  initialState.colorScaleDomainMax == colorScaleDomainMax &&
+  initialState.colorScaleRangeMin == colorScaleRangeMin &&
+  initialState.colorScaleRangeMax == colorScaleRangeMax &&
+  initialState.sizeScaleDomainMax == sizeScaleDomainMax &&
+  initialState.sizeScaleRangeMin == sizeScaleRangeMin &&
+  initialState.sizeScaleRangeMax == sizeScaleRangeMax;
 
   const resetState = () => {
     setColorFamily(initialState.colorFamily);
@@ -44,19 +56,7 @@ export default function useCustomization() {
     setSizeScaleRangeMin(initialState.sizeScaleRangeMin);
     setSizeScaleRangeMax(initialState.sizeScaleRangeMax);
   };
-  
-  const isInitialState = 
-  initialState.colorFamily == colorFamily &&
-  initialState.backgroundColor == backgroundColor &&
-  initialState.numberOfPoints == numberOfPoints &&
-  initialState.phyloRadius == phyloRadius &&
-  initialState.colorScaleDomainMin == colorScaleDomainMin &&
-  initialState.colorScaleDomainMax == colorScaleDomainMax &&
-  initialState.colorScaleRangeMin == colorScaleRangeMin &&
-  initialState.colorScaleRangeMax == colorScaleRangeMax &&
-  initialState.sizeScaleDomainMax == sizeScaleDomainMax &&
-  initialState.sizeScaleRangeMin == sizeScaleRangeMin &&
-  initialState.sizeScaleRangeMax == sizeScaleRangeMax;
+
 
   return {
     colorFamily,
@@ -81,8 +81,8 @@ export default function useCustomization() {
     setSizeScaleRangeMin,
     sizeScaleRangeMax,
     setSizeScaleRangeMax,
-    resetState,
     isInitialState,
+    resetState,
   };
 
 }
