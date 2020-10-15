@@ -4,9 +4,6 @@ import { scaleBand, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { Bar as VXBar } from '@vx/shape';
 
-const xDataAccessor = d => d.label;
-const yDataAccessor = d => d.value;
-
 
 export default function BarChart({ 
   data,
@@ -76,8 +73,14 @@ export default function BarChart({
           label="Candidate" 
           scale={xScale} 
           top={yMax}
-          labelOffset={15} />
+          labelOffset={15} 
+          hideTicks={true}/>
       </Group>
     </svg>
   );
 }
+
+
+
+const xDataAccessor = d => d.label;
+const yDataAccessor = d => d.value;

@@ -3,11 +3,7 @@ import { Group } from '@vx/group';
 import { scaleTime, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { LinePath } from '@vx/shape';
-import { curveLinear } from '@vx/curve';
-
-
-const xDataAccessor = d => new Date(d.date).valueOf();
-const yDataAccessor = d => d.ounces;
+import { curveMonotoneX } from '@vx/curve';
 
 
 export default function LineChart({ 
@@ -65,7 +61,7 @@ export default function LineChart({
 
         <LinePath
           data={data}
-          curve={curveLinear}
+          curve={curveMonotoneX}
           x={datum => xScale(xDataAccessor(datum))}
           y={datum => yScale(yDataAccessor(datum))}
           stroke="rgba(160, 116, 196, 0.69)"
@@ -74,3 +70,8 @@ export default function LineChart({
     </svg>
   );
 }
+
+
+
+const xDataAccessor = d => new Date(d.date).valueOf();
+const yDataAccessor = d => d.ounces;
