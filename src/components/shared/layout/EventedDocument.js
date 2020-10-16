@@ -19,7 +19,7 @@ class Emitter {
 export const DocumentContext = createContext(null);
 
 
-export default function Document({ children }) {
+export default function EventedDocument({ children }) {
   const [emitter] = useState(new Emitter());
 
   return (

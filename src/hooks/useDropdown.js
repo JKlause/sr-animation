@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useContext } from 'react';
-import { DocumentContext } from 'shared/layout/Document';
+import { DocumentContext } from 'shared/layout/EventedDocument';
 
 export default function useDropdown(initial = false) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(initial);
