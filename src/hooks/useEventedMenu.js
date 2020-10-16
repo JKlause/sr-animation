@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, useContext } from 'react';
-import { DocumentContext } from 'shared/layout/EventedDocument';
+import { DocumentContext } from '../EventedDocument';
 
 export default function useEventedMenu(initial = false) {
   const [isOpen, setIsOpen] = useState(initial);
-  const register = useContext(DocumentContext);
+  const registerListener = useContext(DocumentContext);
   const ref = useRef();
 
   const handleClick = e => {
@@ -14,7 +14,7 @@ export default function useEventedMenu(initial = false) {
   
   useEffect(() => {
     if(!isOpen) return;
-    return register(handleClick);
+    return registerListener(handleClick);
   }, [isOpen]);
 
   return [ref, isOpen, setIsOpen];
