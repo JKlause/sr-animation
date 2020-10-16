@@ -1,7 +1,7 @@
 import React from 'react';
 import FillParent from 'shared/layout/FillParent';
 import VisualizationCard from './VisualizationCard';
-import chartsData from './visualization-cards/chartsData';
+import chartsData from './visualization-cards/visualizationCardsData';
 import styles from './VisualizationCards.scss';
 
 
