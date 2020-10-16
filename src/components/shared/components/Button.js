@@ -25,7 +25,9 @@ export default function Button({ className = '', text, handleClick, isVisible, n
       onMouseLeave={() => {
         if(isClicked) setIsClicked(false);
       }}>
+
       { text }
+      
     </button>
   );
 }

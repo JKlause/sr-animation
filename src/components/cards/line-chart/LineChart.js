@@ -4,18 +4,19 @@ import { scaleTime, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { LinePath } from '@vx/shape';
 import { curveLinear } from '@vx/curve';
-import useDimensions from 'hooks/useDimensions';
 
 
 const xDataAccessor = d => new Date(d.date).valueOf();
 const yDataAccessor = d => d.ounces;
 
 
-export default function LineChart({ data, containerRef, isLandscape }) {
-  let { width, height } = useDimensions(containerRef, isLandscape);
-
-  width =  width < 273 ? 273 : width;
-  height = height < 137 ? 137 : height;
+export default function LineChart({ 
+  data, 
+  containerWidth,
+  containerHeight,
+}) {
+  const width =  containerWidth < 273 ? 273 : containerWidth;
+  const height = containerHeight < 137 ? 137 : containerHeight;
 
   const xMax = width > 0 ? width - 80 : 10;
   const yMax = height > 0 ? height - 80 : 10;

@@ -7,7 +7,7 @@ export default function useDimensions(ref, isLandscape, isFillParent) {
   });
 
 
-  const ro = new ResizeObserver(entries => {
+  const resizeObserver = new ResizeObserver(entries => {
     for(let entry of entries) {
       const cr = entry.contentRect;
 
@@ -36,7 +36,7 @@ export default function useDimensions(ref, isLandscape, isFillParent) {
 
 
   useLayoutEffect(() => {
-    if(ref && ref.current) ro.observe(ref.current);
+    if(ref && ref.current) resizeObserver.observe(ref.current);
   }, [ref.current]);
 
   

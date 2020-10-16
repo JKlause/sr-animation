@@ -12,7 +12,14 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
         {'This site was written using React.js, Sass, the @vx library, D3, Material-UI, and a plethora of custom hooks, animations and transitions.'}
       </p>
       <p>
-        {'It is deployed on Heroku, served up with a simple express server, built in VSCode utilizing Github, and was written over the weekend of 9/25/2020.'}
+        {'It is deployed on Heroku, served up with a simple express server, and built in VSCode. The '}
+        <a
+          href="https://github.com/JKlause/sr-animation"
+          target="_blank"
+          rel="noopener noreferrer">
+          {'source code'}
+        </a>
+        {' is available on GitHub, and was written primarily over the weekend of 9/25/2020.'}
       </p>
       <p>
         {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx '}

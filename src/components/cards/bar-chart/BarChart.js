@@ -3,18 +3,19 @@ import { Group } from '@vx/group';
 import { scaleBand, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { Bar as VXBar } from '@vx/shape';
-import useDimensions from 'hooks/useDimensions';
-
 
 const xDataAccessor = d => d.label;
 const yDataAccessor = d => d.value;
 
 
-export default function BarChart({ data, containerRef }) {
-  let { width, height } = useDimensions(containerRef);
+export default function BarChart({ 
+  data,
+  containerWidth,
+  containerHeight,
+}) {
 
-  width =  width < 273 ? 273 : width;
-  height = height < 137 ? 137 : height;
+  const width =  containerWidth < 273 ? 273 : containerWidth;
+  const height = containerHeight < 137 ? 137 : containerHeight;
 
   const xMax = width > 0 ? width - 80 : 10;
   const yMax = height > 0 ? height - 80 : 10;

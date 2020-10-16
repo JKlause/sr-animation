@@ -8,6 +8,7 @@
   height: fit-content;
   width: 300px;
   
+  border-radius: 0 0 8px 8px;
   background: $aboutMeTeal;
 
   transform-origin: top right;
@@ -15,10 +16,11 @@
   
   .dropdown-content {
     min-height: 140px;
-    max-height: 260px;
+    max-height: 308px;
 
     padding: 20px 20px 10px;
 
+    border-radius: 0 0 8px 8px;
     border: 2px solid $aboutMeTeal;
     border-top: none;
     box-shadow: 0px 12px 12px 3px $boxShadowColor;
