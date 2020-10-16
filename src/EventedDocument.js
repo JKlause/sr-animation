@@ -16,7 +16,6 @@ export default function EventedDocument({ children }) {
 }
 
 
-
 class Emitter {
   listeners = new Set();
 
