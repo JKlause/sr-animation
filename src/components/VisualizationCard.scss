@@ -27,7 +27,7 @@
       margin-top: 80px;
     }
     
-    &.is-zoom {
+    &.is-fill-parent {
       @include narrow-view {
         width: calc(100% - 150px);
       }

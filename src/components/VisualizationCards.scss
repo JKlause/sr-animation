@@ -3,7 +3,7 @@
 :local(.VisualizationCards) {
   display: grid;
   grid-template-columns: repeat(4, 100%);
-  grid-gap: 100px;
+  grid-gap: 200px;
   
   transition: margin-left .5s ease-in-out;
 

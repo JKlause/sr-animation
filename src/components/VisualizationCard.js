@@ -9,12 +9,12 @@ export default function VisualizationCard({
   Info, 
   data, 
   isLandscape, 
-  isZoom 
+  isFillParent 
 }) {
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
-  const { width, height } = useDimensions(containerRef, isLandscape, isZoom);
+  const { width, height } = useDimensions(containerRef, isLandscape, isFillParent);
 
   
   const enableResetButton = () => {
@@ -32,8 +32,8 @@ export default function VisualizationCard({
       className={`${styles.VisualizationCard} ${isLandscape ? 'landscape' : ''}`} 
       ref={containerRef}>
       {
-        isZoom 
-          ? <section className={`content ${isZoom ? 'is-zoom' : ''}`} > 
+        isFillParent 
+          ? <section className={`content ${isFillParent ? 'is-fill-parent' : ''}`} > 
               <Visualization 
                 containerWidth={width}
                 containerHeight={height}/>

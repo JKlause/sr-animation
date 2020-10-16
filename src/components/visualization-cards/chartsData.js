@@ -11,7 +11,6 @@ export default [
     Visualization: BarChart,
     Info: BarChartInfo,
     data: barChartData,
-    isLandscape: false,
   },
   {
     Visualization: LineChart,
@@ -21,7 +20,6 @@ export default [
   },
   {
     Visualization: ZoomPhylo,
-    isLandscape: false,
-    isZoom: true,
+    isFillParent: true,
   }
 ];
