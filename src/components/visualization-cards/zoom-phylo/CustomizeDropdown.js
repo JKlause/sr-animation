@@ -88,7 +88,7 @@ export default function CustomizeDropdown({
           value={backgroundColor}
           onChange={({ target }) => setBackgroundColor(target.value)}>
           <option value={'transparent'}>{'Website Teal'}</option>
-          <option value={'rgb(73,73,208)'}>{'Website Purple'}</option>
+          <option value={'#4949D0'}>{'Website Purple'}</option>
           <option value={'#FFFAFA'}>{'Snow White'}</option>
           <option value={'#8e1e1d'}>{'Lipstick Red'}</option>
           <option value={'#228B22'}>{'Forest Green'}</option>
