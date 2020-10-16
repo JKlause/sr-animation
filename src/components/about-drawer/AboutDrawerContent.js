@@ -50,12 +50,12 @@ export default function AboutDrawerContent() {
           {' (both are square space sites so they don\'t count… also my MusicWithJoe hasn\'t been updated in a minute).'}
         </p>
         <p>
-          {'Anyway, after a few years of running around like a chicken missing it\'s head (see '}
+          {'Anyway, after a few years of running around like a chicken missing it\'s head (see incredibly relevant '}
           <a
             href="https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken#:~:text=Mike%20the%20Headless%20Chicken%20(April,head%20had%20been%20cut%20off."
             target="_blank"
             rel="noopener noreferrer">
-            {'incredibly important wiki article'}
+            {'wiki article'}
           </a>
           {'), I decided to find something that fulfilled my love of problem solving, systems management, math, community, and stability while also leaving me time to continue pursuing what brings joy to my heart. The answer: coding.'}
         </p>
