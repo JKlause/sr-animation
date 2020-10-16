@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import styles from './Button.scss';
 
-export default function Button({ className = '', text, handleClick, isVisible, noClickAnimation, isEnabled }) {
+export default function Button({ 
+  className = '', 
+  text, 
+  handleClick, 
+  isVisible, 
+  noClickAnimation, 
+  isEnabled,
+}) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClickStart = () => {

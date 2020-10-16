@@ -1,11 +1,9 @@
 @import 'styles/variables.scss';
 
-:local(.Cards) {
+:local(.VisualizationCards) {
   display: grid;
   grid-template-columns: repeat(4, 100%);
   grid-gap: 100px;
-  
-  margin-right: calc(100% * -3);
   
   transition: margin-left .5s ease-in-out;
 

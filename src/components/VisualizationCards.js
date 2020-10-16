@@ -1,20 +1,20 @@
 import React from 'react';
 import FillParent from 'shared/layout/FillParent';
-import Card from './Card';
-import chartsData from './cards/chartsData';
-import styles from './Cards.scss';
+import VisualizationCard from './VisualizationCard';
+import chartsData from './visualization-cards/chartsData';
+import styles from './VisualizationCards.scss';
 
 
-export default function Cards({ displayIndex }) {
+export default function VisualizationCards({ displayIndex }) {
   const pageStyle = { marginLeft: `calc((-1 * ${displayIndex} * 100%) - (100px * ${displayIndex}))` };
 
 
   return (
-    <FillParent tag="section" className={styles.Cards} style={pageStyle}>
+    <FillParent tag="section" className={styles.VisualizationCards} style={pageStyle}>
       <div className="title-placeholder" />
       {
         chartsData.map(({ Visualization, Info, data, isLandscape, isZoom }, i) => (
-          <Card 
+          <VisualizationCard 
             key={`card-${i}`}
             Visualization={Visualization}
             Info={Info}

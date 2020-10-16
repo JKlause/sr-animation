@@ -29,7 +29,7 @@ export default function BarChartInfo({
       className={styles.BarChartInfo}
       style={{ width: `${containerWidth - 20}px`, height: `${containerHeight - 80}px` }}>
       <h1>
-        { 'Union President Election Results' }
+        { 'Most Loved Alchemy Staff Member' }
       </h1>
       
       <section className="sample-data">

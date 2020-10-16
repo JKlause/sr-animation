@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 import useDimensions from 'hooks/useDimensions';
-import styles from './Card.scss';
+import styles from './VisualizationCard.scss';
 
 
 
-export default function Card({ 
+export default function VisualizationCard({ 
   Visualization, 
   Info, 
   data, 
@@ -29,7 +29,7 @@ export default function Card({
 
   return (
     <section 
-      className={`${styles.Card} ${isLandscape ? 'landscape' : ''}`} 
+      className={`${styles.VisualizationCard} ${isLandscape ? 'landscape' : ''}`} 
       ref={containerRef}>
       {
         isZoom 

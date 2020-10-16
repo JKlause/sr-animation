@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { 
   interpolateBuPu,
   interpolateBrBG,
@@ -19,7 +19,6 @@ import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 
 import { useNarrowView } from 'shared/layout/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
-import useDropdown from 'hooks/useDropdown';
 
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
@@ -49,7 +48,7 @@ const ControlButton = ({ className, text, handleClick }) => (
 
 export default function PhyloZoom({ containerWidth, containerHeight }) {
   const isNarrowView = useNarrowView();
-  const [ref, isDropdownOpen, setIsDropdownOpen] = useDropdown();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const {
     colorFamily,
@@ -131,7 +130,6 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
 
       <CustomizeDropdown
-        dropdownRef={ref}
         isOpen={isDropdownOpen} 
         state={dropdownState}
         menuHeight={containerHeight - 20}
