@@ -11,10 +11,11 @@ export default function Footer({
   openAboutDrawer,
   closeAboutDrawer,
 }) {
-  const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
-  const [areNavButtonsVisible, setAreNavButtonsVisible] = useState(false);
-  const [isAboutButtonVisible, setIsAboutButtonVisible] = useState(false);
   const [isNoBeginButtonClickAnimation, setIsNoBeginButtonClickAnimation] = useState(false);
+  
+  const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
+  const [isAboutButtonVisible, setIsAboutButtonVisible] = useState(false);
+  const [areNavButtonsVisible, setAreNavButtonsVisible] = useState(false);
 
   const isPreviousButtonDisabled = displayIndex === 1 || isAboutDrawerOpen;
   const isNextButtonDisabled = displayIndex === 3 || isAboutDrawerOpen;
@@ -40,6 +41,19 @@ export default function Footer({
   }, [displayIndex]);
 
 
+  const handleBeginButtonClick = () => {
+    setIsNoBeginButtonClickAnimation(true);
+    moveTitle();
+
+    setTimeout(() => {
+      setIsBeginButtonVisible(false);
+    }, 150);
+    
+    setTimeout(() => {
+      setDisplayIndex(1);
+    }, 800);
+  };
+
   const handlePreviousButtonClick = () => {
     if(isPreviousButtonDisabled) return;
     setDisplayIndex(--displayIndex);
@@ -54,19 +68,6 @@ export default function Footer({
     isAboutDrawerOpen 
       ? closeAboutDrawer()
       : openAboutDrawer();
-  };
-
-  const handleBeginButtonClick = () => {
-    setIsNoBeginButtonClickAnimation(true);
-    moveTitle();
-
-    setTimeout(() => {
-      setIsBeginButtonVisible(false);
-    }, 150);
-    
-    setTimeout(() => {
-      setDisplayIndex(1);
-    }, 800);
   };
 
 
