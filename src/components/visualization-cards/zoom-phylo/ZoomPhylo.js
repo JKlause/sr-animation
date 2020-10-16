@@ -37,7 +37,7 @@ const initialTransform = {
 };
 
 
-export default function PhyloZoom({ containerWidth, containerHeight }) {
+export default function PhyloZoom({ width, height }) {
   const isNarrowView = useNarrowView();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -94,7 +94,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
   };
 
 
-  if(!containerWidth) return <div></div>;
+  if(!width) return <div></div>;
 
   const points = [...new Array(numberOfPoints)];
 
@@ -110,8 +110,8 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
 
   const generator = genPhyllotaxis({ 
     radius: phyloRadius, 
-    width: containerWidth, 
-    height: containerHeight 
+    width: width, 
+    height: height 
   });
 
   const phyllotaxis = points.map((d, i) => generator(i));
@@ -130,13 +130,13 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
       <CustomizeDropdown
         isOpen={isDropdownOpen} 
         state={dropdownState}
-        menuHeight={containerHeight - 20}
+        menuHeight={height - 20}
         handleResetClick={() => resetState()}
         isResetEnabled={!isInitialState}/>
 
       <Zoom
-        width={containerWidth}
-        height={containerHeight}
+        width={width}
+        height={height}
         scaleXMin={1 / 2}
         scaleXMax={4}
         scaleYMin={1 / 2}
@@ -147,18 +147,18 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
           zoom => (
             <div className="zoom-container">
               <svg
-                width={containerWidth}
-                height={containerHeight}
+                width={width}
+                height={height}
                 style={{ cursor: zoom.isDragging ? 'grabbing' : 'grab' }}>
                 
                 <RectClipPath 
                   id="zoom-clip" 
-                  width={containerWidth} 
-                  height={containerHeight} />
+                  width={width} 
+                  height={height} />
 
                 <rect 
-                  width={containerWidth} 
-                  height={containerHeight} 
+                  width={width} 
+                  height={height} 
                   rx={0} 
                   fill={backgroundColor} />
 
@@ -196,8 +196,8 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
                 </g>
                 
                 <rect
-                  width={containerWidth}
-                  height={containerHeight}
+                  width={width}
+                  height={height}
                   rx={0}
                   fill="transparent"
                   onTouchStart={zoom.dragStart}

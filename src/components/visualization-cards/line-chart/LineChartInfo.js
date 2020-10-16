@@ -20,8 +20,8 @@ const sadButtonTextOptions = [
 
 export default function LineChartInfo({ 
   data,
-  containerWidth,
-  containerHeight,
+  width,
+  height,
   setData,
   handleResetDataClick, 
   enableResetButton,
@@ -41,7 +41,7 @@ export default function LineChartInfo({
   return (
     <section 
       className={styles.LineChartInfo}
-      style={{ width: `${containerWidth - 8}px`, height: `${containerHeight - 34}px` }}>
+      style={{ width: `${width - 8}px`, height: `${height - 34}px` }}>
       <h1>
         { 'Cumulative Ounces of Ice Cream Consumed Starting Covid Week 29' }
       </h1>

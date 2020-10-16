@@ -1,7 +1,7 @@
 import React from 'react';
 import FillParent from 'shared/layout/FillParent';
 import VisualizationCard from './VisualizationCard';
-import chartsData from './visualization-cards/visualizationCardsData';
+import visualizationCardsData from './visualization-cards/visualizationCardsData';
 import styles from './VisualizationCards.scss';
 
 
@@ -13,7 +13,15 @@ export default function VisualizationCards({ displayIndex }) {
     <FillParent tag="section" className={styles.VisualizationCards} style={pageStyle}>
       <div className="title-placeholder" />
       {
-        chartsData.map(({ Visualization, Info, data, isFillParent, isLandscape, isPortrait }, i) => (
+        visualizationCardsData.map(({ 
+          Visualization, 
+          Info, 
+          data, 
+          isFillParent, 
+          isLandscape, 
+          isPortrait, 
+        }, i) => (
+          
           <VisualizationCard 
             key={`card-${i}`}
             Visualization={Visualization}

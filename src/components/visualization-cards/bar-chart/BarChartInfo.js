@@ -8,8 +8,8 @@ const multiplierSet = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 export default function BarChartInfo({ 
   data,
-  containerWidth,
-  containerHeight,
+  width,
+  height,
   setData,
   handleResetDataClick, 
   enableResetButton,
@@ -30,7 +30,7 @@ export default function BarChartInfo({
   return (
     <section 
       className={styles.BarChartInfo}
-      style={{ width: `${containerWidth - 20}px`, height: `${containerHeight - 80}px` }}>
+      style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
       <h1>
         { 'Most Loved Alchemy Staff Member' }
       </h1>
