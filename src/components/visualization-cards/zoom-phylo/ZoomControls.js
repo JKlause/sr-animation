@@ -6,10 +6,10 @@ import styles from './ZoomControls.scss';
 const ControlButton = ({ className, text, handleClick }) => (
   <Button 
     className={className} 
+    text={text}
     handleClick={() => handleClick()}
     isVisible={true}
-    isEnabled={true}
-    text={text}/>
+    isEnabled={true}/>
 );
 
 
