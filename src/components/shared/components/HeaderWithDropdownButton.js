@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNarrowView } from 'shared/layout/useMedia';
+import { useNarrowView } from 'hooks/useMedia';
 import styles from './HeaderWithDropdownButton.scss';
 
 

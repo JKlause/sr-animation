@@ -17,7 +17,7 @@ import { RectClipPath } from '@vx/clip-path';
 import { scaleLinear } from '@vx/scale';
 import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 
-import { useNarrowView } from 'shared/layout/useMedia';
+import { useNarrowView } from 'hooks/useMedia';
 import useCustomizations from 'hooks/useCustomizations';
 
 import FillParent from 'shared/layout/FillParent';
@@ -107,8 +107,15 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
 
   const points = [...new Array(numberOfPoints)];
 
-  const colorScale = scaleLinear({ domain: [colorScaleDomainMin, colorScaleDomainMax], range: [colorScaleRangeMin, colorScaleRangeMax] });
-  const sizeScale = scaleLinear({ domain: [0, sizeScaleDomainMax], range: [sizeScaleRangeMin, sizeScaleRangeMax] });
+  const colorScale = scaleLinear({ 
+    domain: [colorScaleDomainMin, colorScaleDomainMax], 
+    range: [colorScaleRangeMin, colorScaleRangeMax] 
+  });
+
+  const sizeScale = scaleLinear({ 
+    domain: [0, sizeScaleDomainMax], 
+    range: [sizeScaleRangeMin, sizeScaleRangeMax] 
+  });
 
   const generator = genPhyllotaxis({ 
     radius: phyloRadius, 
