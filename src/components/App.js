@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useDropdown from 'hooks/useDropdown';
 import Header from './Header';
 import VisualizationCards from './VisualizationCards';
 import Footer from './Footer';
@@ -8,7 +9,7 @@ import styles from './App.scss';
 
 export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
-  const [isAboutDrawerOpen, setIsAboutDrawerOpen] = useState(false);
+  const [ref, isAboutDrawerOpen, setIsAboutDrawerOpen] = useDropdown();
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
@@ -40,7 +41,7 @@ export default function App() {
 
       { 
         isAboutDrawerRendered &&
-          <AboutDrawer isOpen={isAboutDrawerOpen}/>
+          <AboutDrawer aboutDrawerRef={ref} isOpen={isAboutDrawerOpen}/>
       }
 
     </section>

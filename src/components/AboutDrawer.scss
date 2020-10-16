@@ -4,6 +4,9 @@
   position: absolute;
   left: 0;
   right: 0;
+
+  height: 100%;
+  width: 100%;
   
   // -20px for box shadow
   bottom: calc(-#{$aboutDrawerHeight} - 20px);
