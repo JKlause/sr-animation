@@ -23,8 +23,8 @@ import useCustomizations from 'hooks/useCustomizations';
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import CustomizeDropdown from './CustomizeDropdown';
-import Button from 'shared/components/Button';
 import styles from './ZoomPhylo.scss';
+import ZoomControls from './ZoomControls';
 
 
 const initialTransform = {
@@ -35,15 +35,6 @@ const initialTransform = {
   skewX: 0,
   skewY: 0,
 };
-
-const ControlButton = ({ className, text, handleClick }) => (
-  <Button 
-    className={className} 
-    handleClick={() => handleClick()}
-    isVisible={true}
-    isEnabled={true}
-    text={text}/>
-);
 
 
 export default function PhyloZoom({ containerWidth, containerHeight }) {
@@ -203,7 +194,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
                     ))
                   }
                 </g>
-
+                
                 <rect
                   width={containerWidth}
                   height={containerHeight}
@@ -224,33 +215,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
                   }}/>
               </svg>
 
-              <section className="controls">
-                <div className="increments">
-                  <ControlButton
-                    className="button-zoom"
-                    text="+"
-                    handleClick={() => zoom.scale({ scaleX: 1.2, scaleY: 1.2 })} />
-                  <ControlButton
-                    className="button-zoom minus"
-                    text="-"
-                    handleClick={() => zoom.scale({ scaleX: 0.8, scaleY: 0.8 })}/>
-                </div>
-
-                <ControlButton
-                  className="button-text" 
-                  text="Center"
-                  handleClick={zoom.center}/>
-
-                <ControlButton
-                  className="button-text"
-                  text="Reset"
-                  handleClick={zoom.reset}/>
-
-                <ControlButton
-                  className="button-text"
-                  text="Clear" 
-                  handleClick={zoom.clear}/>
-              </section>
+              <ZoomControls zoom={zoom} />
             </div>
           )
         }

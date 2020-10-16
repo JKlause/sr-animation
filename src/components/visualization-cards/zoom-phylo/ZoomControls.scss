@@ -1,0 +1,56 @@
+@import 'styles/variables.scss';
+
+:local(.ZoomControls) {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+      
+
+  button {
+    height: 25px;
+
+    margin: 0;
+    padding: 0 4px;
+    
+    background: $buttonPurple;
+    box-shadow: 3px 3px 3px 0px $boxShadowColor;
+    border-radius: $borderRadius;
+    
+    text-align: center;
+    font-family: $semiBold;
+
+    &.on-click {
+      box-shadow: none;
+    }
+  }
+    
+  .increments {
+    display: flex;
+    
+    .button-zoom {
+      width: 24px;
+      margin-right: 2px;
+      
+      font-size: 22px;
+      
+      &.minus {
+        margin: 0 0 0 2px;
+
+        line-height: 20px;
+      }
+    }
+  }
+  
+  .button-text {
+    width: 52px;
+    
+    margin-top: 4px;
+    padding: 4px;
+    
+    font-size: 12px;
+  }
+}
