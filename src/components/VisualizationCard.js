@@ -11,6 +11,7 @@ export default function VisualizationCard({
   isLandscape, 
   isFillParent 
 }) {
+  
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();

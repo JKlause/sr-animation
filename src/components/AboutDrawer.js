@@ -8,7 +8,6 @@ import styles from './AboutDrawer.scss';
 export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
   const [ref, isDropdownOpen, setIsDropdownOpen] = useEventedMenu();
 
-
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
       <section ref={aboutDrawerRef} className="content-container">
@@ -22,6 +21,7 @@ export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
         <AboutDrawerDropdown isOpen={isDropdownOpen} dropdownRef={ref}/>
 
         <AboutDrawerContent />
+        
       </section>
     </section>
   );

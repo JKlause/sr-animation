@@ -11,6 +11,7 @@ export default function Footer({
   openAboutDrawer,
   closeAboutDrawer,
 }) {
+  
   const [isNoBeginButtonClickAnimation, setIsNoBeginButtonClickAnimation] = useState(false);
   
   const [isBeginButtonVisible, setIsBeginButtonVisible] = useState(false);
