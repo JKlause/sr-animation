@@ -4,10 +4,6 @@ import Slider from '@material-ui/core/Slider';
 import styles from './Slider.scss';
 
 
-function valueText(value) {
-  return `${value}`;
-}
-
 export default function RangeSlider({ 
   label, 
   minValue,
@@ -43,4 +39,9 @@ export default function RangeSlider({
         getAriaValueText={valueText}/>
     </div>
   );
+}
+
+
+function valueText(value) {
+  return `${value}`;
 }

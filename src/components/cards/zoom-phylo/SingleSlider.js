@@ -4,10 +4,6 @@ import Slider from '@material-ui/core/Slider';
 import styles from './Slider.scss';
 
 
-function valueText(value) {
-  return `${value}`;
-}
-
 export default function SingleSlider({ 
   label, 
   minValue,
@@ -38,4 +34,9 @@ export default function SingleSlider({
         getAriaValueText={valueText}/>
     </div>
   );
+}
+
+
+function valueText(value) {
+  return `${value}`;
 }

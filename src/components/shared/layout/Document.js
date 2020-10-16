@@ -24,7 +24,7 @@ export default function Document({ children }) {
 
   return (
     <DocumentContext.Provider value={listener => emitter.register(listener)}>
-      <div id="evented-document" onClick={e => emitter.emit(e)}>
+      <div onClick={e => emitter.emit(e)}>
         {children}
       </div>
     </DocumentContext.Provider>

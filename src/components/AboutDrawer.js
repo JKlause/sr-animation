@@ -1,9 +1,9 @@
 import React from 'react';
+import useDropdown from 'hooks/useDropdown';
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import AboutDrawerContent from './about-drawer/AboutDrawerContent';
 import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
-import useDropdown from 'hooks/useDropdown';
 import styles from './AboutDrawer.scss';
 
 export default function AboutDrawer({ isOpen }) {

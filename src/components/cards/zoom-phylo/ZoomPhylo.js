@@ -103,6 +103,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
     setSizeScaleRangeMax,
   };
 
+
   if(!containerWidth) return <div></div>;
 
   const points = [...new Array(numberOfPoints)];
@@ -115,6 +116,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
     width: containerWidth, 
     height: containerHeight 
   });
+
   const phyllotaxis = points.map((d, i) => generator(i));
 
 
@@ -247,9 +249,7 @@ export default function PhyloZoom({ containerWidth, containerHeight }) {
             </div>
           )
         }
-
       </Zoom>
-
     </FillParent>
   );
 }
