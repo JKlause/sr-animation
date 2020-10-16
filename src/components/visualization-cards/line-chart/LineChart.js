@@ -4,6 +4,7 @@ import { scaleTime, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { LinePath } from '@vx/shape';
 import { curveMonotoneX } from '@vx/curve';
+import { chartDataPink } from 'styles/variables';
 
 
 
@@ -56,8 +57,8 @@ export default function LineChart({
               r={5}
               cx={xScale(xDataAccessor(point))}
               cy={yScale(yDataAccessor(point))}
-              stroke="rgba(160, 116, 196, 0.69)"
-              fill="rgba(160, 116, 196, 0.69)"
+              stroke={chartDataPink}
+              fill={chartDataPink}
               fillOpacity={.9}
             />
           ))
@@ -68,7 +69,7 @@ export default function LineChart({
           curve={curveMonotoneX}
           x={datum => xScale(xDataAccessor(datum))}
           y={datum => yScale(yDataAccessor(datum))}
-          stroke="rgba(160, 116, 196, 0.69)"
+          stroke={chartDataPink}
           strokeWidth={3} />
       </Group>
     </svg>

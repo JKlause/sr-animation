@@ -3,6 +3,7 @@ import { Group } from '@vx/group';
 import { scaleBand, scaleLinear } from '@vx/scale';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { Bar as VXBar } from '@vx/shape';
+import { chartDataPink } from 'styles/variables';
 
 
 
@@ -40,7 +41,7 @@ export default function BarChart({
       y={y}
       width={width}
       height={height}
-      fill="rgba(160, 116, 196, 0.69)"
+      fill={chartDataPink}
       bottom={0}/>
   );
 
