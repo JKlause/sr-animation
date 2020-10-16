@@ -17,7 +17,7 @@ export default function BarChart({
 }) {
 
   const width =  containerWidth < 273 ? 273 : containerWidth;
-  const height = containerHeight;
+  const height = containerHeight < 100 ? 100 : containerHeight;
 
   const xMax = width > 0 ? width - 80 : 10;
   const yMax = height > 0 ? height - 80 : 10;

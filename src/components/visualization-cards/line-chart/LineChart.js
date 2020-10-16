@@ -16,7 +16,7 @@ export default function LineChart({
   containerWidth,
   containerHeight,
 }) {
-  const width =  containerWidth;
+  const width =  containerWidth < 100 ? 100 : containerWidth;
   const height = containerHeight < 137 ? 137 : containerHeight;
 
   const xMax = width > 0 ? width - 80 : 10;
