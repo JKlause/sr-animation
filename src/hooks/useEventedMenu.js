@@ -7,9 +7,7 @@ export default function useEventedMenu(initial = false) {
   const ref = useRef();
 
   const handleClick = e => {
-    if(!ref.current.contains(e.target)){
-      setIsOpen(false);
-    }
+    if(!ref.current.contains(e.target)) setIsOpen(false);
   };
   
   useEffect(() => {
