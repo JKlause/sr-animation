@@ -1,21 +1,5 @@
 import React, { createContext, useState } from 'react';
 
-
-export const DocumentContext = createContext(null);
-
-export default function EventedDocument({ children }) {
-  const [emitter] = useState(new Emitter());
-
-  return (
-    <DocumentContext.Provider value={listener => emitter.register(listener)}>
-      <div onClick={e => emitter.emit(e)}>
-        {children}
-      </div>
-    </DocumentContext.Provider>
-  );
-}
-
-
 class Emitter {
   listeners = new Set();
 
@@ -29,4 +13,20 @@ class Emitter {
       listener(event);
     }
   }
+}
+
+
+export const DocumentContext = createContext(null);
+
+
+export default function EventedDocument({ children }) {
+  const [emitter] = useState(new Emitter());
+
+  return (
+    <DocumentContext.Provider value={listener => emitter.register(listener)}>
+      <div onClick={e => emitter.emit(e)}>
+        {children}
+      </div>
+    </DocumentContext.Provider>
+  );
 }
