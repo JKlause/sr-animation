@@ -1,11 +1,19 @@
 import { useState, useLayoutEffect } from 'react';
 
-export default function useDimensions(ref, isLandscape, isFillParent) {
+
+const setDimWithMaxMinDim = (dim, maxDim, minDim) => 
+  dim > maxDim 
+    ? maxDim 
+    : dim < minDim 
+      ? minDim
+      : dim;
+    
+
+export default function useDimensions(ref, isFillParent, isLandscape, isPortrait) {
   const [dim, setDim] = useState({
     width: 0,
     height: 0,
   });
-
 
   const resizeObserver = new ResizeObserver(entries => {
     for(let entry of entries) {
@@ -13,22 +21,22 @@ export default function useDimensions(ref, isLandscape, isFillParent) {
 
       if(isFillParent) {
         setDim({
-          width: (cr.width - 154) < 796 ? (cr.width - 154) : 796,
-          height: (cr.height - 188) < 462 ? (cr.height - 188) : 462,
+          width: setDimWithMaxMinDim((cr.width - 154), 796, 1),
+          height: setDimWithMaxMinDim((cr.height - 188), 462, 1),
         });
       }
 
       else if(isLandscape) {
         setDim({
-          width: (cr.width - 184) < 770 ? (cr.width - 184) : 770,
-          height: (cr.height - 154) / 2 < 248 ? (cr.height - 154) / 2 : 248,
+          width: setDimWithMaxMinDim((cr.width - 184), 770, 100),
+          height: setDimWithMaxMinDim(((cr.height - 154) / 2), 248, 137),
         });
       }
 
-      else {
+      else if(isPortrait) {
         setDim({
-          width: (cr.width - 154) / 2 < 400 ? (cr.width - 154) / 2 : 400,
-          height: (cr.height - 154) < 496 ? (cr.height - 154) : 496,
+          width: setDimWithMaxMinDim(((cr.width - 154) / 2), 400, 273),
+          height: setDimWithMaxMinDim((cr.height - 154), 496, 100),
         });
       }
     }

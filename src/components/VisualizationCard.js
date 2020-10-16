@@ -8,14 +8,15 @@ export default function VisualizationCard({
   Visualization, 
   Info, 
   data, 
+  isFillParent,
   isLandscape, 
-  isFillParent 
+  isPortrait,
 }) {
   
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
-  const { width, height } = useDimensions(containerRef, isLandscape, isFillParent);
+  const { width, height } = useDimensions(containerRef, isFillParent, isLandscape, isPortrait);
 
   
   const enableResetButton = () => {
@@ -36,23 +37,23 @@ export default function VisualizationCard({
         isFillParent 
           ? <section className={`content ${isFillParent ? 'is-fill-parent' : ''}`} > 
               <Visualization 
-                containerWidth={width}
-                containerHeight={height}/>
+                width={width}
+                height={height}/>
             </section>
 
           : <section className="content" > 
               <section className="graph-container disable-scrollbars" >
                 <Visualization 
                   data={renderedData} 
-                  containerWidth={width}
-                  containerHeight={height}/>
+                  width={width}
+                  height={height}/>
               </section>
 
               <section className="info-container disable-scrollbars">
                 <Info 
                   data={renderedData}
-                  containerWidth={width}
-                  containerHeight={height}
+                  width={width}
+                  height={height}
                   setData={setRenderedData}
                   handleResetDataClick={handleResetDataClick}
                   enableResetButton={enableResetButton}
