@@ -11,24 +11,26 @@ export default function useDimensions(ref, isLandscape, isFillParent) {
     for(let entry of entries) {
       const cr = entry.contentRect;
 
+      const setDimWithMaxDim = (dim, maxDim) => dim < maxDim ? dim : maxDim;
+
       if(isFillParent) {
         setDim({
-          width: (cr.width - 154) < 796 ? (cr.width - 154) : 796,
-          height: (cr.height - 188) < 462 ? (cr.height - 188) : 462,
+          width: setDimWithMaxDim((cr.width - 154), 796),
+          height: setDimWithMaxDim((cr.height - 188), 462),
         });
       }
 
       else if(isLandscape) {
         setDim({
-          width: (cr.width - 184) < 770 ? (cr.width - 184) : 770,
-          height: (cr.height - 154) / 2 < 248 ? (cr.height - 154) / 2 : 248,
+          width: setDimWithMaxDim((cr.width - 184), 770),
+          height: setDimWithMaxDim(((cr.height - 154) / 2), 248),
         });
       }
 
       else {
         setDim({
-          width: (cr.width - 154) / 2 < 400 ? (cr.width - 154) / 2 : 400,
-          height: (cr.height - 154) < 496 ? (cr.height - 154) : 496,
+          width: setDimWithMaxDim(((cr.width - 154) / 2), 400),
+          height: setDimWithMaxDim((cr.height - 154), 496),
         });
       }
     }
