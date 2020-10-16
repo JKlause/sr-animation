@@ -1,12 +1,12 @@
 import React from 'react';
-import useDropdown from 'hooks/useDropdown';
+import useEventedMenu from 'hooks/useEventedMenu';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
 import AboutDrawerContent from './about-drawer/AboutDrawerContent';
 import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
 import styles from './AboutDrawer.scss';
 
 export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
-  const [ref, isDropdownOpen, setIsDropdownOpen] = useDropdown();
+  const [ref, isDropdownOpen, setIsDropdownOpen] = useEventedMenu();
 
 
   return (

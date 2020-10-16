@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useDropdown from 'hooks/useDropdown';
+import useEventedMenu from 'hooks/useEventedMenu';
 import Header from './Header';
 import VisualizationCards from './VisualizationCards';
 import Footer from './Footer';
@@ -9,7 +9,7 @@ import styles from './App.scss';
 
 export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
-  const [ref, isAboutDrawerOpen, setIsAboutDrawerOpen] = useDropdown();
+  const [ref, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
