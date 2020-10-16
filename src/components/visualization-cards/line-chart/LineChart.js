@@ -16,11 +16,10 @@ export default function LineChart({
   containerWidth,
   containerHeight,
 }) {
-  const width =  containerWidth < 100 ? 100 : containerWidth;
-  const height = containerHeight < 137 ? 137 : containerHeight;
+  
 
-  const xMax = width > 0 ? width - 80 : 10;
-  const yMax = height > 0 ? height - 80 : 10;
+  const xMax = containerWidth > 0 ? containerWidth - 80 : 10;
+  const yMax = containerHeight > 0 ? containerHeight - 80 : 10;
 
   const xScale = scaleTime({
     range: [0, xMax],
@@ -36,7 +35,7 @@ export default function LineChart({
 
 
   return (
-    <svg width={width} height={height}>
+    <svg width={containerWidth} height={containerHeight}>
       <Group top={25} left={65}>
         <AxisLeft 
           label="Ounces" 

@@ -8,14 +8,15 @@ export default function VisualizationCard({
   Visualization, 
   Info, 
   data, 
+  isFillParent,
   isLandscape, 
-  isFillParent 
+  isPortrait,
 }) {
   
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
-  const { width, height } = useDimensions(containerRef, isLandscape, isFillParent);
+  const { width, height } = useDimensions(containerRef, isFillParent, isLandscape, isPortrait);
 
   
   const enableResetButton = () => {

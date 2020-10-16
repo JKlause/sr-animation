@@ -11,6 +11,7 @@ export default [
     Visualization: BarChart,
     Info: BarChartInfo,
     data: barChartData,
+    isPortrait: true,
   },
   {
     Visualization: LineChart,

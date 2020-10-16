@@ -13,14 +13,15 @@ export default function VisualizationCards({ displayIndex }) {
     <FillParent tag="section" className={styles.VisualizationCards} style={pageStyle}>
       <div className="title-placeholder" />
       {
-        chartsData.map(({ Visualization, Info, data, isLandscape, isFillParent }, i) => (
+        chartsData.map(({ Visualization, Info, data, isFillParent, isLandscape, isPortrait }, i) => (
           <VisualizationCard 
             key={`card-${i}`}
             Visualization={Visualization}
             Info={Info}
             data={data} 
+            isFillParent={isFillParent}
             isLandscape={isLandscape} 
-            isFillParent={isFillParent}/>
+            isPortrait={isPortrait} />
         ))
       }
     </FillParent >

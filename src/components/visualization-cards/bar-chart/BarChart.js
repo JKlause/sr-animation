@@ -16,11 +16,8 @@ export default function BarChart({
   containerHeight,
 }) {
 
-  const width =  containerWidth < 273 ? 273 : containerWidth;
-  const height = containerHeight < 100 ? 100 : containerHeight;
-
-  const xMax = width > 0 ? width - 80 : 10;
-  const yMax = height > 0 ? height - 80 : 10;
+  const xMax = containerWidth > 0 ? containerWidth - 80 : 10;
+  const yMax = containerHeight > 0 ? containerHeight - 80 : 10;
 
   const xScale = scaleBand({
     range: [0, xMax],
@@ -47,7 +44,7 @@ export default function BarChart({
 
 
   return (
-    <svg width={width} height={height}>
+    <svg width={containerWidth} height={containerHeight}>
       <Group top={25} left={55}>
         <AxisLeft 
           label="Votes" 
