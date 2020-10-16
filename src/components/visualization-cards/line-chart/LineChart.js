@@ -6,12 +6,16 @@ import { LinePath } from '@vx/shape';
 import { curveMonotoneX } from '@vx/curve';
 
 
+
+const xDataAccessor = d => new Date(d.date).valueOf();
+const yDataAccessor = d => d.ounces;
+
 export default function LineChart({ 
   data, 
   containerWidth,
   containerHeight,
 }) {
-  const width =  containerWidth < 273 ? 273 : containerWidth;
+  const width =  containerWidth;
   const height = containerHeight < 137 ? 137 : containerHeight;
 
   const xMax = width > 0 ? width - 80 : 10;
@@ -70,8 +74,3 @@ export default function LineChart({
     </svg>
   );
 }
-
-
-
-const xDataAccessor = d => new Date(d.date).valueOf();
-const yDataAccessor = d => d.ounces;
