@@ -25,6 +25,19 @@ import {
   poopBrown,
 } from 'styles/variables';
 
+const BLUE_TO_PURPLE = 'blue-to-purple';
+const BLUE_TO_GOLD = 'blue-to-gold';
+const SPECTRAL = 'spectral';
+const VERIDIS = 'veridis';
+const PLASMA = 'plasma';
+const COOL = 'cool';
+const GREEN_TO_BLUE = 'green-to-blue';
+const RAINBOW = 'rainbow';
+const CUBE_HELIX = 'cube-helix';
+const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
+
+
+
 
 export default function useCustomization() {
   const initialState = {
@@ -149,17 +162,6 @@ export default function useCustomization() {
   };
 }
 
-
-export const BLUE_TO_PURPLE = 'blue-to-purple';
-export const BLUE_TO_GOLD = 'blue-to-gold';
-export const SPECTRAL = 'spectral';
-export const VERIDIS = 'veridis';
-export const PLASMA = 'plasma';
-export const COOL = 'cool';
-export const GREEN_TO_BLUE = 'green-to-blue';
-export const RAINBOW = 'rainbow';
-export const CUBE_HELIX = 'cube-helix';
-export const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
 
 export const colorFamilySelectOptions = [
   { 
