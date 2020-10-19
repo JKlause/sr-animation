@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  interpolateBuPu,
-  interpolateBrBG,
-  interpolateSpectral,
-  interpolateViridis,
-  interpolatePlasma,
-  interpolateCool,
-  interpolateYlGnBu,
-  interpolateRainbow,
-  interpolateCubehelixDefault,
-  interpolatePiYG,
-} from 'd3-scale-chromatic';
+  selectColorFamily,
+  BLUE_TO_PURPLE,
+  BLUE_TO_GOLD,
+  SPECTRAL,
+  VERIDIS,
+  PLASMA,
+  COOL,
+  GREEN_TO_BLUE,
+  RAINBOW,
+  CUBE_HELIX,
+  PINK_TO_YELLOWGREEN,
+} from 'hooks/useCustomizations';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';
@@ -61,7 +62,7 @@ export default function CustomizeDropdown({
     setSizeScaleRangeMax,
   } = state;
 
-  const [colorFamilyValue, setColorFamilyValue] = useState(1);
+  const [colorFamilyValue, setColorFamilyValue] = useState(BLUE_TO_PURPLE);
   
 
   return (
@@ -78,52 +79,20 @@ export default function CustomizeDropdown({
           name="colors" 
           value={colorFamilyValue}
           onChange={({ target }) => {
-            setColorFamilyValue(+target.value);
-            
-            switch(+target.value) {
-              case 1: 
-                setColorFamily(() => interpolateBuPu);
-                break;
-              case 2: 
-                setColorFamily(() => interpolateBrBG);
-                break;
-              case 3: 
-                setColorFamily(() => interpolateSpectral);
-                break;
-              case 4: 
-                setColorFamily(() => interpolateViridis);
-                break;
-              case 5: 
-                setColorFamily(() => interpolatePlasma);
-                break;
-              case 6: 
-                setColorFamily(() => interpolateCool);
-                break;
-              case 7: 
-                setColorFamily(() => interpolateYlGnBu);
-                break;
-              case 8: 
-                setColorFamily(() => interpolateRainbow);
-                break;
-              case 9: 
-                setColorFamily(() => interpolateCubehelixDefault);
-                break;
-              case 10: 
-                setColorFamily(() => interpolatePiYG);
-                break;
-              default:
-                setColorFamily(() => interpolateBuPu);
-            }}}>
-          <option value={1}>{'Blue to Purple'}</option>
-          <option value={2}>{'Blue to Gold'}</option>
-          <option value={3}>{'Spectral'}</option>
-          <option value={4}>{'Veridis'}</option>
-          <option value={5}>{'Plasma'}</option>
-          <option value={6}>{'Cool'}</option>
-          <option value={7}>{'Green to Blue'}</option>
-          <option value={8}>{'Rainbow'}</option>
-          <option value={9}>{'Cube Helix'}</option>
-          <option value={10}>{'Pink to YellowGreen'}</option>
+            const targetValue = target.value;
+            setColorFamilyValue(targetValue);
+            selectColorFamily(targetValue, setColorFamily);
+          }}>
+          <option value={BLUE_TO_PURPLE}>{'Blue to Purple'}</option>
+          <option value={BLUE_TO_GOLD}>{'Blue to Gold'}</option>
+          <option value={SPECTRAL}>{'Spectral'}</option>
+          <option value={VERIDIS}>{'Veridis'}</option>
+          <option value={PLASMA}>{'Plasma'}</option>
+          <option value={COOL}>{'Cool'}</option>
+          <option value={GREEN_TO_BLUE}>{'Green to Blue'}</option>
+          <option value={RAINBOW}>{'Rainbow'}</option>
+          <option value={CUBE_HELIX}>{'Cube Helix'}</option>
+          <option value={PINK_TO_YELLOWGREEN}>{'Pink to YellowGreen'}</option>
         </select>
       </div>
 

@@ -1,5 +1,16 @@
 import { useState } from 'react';
-import { interpolateBuPu } from 'd3-scale-chromatic'; 
+import { 
+  interpolateBuPu,
+  interpolateBrBG,
+  interpolateSpectral,
+  interpolateViridis,
+  interpolatePlasma,
+  interpolateCool,
+  interpolateYlGnBu,
+  interpolateRainbow,
+  interpolateCubehelixDefault,
+  interpolatePiYG,
+} from 'd3-scale-chromatic';
 
 export default function useCustomization() {
   const initialState = {
@@ -86,3 +97,54 @@ export default function useCustomization() {
     resetState,
   };
 }
+
+export const BLUE_TO_PURPLE = 'blue-to-purple';
+export const BLUE_TO_GOLD = 'blue-to-gold';
+export const SPECTRAL = 'spectral';
+export const VERIDIS = 'veridis';
+export const PLASMA = 'plasma';
+export const COOL = 'cool';
+export const GREEN_TO_BLUE = 'green-to-blue';
+export const RAINBOW = 'rainbow';
+export const CUBE_HELIX = 'cube-helix';
+export const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
+
+
+
+export const selectColorFamily = (targetValue, setColorFamily) => {
+
+  switch(targetValue) {
+    case BLUE_TO_PURPLE: 
+      setColorFamily(() => interpolateBuPu);
+      break;
+    case BLUE_TO_GOLD: 
+      setColorFamily(() => interpolateBrBG);
+      break;
+    case SPECTRAL: 
+      setColorFamily(() => interpolateSpectral);
+      break;
+    case VERIDIS: 
+      setColorFamily(() => interpolateViridis);
+      break;
+    case PLASMA: 
+      setColorFamily(() => interpolatePlasma);
+      break;
+    case COOL: 
+      setColorFamily(() => interpolateCool);
+      break;
+    case GREEN_TO_BLUE: 
+      setColorFamily(() => interpolateYlGnBu);
+      break;
+    case RAINBOW: 
+      setColorFamily(() => interpolateRainbow);
+      break;
+    case CUBE_HELIX: 
+      setColorFamily(() => interpolateCubehelixDefault);
+      break;
+    case PINK_TO_YELLOWGREEN: 
+      setColorFamily(() => interpolatePiYG);
+      break;
+    default:
+      setColorFamily(() => interpolateBuPu);
+  }
+};
