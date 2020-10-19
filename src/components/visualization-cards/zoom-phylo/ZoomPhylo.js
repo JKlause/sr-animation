@@ -31,7 +31,7 @@ export default function PhyloZoom({ width, height }) {
 
   const {
     colorFamily,
-    setColorFamily,
+    selectColorFamily,
     backgroundColor,
     setBackgroundColor,
     numberOfPoints,
@@ -57,7 +57,7 @@ export default function PhyloZoom({ width, height }) {
   } = useCustomizations();
 
   const dropdownState = {
-    setColorFamily,
+    selectColorFamily,
     backgroundColor,
     setBackgroundColor,
     numberOfPoints,

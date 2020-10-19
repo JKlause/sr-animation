@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  selectColorFamily,
   BLUE_TO_PURPLE,
   BLUE_TO_GOLD,
   SPECTRAL,
@@ -39,7 +38,7 @@ export default function CustomizeDropdown({
   }, [isOpen]);
 
   const {
-    setColorFamily,
+    selectColorFamily,
     backgroundColor,
     setBackgroundColor,
     numberOfPoints,
@@ -81,7 +80,7 @@ export default function CustomizeDropdown({
           onChange={({ target }) => {
             const targetValue = target.value;
             setColorFamilyValue(targetValue);
-            selectColorFamily(targetValue, setColorFamily);
+            selectColorFamily(targetValue);
           }}>
           <option value={BLUE_TO_PURPLE}>{'Blue to Purple'}</option>
           <option value={BLUE_TO_GOLD}>{'Blue to Gold'}</option>

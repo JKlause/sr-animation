@@ -71,10 +71,47 @@ export default function useCustomization() {
     setSizeScaleRangeMax(initialState.sizeScaleRangeMax);
   };
 
+  const selectColorFamily = COLOR_FAMILY => {
+    switch(COLOR_FAMILY) {
+      case BLUE_TO_PURPLE: 
+        setColorFamily(() => interpolateBuPu);
+        break;
+      case BLUE_TO_GOLD: 
+        setColorFamily(() => interpolateBrBG);
+        break;
+      case SPECTRAL: 
+        setColorFamily(() => interpolateSpectral);
+        break;
+      case VERIDIS: 
+        setColorFamily(() => interpolateViridis);
+        break;
+      case PLASMA: 
+        setColorFamily(() => interpolatePlasma);
+        break;
+      case COOL: 
+        setColorFamily(() => interpolateCool);
+        break;
+      case GREEN_TO_BLUE: 
+        setColorFamily(() => interpolateYlGnBu);
+        break;
+      case RAINBOW: 
+        setColorFamily(() => interpolateRainbow);
+        break;
+      case CUBE_HELIX: 
+        setColorFamily(() => interpolateCubehelixDefault);
+        break;
+      case PINK_TO_YELLOWGREEN: 
+        setColorFamily(() => interpolatePiYG);
+        break;
+      default:
+        setColorFamily(initialState.colorFamily);
+    }
+  };
+  
 
   return {
     colorFamily,
-    setColorFamily,
+    selectColorFamily,
     backgroundColor,
     setBackgroundColor,
     numberOfPoints,
@@ -101,7 +138,6 @@ export default function useCustomization() {
 }
 
 
-
 export const BLUE_TO_PURPLE = 'blue-to-purple';
 export const BLUE_TO_GOLD = 'blue-to-gold';
 export const SPECTRAL = 'spectral';
@@ -112,42 +148,3 @@ export const GREEN_TO_BLUE = 'green-to-blue';
 export const RAINBOW = 'rainbow';
 export const CUBE_HELIX = 'cube-helix';
 export const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
-
-
-export const selectColorFamily = (targetValue, setColorFamily) => {
-
-  switch(targetValue) {
-    case BLUE_TO_PURPLE: 
-      setColorFamily(() => interpolateBuPu);
-      break;
-    case BLUE_TO_GOLD: 
-      setColorFamily(() => interpolateBrBG);
-      break;
-    case SPECTRAL: 
-      setColorFamily(() => interpolateSpectral);
-      break;
-    case VERIDIS: 
-      setColorFamily(() => interpolateViridis);
-      break;
-    case PLASMA: 
-      setColorFamily(() => interpolatePlasma);
-      break;
-    case COOL: 
-      setColorFamily(() => interpolateCool);
-      break;
-    case GREEN_TO_BLUE: 
-      setColorFamily(() => interpolateYlGnBu);
-      break;
-    case RAINBOW: 
-      setColorFamily(() => interpolateRainbow);
-      break;
-    case CUBE_HELIX: 
-      setColorFamily(() => interpolateCubehelixDefault);
-      break;
-    case PINK_TO_YELLOWGREEN: 
-      setColorFamily(() => interpolatePiYG);
-      break;
-    default:
-      setColorFamily(() => interpolateBuPu);
-  }
-};
