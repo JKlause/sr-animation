@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  interpolateBuPu,
+  interpolateBrBG,
+  interpolateSpectral,
+  interpolateViridis,
+  interpolatePlasma,
+  interpolateCool,
+  interpolateYlGnBu,
+  interpolateRainbow,
+  interpolateCubehelixDefault,
+  interpolatePiYG,
+} from 'd3-scale-chromatic';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';
 import Button from 'shared/components/Button';
 import styles from './CustomizeDropdown.scss';
-
 
 export default function CustomizeDropdown({ 
   dropdownRef, 
@@ -27,7 +38,6 @@ export default function CustomizeDropdown({
   }, [isOpen]);
 
   const {
-    colorFamily,
     setColorFamily,
     backgroundColor,
     setBackgroundColor,
@@ -50,6 +60,8 @@ export default function CustomizeDropdown({
     sizeScaleRangeMax,
     setSizeScaleRangeMax,
   } = state;
+
+  const [colorFamilyValue, setColorFamilyValue] = useState(1);
   
 
   return (
@@ -64,8 +76,44 @@ export default function CustomizeDropdown({
         </label>
         <select 
           name="colors" 
-          value={colorFamily}
-          onChange={({ target }) => setColorFamily(target.value)}>
+          value={colorFamilyValue}
+          onChange={({ target }) => {
+            setColorFamilyValue(+target.value);
+            
+            switch(+target.value) {
+              case 1: 
+                setColorFamily(() => interpolateBuPu);
+                break;
+              case 2: 
+                setColorFamily(() => interpolateBrBG);
+                break;
+              case 3: 
+                setColorFamily(() => interpolateSpectral);
+                break;
+              case 4: 
+                setColorFamily(() => interpolateViridis);
+                break;
+              case 5: 
+                setColorFamily(() => interpolatePlasma);
+                break;
+              case 6: 
+                setColorFamily(() => interpolateCool);
+                break;
+              case 7: 
+                setColorFamily(() => interpolateYlGnBu);
+                break;
+              case 8: 
+                setColorFamily(() => interpolateRainbow);
+                break;
+              case 9: 
+                setColorFamily(() => interpolateCubehelixDefault);
+                break;
+              case 10: 
+                setColorFamily(() => interpolatePiYG);
+                break;
+              default:
+                setColorFamily(() => interpolateBuPu);
+            }}}>
           <option value={1}>{'Blue to Purple'}</option>
           <option value={2}>{'Blue to Gold'}</option>
           <option value={3}>{'Spectral'}</option>

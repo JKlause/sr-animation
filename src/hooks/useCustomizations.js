@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { interpolateBuPu } from 'd3-scale-chromatic'; 
 
 export default function useCustomization() {
   const initialState = {
-    colorFamily: 1,
+    colorFamily: () => interpolateBuPu,
     backgroundColor: 'transparent',
     numberOfPoints: 1000,
     phyloRadius: 10,

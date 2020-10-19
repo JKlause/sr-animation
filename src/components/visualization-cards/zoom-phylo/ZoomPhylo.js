@@ -1,16 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { 
-  interpolateBuPu,
-  interpolateBrBG,
-  interpolateSpectral,
-  interpolateViridis,
-  interpolatePlasma,
-  interpolateCool,
-  interpolateYlGnBu,
-  interpolateRainbow,
-  interpolateCubehelixDefault,
-  interpolatePiYG,
-} from 'd3-scale-chromatic';
 import { Zoom } from '@vx/zoom';
 import { localPoint } from '@vx/event';
 import { RectClipPath } from '@vx/clip-path';
@@ -69,7 +57,6 @@ export default function PhyloZoom({ width, height }) {
   } = useCustomizations();
 
   const dropdownState = {
-    colorFamily,
     setColorFamily,
     backgroundColor,
     setBackgroundColor,
@@ -115,7 +102,7 @@ export default function PhyloZoom({ width, height }) {
   });
 
   const phyllotaxis = points.map((d, i) => generator(i));
-
+  
 
   return (
     <FillParent className={styles.ZoomPhylo}>
@@ -170,26 +157,7 @@ export default function PhyloZoom({ width, height }) {
                           cx={x}
                           cy={y}
                           r={i > 500 && 1000 - i > 0 ? sizeScale(1000 - i) : sizeScale(i)}
-                          fill={
-                            colorFamily == 1 
-                              ? interpolateBuPu(colorScale(i)) 
-                              : colorFamily == 2 
-                                ? interpolateBrBG(colorScale(i)) 
-                                : colorFamily == 3
-                                  ? interpolateSpectral(colorScale(i))
-                                  : colorFamily == 4
-                                    ? interpolateViridis(colorScale(i))
-                                    : colorFamily == 5
-                                      ? interpolatePlasma(colorScale(i))
-                                      : colorFamily == 6
-                                        ? interpolateCool(colorScale(i))
-                                        : colorFamily == 7
-                                          ? interpolateYlGnBu(colorScale(i))
-                                          : colorFamily == 8
-                                            ? interpolateRainbow(colorScale(i))
-                                            : colorFamily == 9
-                                              ? interpolateCubehelixDefault(colorScale(i))
-                                              : interpolatePiYG(colorScale(i))}/>
+                          fill={colorFamily(colorScale(i))}/>
                       </Fragment>
                     ))
                   }
