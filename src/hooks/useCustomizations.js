@@ -12,6 +12,18 @@ import {
   interpolatePiYG,
 } from 'd3-scale-chromatic';
 
+import {
+  transparent,
+  websitePurple,
+  snowWhite,
+  lipstickRed,
+  forestGreen,
+  oceanBlue,
+  seaShellPink,
+  nightBlack,
+  citrusOragne,
+  poopBrown,
+} from 'styles/variables';
 
 
 export default function useCustomization() {
@@ -148,3 +160,89 @@ export const GREEN_TO_BLUE = 'green-to-blue';
 export const RAINBOW = 'rainbow';
 export const CUBE_HELIX = 'cube-helix';
 export const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
+
+export const colorFamilySelectOptions = [
+  { 
+    value: BLUE_TO_PURPLE,
+    text: 'Blue to Purple',
+  },
+  { 
+    value: BLUE_TO_GOLD,
+    text: 'Blue to Gold',
+  },
+  { 
+    value: SPECTRAL,
+    text: 'Spectral',
+  },
+  { 
+    value: VERIDIS,
+    text: 'Veridis',
+  },
+  { 
+    value: PLASMA,
+    text: 'Plasma',
+  },
+  { 
+    value: COOL,
+    text: 'Cool',
+  },
+  { 
+    value: GREEN_TO_BLUE,
+    text: 'Green to Blue',
+  },
+  { 
+    value: RAINBOW,
+    text: 'Rainbow',
+  },
+  { 
+    value: CUBE_HELIX,
+    text: 'Cube Helix',
+  },
+  { 
+    value: PINK_TO_YELLOWGREEN,
+    text: 'Pink to YellowGreen',
+  },
+];
+
+export const backgroundColorSelectOptions = [
+  {
+    value: transparent,
+    text: 'Website Teal',
+  },
+  {
+    value: websitePurple,
+    text: 'Website Purple',
+  },
+  {
+    value: snowWhite,
+    text: 'Snow White',
+  },
+  {
+    value: lipstickRed,
+    text: 'Lipstick Red',
+  },
+  {
+    value: forestGreen,
+    text: 'Forest Green',
+  },
+  {
+    value: oceanBlue,
+    text: 'Ocean Blue',
+  },
+  {
+    value: seaShellPink,
+    text: 'Sea Shell Pink',
+  },
+  {
+    value: nightBlack,
+    text: 'Night Black',
+  },
+  {
+    value: citrusOragne,
+    text: 'Citrus Orange',
+  },
+  {
+    value: poopBrown,
+    text: 'Poop Brown', 
+  },
+];

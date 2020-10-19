@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  BLUE_TO_PURPLE,
-  BLUE_TO_GOLD,
-  SPECTRAL,
-  VERIDIS,
-  PLASMA,
-  COOL,
-  GREEN_TO_BLUE,
-  RAINBOW,
-  CUBE_HELIX,
-  PINK_TO_YELLOWGREEN,
+  colorFamilySelectOptions, 
+  backgroundColorSelectOptions,
 } from 'hooks/useCustomizations';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';
 import Button from 'shared/components/Button';
 import styles from './CustomizeDropdown.scss';
+import Select from './Select';
+
 
 export default function CustomizeDropdown({ 
   dropdownRef, 
@@ -39,7 +33,6 @@ export default function CustomizeDropdown({
 
   const {
     selectColorFamily,
-    backgroundColor,
     setBackgroundColor,
     numberOfPoints,
     setNumberOfPoints,
@@ -61,7 +54,6 @@ export default function CustomizeDropdown({
     setSizeScaleRangeMax,
   } = state;
 
-  const [colorFamilyValue, setColorFamilyValue] = useState(BLUE_TO_PURPLE);
   
 
   return (
@@ -70,51 +62,18 @@ export default function CustomizeDropdown({
       isOpen={isOpen} 
       dropdownRef={dropdownRef} 
       contentStyle={{ maxHeight: `${menuHeight}px` }}>
-      <div className="select">
-        <label htmlFor="colors">
-          {'Change Color Family'}
-        </label>
-        <select 
-          name="colors" 
-          value={colorFamilyValue}
-          onChange={({ target }) => {
-            const targetValue = target.value;
-            setColorFamilyValue(targetValue);
-            selectColorFamily(targetValue);
-          }}>
-          <option value={BLUE_TO_PURPLE}>{'Blue to Purple'}</option>
-          <option value={BLUE_TO_GOLD}>{'Blue to Gold'}</option>
-          <option value={SPECTRAL}>{'Spectral'}</option>
-          <option value={VERIDIS}>{'Veridis'}</option>
-          <option value={PLASMA}>{'Plasma'}</option>
-          <option value={COOL}>{'Cool'}</option>
-          <option value={GREEN_TO_BLUE}>{'Green to Blue'}</option>
-          <option value={RAINBOW}>{'Rainbow'}</option>
-          <option value={CUBE_HELIX}>{'Cube Helix'}</option>
-          <option value={PINK_TO_YELLOWGREEN}>{'Pink to YellowGreen'}</option>
-        </select>
-      </div>
 
-      <div className="select" >
-        <label htmlFor="background">
-          {'Change Background Color'}
-        </label>
-        <select 
-          name="background" 
-          value={backgroundColor}
-          onChange={({ target }) => setBackgroundColor(target.value)}>
-          <option value={'transparent'}>{'Website Teal'}</option>
-          <option value={'#4949D0'}>{'Website Purple'}</option>
-          <option value={'#FFFAFA'}>{'Snow White'}</option>
-          <option value={'#8e1e1d'}>{'Lipstick Red'}</option>
-          <option value={'#228B22'}>{'Forest Green'}</option>
-          <option value={'#0077be'}>{'Ocean Blue'}</option>
-          <option value={'#ffcccb'}>{'Sea Shell Pink'}</option>
-          <option value={'#323639'}>{'Night Black'}</option>
-          <option value={'#f88624'}>{'Citrus Orange'}</option>
-          <option value={'#7a5901'}>{'Poop Brown'}</option>
-        </select>
-      </div>
+      <Select
+        name="colors"
+        label="Change Color Family"
+        options={colorFamilySelectOptions}
+        handleChange={value => selectColorFamily(value)}/>
+
+      <Select
+        name="background"
+        label="Change Background Color"
+        options={backgroundColorSelectOptions}
+        handleChange={value => setBackgroundColor(value)} />
 
       <SingleSlider
         label={'Phylo Radius'}
