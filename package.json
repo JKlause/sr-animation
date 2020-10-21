@@ -8,7 +8,6 @@
   "main": "src/index.js",
   "scripts": {
     "heroku-postbuild": "npm run build",
-    "test": "jest -i",
     "start:dev": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "start": "node server",
     "build": "webpack -p --devtool source-map",
