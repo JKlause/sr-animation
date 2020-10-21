@@ -6,7 +6,7 @@ import { scaleLinear } from '@vx/scale';
 import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 
 import { useNarrowView } from 'hooks/useMedia';
-import useCustomizations from 'hooks/useCustomizations';
+import createCustomizationState from 'hooks/createCustomizationState';
 
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
@@ -54,7 +54,7 @@ export default function PhyloZoom({ width, height }) {
     setSizeScaleRangeMax,
     resetState,
     isInitialState,
-  } = useCustomizations();
+  } = createCustomizationState();
 
   const dropdownState = {
     selectColorFamily,

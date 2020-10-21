@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   colorFamilySelectOptions, 
   backgroundColorSelectOptions,
-} from 'hooks/useCustomizations';
+} from 'hooks/createCustomizationState';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import RangeSlider from './RangeSlider';
 import SingleSlider from './SingleSlider';

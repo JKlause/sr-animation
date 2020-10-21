@@ -39,7 +39,7 @@ const PINK_TO_YELLOWGREEN = 'pink-to-yellowGreen';
 
 
 
-export default function useCustomization() {
+export default function createCustomizationState() {
   const initialState = {
     colorFamily: () => interpolateBuPu,
     backgroundColor: transparent,
