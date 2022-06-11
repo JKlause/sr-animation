@@ -1,6 +1,7 @@
 # Joe's Sprinklr Application
 
-Built to show off some of the front end skill sets that Joe Klause has learned, and also his first foray into using the @vx library.
+Built to show off some of the front end skill sets, and a first foray into using the @vx library.
+See page [deployed live](https://joes-sprinklr-application.herokuapp.com/)
 
 ## Installing
 
