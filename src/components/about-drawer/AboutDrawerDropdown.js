@@ -22,6 +22,9 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
         {' is available on GitHub, and was written primarily over the weekend of 9/25/2020.'}
       </p>
       <p>
+        {'It has been more recently updated over the weekend of 8/20/2022.'}
+      </p>
+      <p>
         {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx '}
         <a
           href="https://joelmturner.com/blog/data-vis-react-bar-chart-vx"
@@ -45,7 +48,7 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
         </a>
       </p>
       <p>
-        {'The site is meant to be viewed on desktops or tablets. It hasn\'t been fully vetted for mobile use.'}
+        {'The site is meant to be viewed on desktops. It hasn\'t been fully vetted for mobile use.'}
       </p>
       <p>
         {'Copyright © 2020, Joseph Klause'}
