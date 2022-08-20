@@ -31,13 +31,8 @@ export default function Footer({
     if(displayIndex === 1) {
       setTimeout(() => {
         setAreNavButtonsVisible(true);
-      }, 650);
-    }
-
-    if(displayIndex === 3) {
-      setTimeout(() => {
         setIsAboutButtonVisible(true);
-      }, 500);
+      }, 650);
     }
   }, [displayIndex]);
 
