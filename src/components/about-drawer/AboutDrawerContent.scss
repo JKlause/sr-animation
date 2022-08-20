@@ -19,13 +19,29 @@
 
   .paragraphs {
     display: inline;
+    font-family: $regular;
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 5px;
+
+      line-height: 25px;
+
+      font-family: $semiBold;
+      font-size: 18px;
+    }
 
     p {
       margin-bottom: 10px;
 
       line-height: 19px;
+      font-size: 16px;
+    }
 
-      font-family: $regular;
+    ul {
+      margin-left: 30px;
+
+      line-height: 19px;
       font-size: 16px;
     }
   }

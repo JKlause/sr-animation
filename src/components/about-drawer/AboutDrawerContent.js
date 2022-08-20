@@ -1,4 +1,5 @@
 import React from 'react';
+import { AboutDrawerParagraph, AboutDrawerParagraphHeading } from './AboutDrawerTextComponents';
 import joePic from 'assets/joePic.jpg';
 import styles from './AboutDrawerContent.scss';
 
@@ -11,63 +12,87 @@ export default function AboutDrawerContent() {
       <img src={joePic} alt="Joe" />
       <article className="paragraphs">
         <p>
-          {'TL;DR == I\'m a fun, funny, passionate, creative, musical, business oriented team player who is super excited to be a part of the Sprinklr team here in PDX.'}
-        </p>
-        <p>
-          {'Hey everyone. My name is Joe. And I\'m applying to become a new member of your team. I got into coding a little over a year ago when I attending Alchemy Code Lab. It was there that I met Megan and Anna who recommended me for this position, and whom I am grateful to! '}
-        </p>
-        <p>
-          {'My journey to coding is a circuitous one. I started at the age of four as a classical musician. After many years of study, I attended the Juilliard School, the New England Conservatory of Music, and the Longy School of Music. I spent most of my time studying the trumpet, and specifically playing orchestral and chamber music. In this capacity I really developed my skill of communication: being able to freely flow ideas (both musically and verbally) as well as receiving subtle (and not so subtle) data from others.'}
-        </p>
-        <p>
-          {'After school I started an ice cream sandwich business with my family. My father and I built it from a farmers market stand into a 6-store chain spanning from Florida to New Jersey. The website is '}
+          {'Hi! My name is Joe, and I\'m applying to be the newest member of your development team. I have spent the last year and a half working on the Web Development team in the Digital Marketing Department at Sprinklr (building '}
           <a
-            href="https://www.peacepieworld.com/"
+            href="https://www.sprinklr.com/"
             target="_blank"
             rel="noopener noreferrer">
-            {'PeacePieWorld.com'}
+            {'Sprinklr.com'}
           </a>
-          {' if you are interested in having your mouth water (I didn\'t build this site). This got old though; if anyone has been in food services, you probably know what it feels like to be a cog in the machine. And after awhile, well, that just got boring to me. I am still an owner of this company, and participate in overall business decisions.'}
+          {'), and this is that story.'}
         </p>
+        
+        <AboutDrawerParagraphHeading headerText={'TL:DR'} />
+        <AboutDrawerParagraph text={'I was hired as a Senior Front End Engineer for the digital marketing department at Sprinklr, and through a deep sense of teamwork, empathy, willingness to learn, laughter, process, and work ethic I quickly rose to team lead. I am excited to be a new addition to your team/company, and I look forward to speaking with you further!'} />
+        
+        <AboutDrawerParagraphHeading headerText={'Independent Contributor as a Senior Front End Engineer'} />
+        <AboutDrawerParagraph text={'At Sprinklr, I was initially hired to work on a codebase that was migrated from a Wordpress site to an AWS deployed Gatsby/Contentful site. This migration had taken place three months before I was brought on, and was completed by 20 developers over the course of one week. As you can imagine, the scalability and durability of the code was not deeply considered. Nor was the purpose of a digital marketing site: to be the funnel that drives leads to sales. The SEO score plummeted to single digits, and the site health score was not much higher.'} />
+        <AboutDrawerParagraph text={'When I was brought on, the Gatsby/Contentful tech stack was new to everyone on the team. My team lead tasked me with architecting and building the company\'s new “Resources” and “Events” sections of the site that would support our top-of-funnel leads. I quickly caught on to the patterns necessary to build this out, and helped my manager and teammates think about creating the new components and their data structures to be reusable in other yet-to-be-built areas of the site. In shaping these epics, I became a mentor to my peers, owning the project management and helping the developers who were working on them.'} />
+        <AboutDrawerParagraph text={'The team lead also tasked me with the AWS deployment of the site, becoming his go-to person for the more dev-ops related tasks whenever he was unavailable. I became familiar with our deployment structure (CodePipeline, CodeBuild, s3, and CloudFront) as well as creating a number of @edgeLambda functions to help with blanket redirects and other data manipulations. I also spearheaded the development efforts to localize our site, integrating 3rd party libraries, and collaborating with the Localization, Content Authoring, and Content Production teams to develop cross-team processes which enabled us to launch our site in 8 different languages.'} />
+        
+        <AboutDrawerParagraphHeading headerText={'Lead of the Digital Marketing Department\'s Web Development Team'} />
+        <AboutDrawerParagraph text={'When the team lead left the company, I was asked to move into his position. My first job was hiring four new developers, transitioning two previously contracted employees to full-time positions, and conduction the search for two more. After reviewing 400 applications, interviewing 20 candidates, and bringing six of them in front of my team, we landed on two incredible junior developers.'} />
+        <AboutDrawerParagraph text={'As a technical lead, I spent hours a day working directly with my engineers. We engaged in weekly sprints, daily stand ups, pair and mob programing, peer review of all branches, and group backlog grooming sessions. I encouraged everyone to work together, to learn from each other, and to build deep bonds of trust and understanding. There were never arguments. When we disagreed on approaches, we talked out the possibilities and gave our opinions, eventually deciding as a group which direction we wanted to go. I did my best to slowly nurture each individual programmer with gradually increasing projects of scope, helping them to build new skill sets, and solidifying more familiar ones.'} />
+        <AboutDrawerParagraph text={'As a people leader in the broader marketing department, I helped shape the priorities and projects with our immediate stakeholders. I spent time understanding the nuances of digital marketing, and helped our SEO strategist to improve our SEO and site-health score to the mid-90\'s! I worked with the digital marketing director and marketing ops to identify unsupported areas of our marketing funnel. During my tenure as lead, our department nailed every quarterly Verified Opportunity target that was set, at a pace of 30% growth quarter over quarter!'} />
+        <AboutDrawerParagraph text={'I spent a lot of time working with our designers and project stakeholders to create new components that were specific enough to meet the business requirements necessary for the specific project, while flexible enough to be re-used in other scenariors. This enabled a 1000+ page website to be built without a constant need for development support, freeing up my team to work on maintaining our codebase and building out new initiatives. It also streamlined the cross-team effort to get a stakeholder’s project from speculation to deployment.'} />
+        <AboutDrawerParagraph text={'Twice I was brought into marketing department people leader off-site meetings. As a team of 20, we worked together to make our remote marketing department more efficient, effective, and fun. I helped to develop the process of passing our SDRs specific and useful information from our product marketers about the specific campaign that brought in any particular lead. I also became one of the lead voices on the “Make Marketing Fun Again” inter-marketing-department team.'} />
+        
+        <AboutDrawerParagraphHeading headerText={'Everything is Impermanent'} />
+        <AboutDrawerParagraph text={'As the US marketing jobs of Sprinklr were put on ice, being replaced overseas, the processes that were created and put in place started to fracture. It became my main priority to insulate my engineers from this chaos, and continue to deliver them well-thought-out problems to solve. The entire digital marketing team, as well as 60 other US marketing employees were let go due to “budgetary considerations”. I was given a two-day warning, and while on PTO, I elected to be the person to lay off my team. Our development team is still connected, continuing to support each other as we navigate finding new roles. As of writing this paragraph, we got together last night to celebrate three of us being hired by different companies.'} />
+        
+        <AboutDrawerParagraphHeading headerText={'Giving Back to the Coding Community'} />
         <p>
-          {'I had been playing with Eugene Symphony since the end of my schooling (I lived in Eugene for about six months, and kept getting calls to come out to sub with the orchestra). I decided it was time to make the great journey West. I spent about two years being a freelance musician in the PNW. I made it work, and have developed a lot of amazing playing and teaching opportunities. '}
+          {'In gratitude to my bootcamp, '}
+          <a
+            href="https://www.alchemycodelab.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            {'Alchemy Code Lab'}
+          </a>
+          {', I offer my skills as a teacher and mentor to the current and graduating students. I do quarterly mock interviews with graduates, and deliver a monthly presentation, guiding each cohort to better communicate code to non-developers by translating code into narratives: seeing how the verbs (functions), nouns (objects etc), and adjectives (async etc) of code lend themselves to storytelling, and how transversing the code from a top-level down to the details (encapsulation) gives a clearer thread of the story. I spend time working on developing a personal style of semantic naming conventions, and share with them the five coding principals that shape everything I do:'}
         </p>
+        <ul>
+          <li>{'Good code is written for people to read'}</li>
+          <li>{'Always be editing'}</li>
+          <li>{'See the data move across the network'}</li>
+          <li>{'Find the simple, straight-forward solution'}</li>
+          <li>{'Have a plan'}</li>
+        </ul>
+
+        <AboutDrawerParagraphHeading headerText={'Joe Outside of Work'} />
         <p>
-          {'I am a member of the Eugene and Portland Columbia Symphonies. I sub with the Oregon Ballet Theatre and Portland Opera. I am also working my way onto the sublist of the Oregon Symphony, and regularly get called to play musicals (pre-covid). I also play with many chamber groups, including one of my biggest pet projects the Rose City Brass Quintet. I teach trumpet at Reed College and Clackamas Community College. I also have a number of private students out of my home (or on zoom due to covid times). If you\'re interested, you can check out these exploits at ' } 
+          {'Aside from coding, I am a professional classical trumpet player, performing with many high-level orchestras and chamber ensembles in and around the Pacific North West (see '}
           <a
             href="https://www.rosecitybrasscompany.com/"
             target="_blank"
             rel="noopener noreferrer">
-            {'RoseCityBrassCompany.com'}
+            {'The Rose City Brass Company'}
           </a>
           {' and '}
           <a
             href="https://www.musicwithjoe.com/"
             target="_blank"
             rel="noopener noreferrer">
-            {'MusicWithJoe.com'}
+            {'Music With Joe'}
           </a>
-          {' (both are square space sites so they don\'t count… also my MusicWithJoe hasn\'t been updated in a minute).'}
+          {' for more details). I teach trumpet and chamber music at Reed College and Clackamas Community College. I also have a small, but dedicated private studio of students.'}
         </p>
         <p>
-          {'Anyway, after a few years of running around like a chicken missing it\'s head (see incredibly relevant '}
+          {'I am a founder and part owner of an ice cream sandwich business, '}
           <a
-            href="https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken#:~:text=Mike%20the%20Headless%20Chicken%20(April,head%20had%20been%20cut%20off."
+            href="https://www.peacepieworld.com/"
             target="_blank"
             rel="noopener noreferrer">
-            {'wiki article'}
+            {'Peace Pie'}
           </a>
-          {'), I decided to find something that fulfilled my love of problem solving, systems management, math, community, and stability while also leaving me time to continue pursuing what brings joy to my heart. The answer: coding.'}
+          {', which my family and I built from a farmers market stand into a three-state, six-store chain. It continues to thrive to this day.'}
         </p>
-        <p>
-          {'In the six months that I spent at Alchemy, I managed to maintain a perfect GPA while continuing all of my musical commitments and drinking lots of coffee. I then moved into a contract position working with a Chinese language learning company. Since the beginning of this year, I have been building their first app/updated website. This involves building a full-stack MERN app based on Sketch designs that were provided to me, as well as migrating a sql database to a mongoDB. As the only developer on the team (and the team being very small), I\'m acting as their CTO: speaking to the needs of the business, and how those needs have to be reflected in the code that I write. I am responsible for managing myself through this massive undertaking. I\'ve learned a great deal about front-end architecture, using custom hooks, redux, transitions/animations, mongoDB pipeline aggregations, sql querying, schema methods, and express routes. It\'s great, but incomplete. I don\'t have a team.'}
-        </p>
-        <p>
-          {'I learn best from others. I work best with others. I want to feel inspired by my teammates. I want to grow with them. I want to collaborate. I want to build a team identity. And I want to get shit done with them (excusez mon français, I curse with the fluency of a person born in New Jersey).'}
-        </p>
-        <p>
-          {'As a deeply spiritual person (I vibe with crystals, Buddah, Jesus, Grandma Spider, my ancestral guides, the moon, the fire gods, etc…), I believe that in this time we must be the light in the world. I believe that we do this not in what we do, but in how we do it. Sprinklr\'s vision is "to be the world\'s most loved enterprise software company, ever." That is how the world changes, by people and entities striving, not to be the best, but to be the most loved and loving. I want to put my creative and mental energy behind an initiative like that. And on the way, write the World Health Organization\'s home page. Let\'s do this yo!'}
-        </p>
+        <AboutDrawerParagraph text={'I love to hike, eat, swim, climb, read, love my cats, and laugh. I find joy in bringing others joy. I do my best to always be working towards a better version of my self. In that regard, I know that I still have much work to do.'} />
+        
+        <AboutDrawerParagraphHeading headerText={'Moving Forward'} />
+        <AboutDrawerParagraph text={'At this point in my journey, I am excited to join a company whose mission is, in some way, to better the world. Whether that is for the humans, the plants, the animals, the globe, I want to spend my life energy to better our “pale blue dot”. I want to be in a working environment that supports the lives of its employees: employees that work to live, not live to work. At the same time, I am looking for a team that is passionate, hardworking, curious, supportive, and fearless; a place where all of me, and all of everyone else, is welcomed and radically empowered. As an engineer, as a co-worker, as a people leader, I have so much room to grow. I\'m excited to believe in a company that believes in me.'} />
+        <AboutDrawerParagraph text={'Problem domains fascinate me; I keep myself open to learning from everyone around me, incorporate as much knowledge as I can so that I can help to synthesize problem solving efforts from my unique viewpoint. I bring this mentality to all areas of my life, and I feel it is one of my greatest strengths as a teammate.'} />
+        <AboutDrawerParagraph text={'Prior to my time at Sprinklr, I had no experience in digital marketing. But within a short time, I was making decisions right along side people that have been in that area for their entire career. I\'m excited to find a new problem domain to sink my teeth into, and in doing so make the world, myself, and my team “Bigger; Better; Best”.'} />
       </article>
     </section>
   );

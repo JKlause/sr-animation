@@ -1,22 +1,22 @@
 export default [
   {
-    label: 'Danny',
+    label: 'Chocolate',
     value: 432,
   },
   {
-    label: 'Marty',
+    label: 'Vanilla',
     value: 126,
   },
   {
-    label: 'Meghan',
+    label: 'Strawberry',
     value: 523,
   },
   {
-    label: 'Ryan',
+    label: 'Mint',
     value: 630,
   },
   {
-    label: 'Shannon',
+    label: 'Cookie Dough',
     value: 700,
   },
 ];

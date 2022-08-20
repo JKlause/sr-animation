@@ -109,7 +109,7 @@ export default function PhyloZoom({ width, height }) {
 
       <HeaderWithDropdownButton 
         className="header"
-        headerText={`${isNarrowView ? '' : 'Some '}Beautiful Sh*t :-)`}
+        headerText={`${isNarrowView ? '' : 'Some '}Beautiful Stuff :-)`}
         buttonText="Customize"
         isDropdownOpen={isDropdownOpen}
         toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>

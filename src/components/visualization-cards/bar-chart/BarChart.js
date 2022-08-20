@@ -72,7 +72,7 @@ export default function BarChart({
         }
         
         <AxisBottom 
-          label="Staff Member" 
+          label="Ice Cream Flavors" 
           scale={xScale} 
           top={yMax}
           labelOffset={15} 
