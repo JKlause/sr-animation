@@ -32,7 +32,7 @@ export default function BarChartInfo({
       className={styles.BarChartInfo}
       style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
       <h1>
-        { 'Most Loved Alchemy Staff Member' }
+        { 'Most Loved Ice Cream Flavor' }
       </h1>
       
       <section className="sample-data">
@@ -41,7 +41,7 @@ export default function BarChartInfo({
         </h2>
         <article className="data">
           <p>{'{'}</p>
-          <p className="indent">{'label: name,'}</p>
+          <p className="indent">{'label: flavor,'}</p>
           <p className="indent">{'value: votes'}</p>
           <p>{'}'}</p>
         </article>
