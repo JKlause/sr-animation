@@ -11,9 +11,6 @@ const sadButtonTextOptions = [
   'Existential Crisis',
   'Netflix is Down',
   'AQI: +500',
-  'Trump\'s President',
-  'Really? Biden?',
-  'F*#% It',
   'No One Loves Me'
 ];
 
