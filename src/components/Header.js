@@ -11,7 +11,7 @@ export default function Header() {
           {'Joe Klause'}
         </h1>
         <h2>
-          {'Sprinklr PDX Engineering Team\'s New Best Friend'}
+          {'Your Engineering Team\'s New Best Friend'}
         </h2>
       </section>
 
