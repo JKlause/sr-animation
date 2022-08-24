@@ -1,6 +1,6 @@
 {
-  "name": "joeklause-resume-site",
-  "version": "1.0.0",
+  "name": "sr-animation",
+  "version": "1.1.0",
   "engines": {
     "node": "12.x"
   },
