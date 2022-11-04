@@ -4,8 +4,7 @@ import {
   backgroundColorSelectOptions,
 } from 'hooks/createCustomizationState';
 import DropdownMenu from 'shared/layout/DropdownMenu';
-import RangeSlider from './RangeSlider';
-import SingleSlider from './SingleSlider';
+import Slider from './Slider';
 import Button from 'shared/components/Button';
 import styles from './CustomizeDropdown.scss';
 import Select from './Select';
@@ -75,21 +74,22 @@ export default function CustomizeDropdown({
         options={backgroundColorSelectOptions}
         handleChange={value => setBackgroundColor(value)} />
 
-      <SingleSlider
+      <Slider
         label={'Phylo Radius'}
         minValue={1}
         maxValue={20}
         currentValue={phyloRadius}
         setCurrentValue={setPhyloRadius} />
         
-      <SingleSlider
+      <Slider
         label={'Number of Points'}
         minValue={50}
         maxValue={1000}
         currentValue={numberOfPoints}
         setCurrentValue={setNumberOfPoints} />
 
-      <RangeSlider
+      <Slider
+        isRange={true}
         label={'Color Domain'}
         currentMin={colorScaleDomainMin}
         currentMax={colorScaleDomainMax}
@@ -98,7 +98,8 @@ export default function CustomizeDropdown({
         setMin={setColorScaleDomainMin}
         setMax={setColorScaleDomainMax} />
 
-      <RangeSlider
+      <Slider
+        isRange={true}
         label={'Color Range'}
         minValue={0}
         maxValue={1}
@@ -108,14 +109,15 @@ export default function CustomizeDropdown({
         setMin={setColorScaleRangeMin}
         setMax={setColorScaleRangeMax} />
 
-      <SingleSlider
+      <Slider
         label={'Size Domain'}
         currentValue={sizeScaleDomainMax}
         minValue={0}
         maxValue={1000}
         setCurrentValue={setSizeScaleDomainMax} />
 
-      <RangeSlider
+      <Slider
+        isRange={true}
         label={'Size Range'}
         minValue={0}
         maxValue={20}
