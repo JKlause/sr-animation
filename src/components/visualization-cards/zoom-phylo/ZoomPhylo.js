@@ -6,7 +6,7 @@ import { scaleLinear } from '@vx/scale';
 import genPhyllotaxis from '@vx/mock-data/lib/generators/genPhyllotaxis';
 
 import { useNarrowView } from 'hooks/useMedia';
-import createCustomizationState from 'hooks/createCustomizationState';
+import createCustomizationState from './createZoomPhyloState';
 
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';

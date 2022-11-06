@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   colorFamilySelectOptions, 
   backgroundColorSelectOptions,
-} from 'hooks/createCustomizationState';
+} from './createZoomPhyloState';
 import DropdownMenu from 'shared/layout/DropdownMenu';
 import Slider from './Slider';
 import Button from 'shared/components/Button';
