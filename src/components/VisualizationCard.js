@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import useDimensions from 'hooks/useDimensions';
 import styles from './VisualizationCard.scss';
+import { isLandscape, isFillParent } from './visualization-cards/visualizationCardsData';
 
 
 
@@ -8,15 +9,13 @@ export default function VisualizationCard({
   Visualization, 
   Info, 
   data, 
-  isFillParent,
-  isLandscape, 
-  isPortrait,
+  visualOrientation,
 }) {
   
   const [renderedData, setRenderedData] = useState(data);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
-  const { width, height } = useDimensions(containerRef, isFillParent, isLandscape, isPortrait);
+  const { width, height } = useDimensions(containerRef, visualOrientation);
 
   
   const enableResetButton = () => {
