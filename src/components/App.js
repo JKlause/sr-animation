@@ -24,7 +24,7 @@ export default function App() {
     <section className={`comp-app ${styles.App}`}>
       <Header/>
 
-      <main className="main">
+      <main className="main-content">
         <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>

@@ -29,7 +29,6 @@ export default function VisualizationCard({
     setRenderedData(data);
   };
 
-
   return (
     <section 
       className={`comp-viz-card ${styles.VisualizationCard} ${isLandscape ? 'landscape' : ''}`} 

@@ -54,7 +54,7 @@
   }
 
   &.landscape {
-    .content {
+    .card-content {
       flex-direction: column-reverse;
 
       @include narrow-view {
