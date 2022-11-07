@@ -6,7 +6,7 @@ import AboutDrawerDropdown from './about-drawer/AboutDrawerDropdown';
 import styles from './AboutDrawer.scss';
 
 export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
-  const [ref, isDropdownOpen, setIsDropdownOpen] = useEventedMenu();
+  const [eventedMenuRef, isDropdownOpen, setIsDropdownOpen] = useEventedMenu();
 
   return (
     <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
@@ -18,7 +18,7 @@ export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
           isDropdownOpen={isDropdownOpen}
           toggleDropdown={() => setIsDropdownOpen(!isDropdownOpen)}/>
 
-        <AboutDrawerDropdown isOpen={isDropdownOpen} dropdownRef={ref}/>
+        <AboutDrawerDropdown isOpen={isDropdownOpen} dropdownRef={eventedMenuRef}/>
 
         <AboutDrawerContent />
         

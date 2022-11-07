@@ -9,7 +9,7 @@ import styles from './App.scss';
 
 export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
-  const [ref, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
+  const [eventedMenuRef, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
@@ -41,7 +41,7 @@ export default function App() {
 
       { 
         isAboutDrawerRendered &&
-          <AboutDrawer aboutDrawerRef={ref} isOpen={isAboutDrawerOpen}/>
+          <AboutDrawer aboutDrawerRef={eventedMenuRef} isOpen={isAboutDrawerOpen}/>
       }
 
     </section>

@@ -4,10 +4,11 @@ import { DocumentContext } from '../EventedDocument';
 export default function useEventedMenu(initial = false) {
   const [isOpen, setIsOpen] = useState(initial);
   const registerListener = useContext(DocumentContext);
-  const ref = useRef();
+  const eventedMenuRef = useRef();
+
 
   const handleClick = e => {
-    if(!ref.current.contains(e.target)) setIsOpen(false);
+    if(!eventedMenuRef.current.contains(e.target)) setIsOpen(false);
   };
   
   useEffect(() => {
@@ -15,5 +16,5 @@ export default function useEventedMenu(initial = false) {
     return registerListener(handleClick);
   }, [isOpen]);
 
-  return [ref, isOpen, setIsOpen];
+  return [eventedMenuRef, isOpen, setIsOpen];
 }
