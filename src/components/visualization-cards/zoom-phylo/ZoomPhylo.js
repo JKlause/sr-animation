@@ -10,7 +10,7 @@ import createCustomizationState from './createZoomPhyloState';
 
 import FillParent from 'shared/layout/FillParent';
 import HeaderWithDropdownButton from 'shared/components/HeaderWithDropdownButton';
-import CustomizeDropdown from './CustomizeDropdown';
+import CustomizeDropdown from './customizeDropdown/CustomizeDropdown';
 import styles from './ZoomPhylo.scss';
 import ZoomControls from './ZoomControls';
 
