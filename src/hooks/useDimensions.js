@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from 'react';
-import { isLandscape, isPortrait, isFillParent } from '../components/visualization-cards/visualizationCardsData';
+import { IS_LANDSCAPE, IS_PORTRAIT, IS_FILL_PARENT } from '../components/visualization-cards/visualizationCardsData';
 
 
 
@@ -21,21 +21,21 @@ export default function useDimensions(ref, visualOrientation) {
     for(let entry of entries) {
       const cr = entry.contentRect;
 
-      if(visualOrientation === isFillParent) {
+      if(visualOrientation === IS_FILL_PARENT) {
         setDim({
           width: setDimWithMaxMinDim((cr.width - 154), 796, 1),
           height: setDimWithMaxMinDim((cr.height - 188), 462, 1),
         });
       }
 
-      else if(visualOrientation === isLandscape) {
+      else if(visualOrientation === IS_LANDSCAPE) {
         setDim({
           width: setDimWithMaxMinDim((cr.width - 184), 770, 100),
           height: setDimWithMaxMinDim(((cr.height - 154) / 2), 248, 137),
         });
       }
 
-      else if(visualOrientation === isPortrait) {
+      else if(visualOrientation === IS_PORTRAIT) {
         setDim({
           width: setDimWithMaxMinDim(((cr.width - 154) / 2), 400, 273),
           height: setDimWithMaxMinDim((cr.height - 154), 496, 100),
