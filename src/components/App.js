@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useEventedMenu from 'hooks/useEventedMenu';
 import Header from './Header';
-import VisualizationCards from './VisualizationCards';
+import VisualizationCardsGrid from './VisualizationCardsGrid';
 import Footer from './Footer';
 import AboutDrawer from './AboutDrawer';
 import styles from './App.scss';
@@ -11,13 +11,6 @@ export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [eventedMenuRef, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
-  const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsAboutDrawerRendered(true);
-    }, 1000);
-  }, []);
 
 
   return (
@@ -28,7 +21,7 @@ export default function App() {
         <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>
-        <VisualizationCards displayIndex={displayIndex} />
+        <VisualizationCardsGrid displayIndex={displayIndex} />
       </main>
 
       <Footer 
@@ -39,10 +32,7 @@ export default function App() {
         openAboutDrawer={() => setIsAboutDrawerOpen(true)}
         closeAboutDrawer={() => setIsAboutDrawerOpen(false)}/>
 
-      { 
-        isAboutDrawerRendered &&
-          <AboutDrawer aboutDrawerRef={eventedMenuRef} isOpen={isAboutDrawerOpen}/>
-      }
+      <AboutDrawer aboutDrawerRef={eventedMenuRef} isOpen={isAboutDrawerOpen}/>
 
     </section>
   );
