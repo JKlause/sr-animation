@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import useDimensions from 'hooks/useDimensions';
 import styles from './VisualizationCard.scss';
-import { IS_LANDSCAPE, IS_FILL_PARENT } from './visualization-cards/visualizationCardsData';
+import { IS_LANDSCAPE, IS_FILL_PARENT } from 'hooks/useDimensions';
 
 
 

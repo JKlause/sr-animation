@@ -1,6 +1,8 @@
 import { useState, useLayoutEffect } from 'react';
-import { IS_LANDSCAPE, IS_PORTRAIT, IS_FILL_PARENT } from '../components/visualization-cards/visualizationCardsData';
 
+export const IS_PORTRAIT = 'IS_PORTRAIT';
+export const IS_LANDSCAPE = 'IS_LANDSCAPE';
+export const IS_FILL_PARENT = 'IS_FILL_PARENT';
 
 
 const setDimWithMaxMinDim = (dim, maxDim, minDim) => 
