@@ -5,6 +5,6 @@ export const AboutDrawerParagraph = ({ text }) => (
   <p>{text}</p>
 );
 
-export const AboutDrawerParagraphHeading = ({ headerText }) => (
-  <h2>{headerText}</h2>
+export const AboutDrawerParagraphHeading = ({ headerText, styles }) => (
+  <h2 style={styles}>{headerText}</h2>
 );
