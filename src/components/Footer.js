@@ -31,8 +31,14 @@ export default function Footer({
     if(displayIndex === 1) {
       setTimeout(() => {
         setAreNavButtonsVisible(true);
-        setIsAboutButtonVisible(true);
       }, 650);
+    }
+
+    //not sure which I prefer? this, or setIsAboutButtonVisible on displayIndex = 1.
+    if(displayIndex === 3) {
+      setTimeout(() => {
+        setIsAboutButtonVisible(true);
+      }, 500);
     }
   }, [displayIndex]);
 
