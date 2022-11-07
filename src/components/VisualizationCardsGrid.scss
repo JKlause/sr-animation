@@ -1,6 +1,6 @@
 @import 'styles/variables.scss';
 
-:local(.VisualizationCards) {
+:local(.VisualizationCardsGrid) {
   display: grid;
   grid-template-columns: repeat(4, 100%);
   grid-gap: 200px;
