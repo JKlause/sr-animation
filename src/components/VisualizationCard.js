@@ -32,17 +32,17 @@ export default function VisualizationCard({
 
   return (
     <section 
-      className={`${styles.VisualizationCard} ${isLandscape ? 'landscape' : ''}`} 
+      className={`comp-viz-card ${styles.VisualizationCard} ${isLandscape ? 'landscape' : ''}`} 
       ref={containerRef}>
       {
         isFillParent 
-          ? <section className={`content ${isFillParent ? 'is-fill-parent' : ''}`} > 
+          ? <section className={`card-content ${isFillParent ? 'is-fill-parent' : ''}`} > 
               <Visualization 
                 width={width}
                 height={height}/>
             </section>
 
-          : <section className="content" > 
+          : <section className="card-content" > 
               <section className="graph-container disable-scrollbars" >
                 <Visualization 
                   data={renderedData} 

@@ -8,7 +8,7 @@ export default function AboutDrawerContent() {
 
   
   return (
-    <section className={`${styles.AboutDrawerContent} disable-scrollbars`}>
+    <section className={`comp-about-drawer-content ${styles.AboutDrawerContent} disable-scrollbars`}>
       <img src={joePic} alt="Joe" />
       <article className="paragraphs">
         <p>

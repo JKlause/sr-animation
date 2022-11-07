@@ -5,7 +5,7 @@ import styles from './Header.scss';
 export default function Header() {
 
   return (
-    <header className={styles.Header}>
+    <header className={`comp-header ${styles.Header}`}>
       <section className="headers">
         <h1>
           {'Joe Klause'}

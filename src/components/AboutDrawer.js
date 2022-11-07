@@ -9,7 +9,7 @@ export default function AboutDrawer({ aboutDrawerRef, isOpen }) {
   const [eventedMenuRef, isDropdownOpen, setIsDropdownOpen] = useEventedMenu();
 
   return (
-    <section className={`${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
+    <section className={`comp-about-drawer ${styles.AboutDrawer} ${isOpen ? 'open' : ''}`}>
       <section ref={aboutDrawerRef} className="content-container">
 
         <HeaderWithDropdownButton 

@@ -21,10 +21,10 @@ export default function App() {
 
 
   return (
-    <section className={styles.App}>
+    <section className={`comp-app ${styles.App}`}>
       <Header/>
 
-      <main>
+      <main className="main">
         <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>

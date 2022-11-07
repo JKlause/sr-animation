@@ -8,7 +8,7 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
 
 
   return (
-    <DropdownMenu className={styles.AboutDrawerDropdown} isOpen={isOpen} dropdownRef={dropdownRef}>
+    <DropdownMenu className={`comp-about-drawer ${styles.AboutDrawerDropdown}`} isOpen={isOpen} dropdownRef={dropdownRef}>
       <AboutDrawerParagraph text={'This site was written using React.js, Sass, the @vx library, D3, Material-UI, and a plethora of custom hooks, animations and transitions.'} />
       <p>
         {'It is deployed on Heroku, served up with a simple express server, and built in VSCode. The '}

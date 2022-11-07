@@ -10,7 +10,7 @@ export default function VisualizationCards({ displayIndex }) {
 
 
   return (
-    <FillParent tag="section" className={styles.VisualizationCards} style={pageStyle}>
+    <FillParent tag="section" className={`comp-viz-card-grid ${styles.VisualizationCards}`} style={pageStyle}>
       <div className="title-placeholder" />
       {
         visualizationCardsData.map(({ 
