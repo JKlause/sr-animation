@@ -15,7 +15,7 @@ export default function DropdownMenu({
   
   return (
     <section 
-      className={`${styles.DropdownMenu} ${isOpen ? 'open' : 'closed'} ${className}`} 
+      className={`comp-dropdown ${styles.DropdownMenu} ${isOpen ? 'open' : 'closed'} ${className}`} 
       ref={dropdownRef} 
       {...props}>
 

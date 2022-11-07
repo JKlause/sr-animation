@@ -10,26 +10,22 @@ export default function VisualizationCards({ displayIndex }) {
 
 
   return (
-    <FillParent tag="section" className={styles.VisualizationCards} style={pageStyle}>
+    <FillParent tag="section" className={`comp-viz-card-grid ${styles.VisualizationCards}`} style={pageStyle}>
       <div className="title-placeholder" />
       {
         visualizationCardsData.map(({ 
           Visualization, 
           Info, 
           data, 
-          isFillParent, 
-          isLandscape, 
-          isPortrait, 
+          visualOrientation, 
         }, i) => (
-          
           <VisualizationCard 
             key={`card-${i}`}
             Visualization={Visualization}
             Info={Info}
             data={data} 
-            isFillParent={isFillParent}
-            isLandscape={isLandscape} 
-            isPortrait={isPortrait} />
+            visualOrientation={visualOrientation} 
+          />
         ))
       }
     </FillParent >

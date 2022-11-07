@@ -29,7 +29,7 @@ export default function BarChartInfo({
 
   return (
     <section 
-      className={styles.BarChartInfo}
+      className={`comp-bar-chart-info ${styles.BarChartInfo}`}
       style={{ width: `${width - 20}px`, height: `${height - 80}px` }}>
       <h1>
         { 'Most Loved Ice Cream Flavor' }

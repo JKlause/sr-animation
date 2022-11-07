@@ -9,7 +9,7 @@ import styles from './App.scss';
 
 export default function App() {
   const [displayIndex, setDisplayIndex] = useState(0);
-  const [ref, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
+  const [eventedMenuRef, isAboutDrawerOpen, setIsAboutDrawerOpen] = useEventedMenu();
   const [isTitleInFinalPosition, setIsTitleInFinalPosition] = useState(false);
   const [isAboutDrawerRendered, setIsAboutDrawerRendered] = useState(false);
 
@@ -21,10 +21,10 @@ export default function App() {
 
 
   return (
-    <section className={styles.App}>
+    <section className={`comp-app ${styles.App}`}>
       <Header/>
 
-      <main>
+      <main className="main-content">
         <h1 className={`title ${isTitleInFinalPosition ? 'final-position' : ''}`}>
           {'Data Visualizations Utilizing the VX Library'}
         </h1>
@@ -41,7 +41,7 @@ export default function App() {
 
       { 
         isAboutDrawerRendered &&
-          <AboutDrawer aboutDrawerRef={ref} isOpen={isAboutDrawerOpen}/>
+          <AboutDrawer aboutDrawerRef={eventedMenuRef} isOpen={isAboutDrawerOpen}/>
       }
 
     </section>

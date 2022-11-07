@@ -6,21 +6,25 @@ import LineChart from './line-chart/LineChart';
 import LineChartInfo from './line-chart/LineChartInfo';
 import ZoomPhylo from './zoom-phylo/ZoomPhylo';
 
+export const IS_PORTRAIT = 'IS_PORTRAIT';
+export const IS_LANDSCAPE = 'IS_LANDSCAPE';
+export const IS_FILL_PARENT = 'IS_FILL_PARENT';
+
 export default [
   {
     Visualization: BarChart,
     Info: BarChartInfo,
     data: barChartData,
-    isPortrait: true,
+    visualOrientation: IS_PORTRAIT,
   },
   {
     Visualization: LineChart,
     Info: LineChartInfo,
     data: lineChartData,
-    isLandscape: true,
+    visualOrientation: IS_LANDSCAPE,
   },
   {
     Visualization: ZoomPhylo,
-    isFillParent: true,
+    visualOrientation: IS_FILL_PARENT,
   }
 ];

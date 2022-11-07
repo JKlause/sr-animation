@@ -37,7 +37,7 @@ export default function LineChartInfo({
 
   return (
     <section 
-      className={styles.LineChartInfo}
+      className={`comp-line-chart-info ${styles.LineChartInfo}`}
       style={{ width: `${width - 8}px`, height: `${height - 34}px` }}>
       <h1>
         { 'Cumulative Ounces of Ice Cream Consumed Starting Covid Week 29' }

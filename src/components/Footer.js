@@ -68,8 +68,8 @@ export default function Footer({
 
 
   return (
-    <footer className={styles.Footer}>
-      <div>
+    <footer className={`comp-footer ${styles.Footer}`}>
+      <div className="back-button">
         <Button
           className="previous"
           text="Previous"
@@ -78,7 +78,7 @@ export default function Footer({
           isEnabled={!isPreviousButtonDisabled}/>
       </div>
 
-      <div>
+      <div className="main-button">
         {
           displayIndex === 0 
             ? <Button
@@ -98,7 +98,7 @@ export default function Footer({
         }
       </div>
 
-      <div>
+      <div className="next-button">
         <Button
           className="next"
           text="Next"

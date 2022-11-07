@@ -5,7 +5,7 @@ import styles from './Contact.scss';
 export default function Contact() {
   
   return (
-    <section className={styles.Contact}>
+    <section className={`comp-contact ${styles.Contact}`}>
 
       <div className="paragraph-container">
         <p className="phone">

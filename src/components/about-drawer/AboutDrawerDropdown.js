@@ -8,7 +8,7 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
 
 
   return (
-    <DropdownMenu className={styles.AboutDrawerDropdown} isOpen={isOpen} dropdownRef={dropdownRef}>
+    <DropdownMenu className={`comp-about-drawer ${styles.AboutDrawerDropdown}`} isOpen={isOpen} dropdownRef={dropdownRef}>
       <AboutDrawerParagraph text={'This site was written using React.js, Sass, the @vx library, D3, Material-UI, and a plethora of custom hooks, animations and transitions.'} />
       <p>
         {'It is deployed on Heroku, served up with a simple express server, and built in VSCode. The '}
@@ -18,9 +18,8 @@ export default function AboutDrawerDropdown({ isOpen, dropdownRef }) {
           rel="noopener noreferrer">
           {'source code'}
         </a>
-        {' is available on GitHub, and was written primarily over the weekend of 9/25/2020.'}
+        {' is available on GitHub.'}
       </p>
-      <AboutDrawerParagraph text={'It has been more recently updated over the weekend of 8/20/2022.'} />
       <p>
         {'I owe a fair amount of gratitude to Joel M. Turner\'s blog posts on @vx '}
         <a

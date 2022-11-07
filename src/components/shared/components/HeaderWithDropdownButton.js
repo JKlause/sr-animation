@@ -19,7 +19,7 @@ export default function HeaderWithDropdownButton({
 
   
   return (
-    <header className={`${styles.HeaderWithDropdownButton} ${className}`}>
+    <header className={`comp-header-with-dropdown ${styles.HeaderWithDropdownButton} ${className}`}>
 
       { isNarrowView || <div/> }
 

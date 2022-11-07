@@ -23,7 +23,7 @@ export default function Button({
   
   return (
     <button 
-      className={`${styles.Button} ${className} ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''} ${isEnabled ? 'enabled' : 'disabled'}`}
+      className={`comp-button ${styles.Button} ${className} ${isVisible ? 'visible' : 'not-visible'} ${isClicked ? 'on-click' : ''} ${isEnabled ? 'enabled' : 'disabled'}`}
       onClick={() => handleClick()}
       onMouseDown={() => handleClickStart()}
       onMouseUp={() => handleClickEnd()}
