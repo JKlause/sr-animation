@@ -17,19 +17,15 @@ export default function VisualizationCards({ displayIndex }) {
           Visualization, 
           Info, 
           data, 
-          isFillParent, 
-          isLandscape, 
-          isPortrait, 
+          visualOrientation, 
         }, i) => (
-          
           <VisualizationCard 
             key={`card-${i}`}
             Visualization={Visualization}
             Info={Info}
             data={data} 
-            isFillParent={isFillParent}
-            isLandscape={isLandscape} 
-            isPortrait={isPortrait} />
+            visualOrientation={visualOrientation} 
+          />
         ))
       }
     </FillParent >

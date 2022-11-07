@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import useDimensions from 'hooks/useDimensions';
 import styles from './VisualizationCard.scss';
-import { isLandscape, isFillParent } from './visualization-cards/visualizationCardsData';
+import { IS_LANDSCAPE, IS_FILL_PARENT } from './visualization-cards/visualizationCardsData';
 
 
 
@@ -16,6 +16,8 @@ export default function VisualizationCard({
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const containerRef = useRef();
   const { width, height } = useDimensions(containerRef, visualOrientation);
+  const isLandscape = visualOrientation === IS_LANDSCAPE;
+  const isFillParent = visualOrientation === IS_FILL_PARENT;
 
   
   const enableResetButton = () => {
